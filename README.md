@@ -1,6 +1,5 @@
 # sei-group-project
-<<<<<<< HEAD
-I LOVE CODING
-=======
+Ola
+Lily
 Charlie
->>>>>>> development
+More names of other people
