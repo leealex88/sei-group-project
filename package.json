@@ -2,6 +2,13 @@
   "name": "sei-project-03",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "serve:back": "nodemon index.js",
+    "seed": "node db/seeds.js",
+    "serve:front": "webpack-dev-server --mode=development",
+    "build": "webpack -p",
+    "start": "node index.js"
+  },
   "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^10.0.2",
