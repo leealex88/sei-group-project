@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 // import './style.scss'
 
+import Login from './components/auth/Login'
+import Register from './components/auth/Register'
+
+
+
+
 
 const App = () => {
   return (
@@ -14,7 +20,6 @@ const App = () => {
 
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
-          <Route path="/events" component={eventIndex} />
 
         </Switch>
       </main>
@@ -26,3 +31,7 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 )
+
+
+
+// <Route path="/events" component={eventIndex} />

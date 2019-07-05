@@ -1,9 +1,9 @@
-// const mongoose = require('mongoose')
-// const { dbURI } = require('../config/environment')
-//
-//
-//
-//
+const mongoose = require('mongoose')
+const { dbURI } = require('../config/environment')
+
+
+
+
 {
   eventType: 'Sport',
   name: 'Bouldering',
