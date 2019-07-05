@@ -16,6 +16,7 @@ const App = () => {
 
         < EventsIndex />
 
+
       </main>
     </BrowserRouter>
 
