@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import './styles/styles.scss'
 
 import EventsIndex from './components/events/eventsIndex'
@@ -12,11 +12,11 @@ const App = () => {
     <BrowserRouter>
       <main>
 
-        <Switch>
 
-          <Route path="/events" component={EventsIndex} />
-          <Route path="/login" component={Login} />
-        </Switch>
+
+        <EventsIndex />
+        <Login />
+
       </main>
     </BrowserRouter>
 
