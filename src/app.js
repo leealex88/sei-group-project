@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import './style.scss'
+import './styles/styles.scss'
 
-import Register from './components/auth/Register'
-import Login from './components/auth/Login'
-// import EventIndex from './components/'
+import EventsIndex from './components/events/eventsIndex'
+// import Login from './components/auth/Login'
+// import Register from './components/auth/Register'
 
 const App = () => {
   return (
@@ -13,11 +13,12 @@ const App = () => {
       <main>
 
         <Switch>
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
+          <h1>helloo</h1>
+          <Route path="/events" component={EventsIndex} />
         </Switch>
       </main>
     </BrowserRouter>
+
 
   )
 }
@@ -26,3 +27,10 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 )
+
+
+
+{/*
+  <Route path="/register" component={Register} />
+  <Route path="/login" component={Login} />
+  <Route path="/events" component={EventsIndex} /> */}
