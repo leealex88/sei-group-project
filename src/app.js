@@ -1,8 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-// import './style.scss'
+import './style.scss'
 
+import EventsIndex from './components/events/eventsIndex'
+// import Login from './components/auth/Login'
+// import Register from './components/auth/Register'
 
 const App = () => {
   return (
@@ -11,14 +14,12 @@ const App = () => {
 
         <Switch>
 
-
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
-          <Route path="/events" component={eventIndex} />
-
+          <Route path="/events" component={EventsIndex} />
         </Switch>
       </main>
     </BrowserRouter>
+
+
   )
 }
 
@@ -26,3 +27,10 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 )
+
+
+
+{/*
+  <Route path="/register" component={Register} />
+  <Route path="/login" component={Login} />
+  <Route path="/events" component={EventsIndex} /> */}
