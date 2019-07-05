@@ -1,8 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-// import './style.scss'
+import './style.scss'
 
+import Register from './components/auth/Register'
+import Login from './components/auth/Login'
+// import EventIndex from './components/'
 
 const App = () => {
   return (
@@ -10,15 +13,12 @@ const App = () => {
       <main>
 
         <Switch>
-
-
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
-          <Route path="/events" component={eventIndex} />
-
         </Switch>
       </main>
     </BrowserRouter>
+
   )
 }
 
