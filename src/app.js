@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './styles/styles.scss'
 
 import EventsIndex from './components/events/eventsIndex'
-// import Login from './components/auth/Login'
+import Login from './components/auth/Login'
 // import Register from './components/auth/Register'
 
 const App = () => {
@@ -13,8 +13,9 @@ const App = () => {
       <main>
 
         <Switch>
-          <h1>helloo</h1>
+
           <Route path="/events" component={EventsIndex} />
+          <Route path="/login" component={Login} />
         </Switch>
       </main>
     </BrowserRouter>
