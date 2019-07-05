@@ -9,11 +9,11 @@ const eventCommentSchema = new mongoose.Schema({
 
 const eventSchema = new mongoose.Schema({
   eventType: { type: String, required: true },
-  eventName: { type: String, required: true },
+  eventName: { type: String },
   date: { type: Date, required: true },
-  fixedDate: { type: Boolean, required: true },
-  location: { type: String, require: true },
-  description: { type: String, required: true },
+  fixedDate: { type: Boolean },
+  location: { type: String },
+  description: { type: String },
   schedule: { type: String },
   startTime: { type: Number },
   endTime: { type: Number },
@@ -25,15 +25,15 @@ const eventSchema = new mongoose.Schema({
   catered: { type: String },
   provided: { type: String },
   whatToBring: { type: String },
-  maxSize: { type: Number, required: true },
+  maxSize: { type: Number },
   minSize: { type: Number },
   idealGroupSize: { type: Number },
   anythingElse: { type: String },
   image: { type: String },
   tags: { type: Array },
-  skillLevel: { type: String },
-  comments: [ eventCommentSchema ],
-  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  skillLevel: { type: String }
+  // comments: [ eventCommentSchema ],
+  // user: { type: mongoose.Schema.ObjectId, ref: 'User', default: 'user' }
 }, {
   timestamps: true
 })
