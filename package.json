@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
  "name": "sei-project-03",
  "version": "1.0.0",
  "main": "index.js",
@@ -51,4 +52,35 @@
     "react-router-dom": "^4.3.1",
     "react-sound": "^1.2.0"
  }
+=======
+  "name": "sei-project-03",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "serve:back": "nodemon index.js",
+    "seed": "node db/seeds.js",
+    "serve:front": "webpack-dev-server --mode=development",
+    "build": "webpack -p",
+    "start": "node index.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.0.1",
+    "eslint-plugin-react": "^7.14.2"
+  },
+  "repository": "git@github.com:CPrich905/sei-group-project.git",
+  "author": "CPrich905 <charlie.prichard@gmail.com>",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.3",
+    "mongoose-unique-validator": "^2.0.3",
+    "mongoose": "^5.6.3",
+    "mongoose-unique-validator": "^2.0.3",
+    "skeleton": "^0.1.2"
+  }
+>>>>>>> 0212345923d7f88814aae52ed9e1b9b58dae2b3d
 }
