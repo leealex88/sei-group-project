@@ -17,6 +17,8 @@
     "express": "^4.17.1",
     "mongoose": "^5.6.3",
     "mongoose-unique-validator": "^2.0.3",
+    "mongoose": "^5.6.3",
+    "mongoose-unique-validator": "^2.0.3",
     "skeleton": "^0.1.2"
   }
 }
