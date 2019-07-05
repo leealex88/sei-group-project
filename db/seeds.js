@@ -37,7 +37,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
 
         {
           eventType: 'picnic',
-          name: 'non-alcoholic picnic',
+          eventName: 'non-alcoholic picnic',
           date: new Date('07/10/2019'),
           fixed: false,
           location: 'Peckham Rye',
@@ -64,7 +64,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
 
         {
           eventType: 'Drinks',
-          name: 'After Work Drink and Chat',
+          eventName: 'After Work Drink and Chat',
           date: new Date('07/28/2019'),
           fixed: true,
           location: 'The City',
@@ -91,7 +91,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
 
         {
           eventType: 'Yoga',
-          name: 'Morning Yoga Session',
+          eventName: 'Morning Yoga Session',
           date: new Date('07/17/2019'),
           fixed: true ,
           location: 'Brixton',
@@ -118,7 +118,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
 
         {
           eventType: 'Tea and Cake',
-          name: 'An informal afternoon tea at my lovely home',
+          eventName: 'An informal afternoon tea at my lovely home',
           date: new Date('07/12/2019'),
           fixed: false ,
           location: 'Poplar',
@@ -145,7 +145,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
 
         {
           eventType: 'Shopping',
-          name: 'Vintage Clothes Shopping- Brick Lane',
+          eventName: 'Vintage Clothes Shopping- Brick Lane',
           date: new Date('08/01/2019'),
           fixed: true ,
           location: 'Brick Lane',
@@ -171,7 +171,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Language Exchange',
-          name: 'My French for Your English',
+          eventName: 'My French for Your English',
           date: new Date('08/01/2019'),
           fixed: true ,
           location: 'Dulwich',
@@ -197,7 +197,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Breakfast',
-          name: 'Greasy Fry-Up in my Local Caff',
+          eventName: 'Greasy Fry-Up in my Local Caff',
           date: new Date('08/02/2019'),
           fixed: false ,
           location: 'Tower Hamlets',
@@ -223,7 +223,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Film',
-          name: 'Screening of Brief Encounter',
+          eventName: 'Screening of Brief Encounter',
           date: new Date('08/05/2019'),
           fixed: true ,
           location: 'Shoreditch',
@@ -250,7 +250,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
 
         {
           eventType: 'Dog Walking',
-          name: '(Long) Sunday Afternoon Dog Walk',
+          eventName: '(Long) Sunday Afternoon Dog Walk',
           date: new Date('08/09/2019'),
           fixed: true ,
           location: 'Richmond',
@@ -276,7 +276,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Ping-Pong',
-          name: 'Very serious Ping-Pong Tournament',
+          eventName: 'Very serious Ping-Pong Tournament',
           date: new Date('08/09/2019'),
           fixed: true ,
           location: 'Kilburn',
@@ -297,16 +297,16 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: '',
           anythingElse: '',
           image: '',
-          tags: ['ping-pong', 'sport', 'game', 'ball-game', 'activity', 'competition', 'tournament'],
+          tags: ['ping-pong', 'sport', 'game', 'ball-game', 'activity', 'competition', 'toureventNament'],
           skillLevel: 'Advanced!'
         },
         {
           eventType: 'Ping-Pong',
-          name: 'Very serious Ping-Pong Tournament',
+          eventName: 'Very serious Ping-Pong ToureventNament',
           date: new Date('08/13/2019'),
           fixed: true ,
           location: 'Kilburn',
-          description: 'This tournament will not be the faint harded! I take my ping pong (aka table tennis, aka WHIFF WHAFF) exceedingly seriously so please don\'t bother RSVP-ing if you don\'t even know the TTA\'s official rules or don\'t own your own bat!!!!!',
+          description: 'This toureventNament will not be the faint harded! I take my ping pong (aka table tennis, aka WHIFF WHAFF) exceedingly seriously so please don\'t bother RSVP-ing if you don\'t even know the TTA\'s official rules or don\'t own your own bat!!!!!',
           schedule: '',
           startTime: '1600',
           endTime: '2200',
@@ -323,12 +323,12 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: '',
           anythingElse: '',
           image: '',
-          tags: ['ping-pong', 'sport', 'game', 'ball-game', 'activity', 'competition', 'tournament'],
+          tags: ['ping-pong', 'sport', 'game', 'ball-game', 'activity', 'competition', 'toureventNament'],
           skillLevel: 'Advanced!'
         },
         {
           eventType: 'Jam Session',
-          name: 'Casual (indie rock) Jam Session',
+          eventName: 'Casual (indie rock) Jam Session',
           date: new Date('08/15/2019'),
           fixed: true ,
           location: 'Dalston',
@@ -354,7 +354,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Game',
-          name: 'Dungeons and Dragons',
+          eventName: 'Dungeons and Dragons',
           date: new Date('08/17/2019'),
           fixed: false ,
           location: 'Islington',
@@ -380,7 +380,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Make-over',
-          name: 'Make-up session with Prosecco and Cheese',
+          eventName: 'Make-up session with Prosecco and Cheese',
           date: new Date('08/12/2019'),
           fixed: false ,
           location: 'Camden Town',
@@ -406,7 +406,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Watching Sport',
-          name: 'Liverpool V. Bangor',
+          eventName: 'Liverpool V. Bangor',
           date: new Date('08/19/2019'),
           fixed: false ,
           location: 'Holborm',
@@ -432,7 +432,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Running',
-          name: 'Morning Thames Run',
+          eventName: 'Morning Thames Run',
           date: new Date('08/28/2019'),
           fixed: false ,
           location: 'Tower Bridge',
@@ -458,7 +458,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Game',
-          name: 'Chess Game',
+          eventName: 'Chess Game',
           date: new Date('08/11/2019'),
           fixed: false ,
           location: 'Clerkenwell',
@@ -484,7 +484,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Meal',
-          name: 'Dinner at Moro',
+          eventName: 'Dinner at Moro',
           date: new Date('08/10/2019'),
           fixed: false ,
           location: 'Faringdon',
@@ -510,7 +510,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Coffee',
-          name: 'Casual cup of coffee and a bit of a chat',
+          eventName: 'Casual cup of coffee and a bit of a chat',
           date: new Date('08/13/2019'),
           fixed: false ,
           location: 'Greenwich',
@@ -536,7 +536,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Political Canvassing',
-          name: 'Door knocking for the Greens',
+          eventName: 'Door knocking for the Greens',
           date: new Date('09/16/2019'),
           fixed: false ,
           location: 'Chelsea',
@@ -562,7 +562,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Meal',
-          name: 'Mexican Night!',
+          eventName: 'Mexican Night!',
           date: new Date('09/18/2019'),
           fixed: false ,
           location: 'Hackney',
@@ -588,7 +588,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Conversation',
-          name: 'A nice chat',
+          eventName: 'A nice chat',
           date: new Date('09/01/2019'),
           fixed: false ,
           location: 'Haringey',
@@ -614,7 +614,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Charity',
-          name: 'Help the Homeless',
+          eventName: 'Help the Homeless',
           date: new Date('07/02/2019'),
           fixed: false ,
           location: 'The City',
@@ -640,7 +640,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Charity',
-          name: 'Help the Homeless',
+          eventName: 'Help the Homeless',
           date: new Date('07/10/2019'),
           fixed: false ,
           location: 'The City',
@@ -666,7 +666,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Play Date',
-          name: 'Park Trip with Small People',
+          eventName: 'Park Trip with Small People',
           date: new Date('07/11/2019'),
           fixed: false ,
           location: 'Southwark Park',
@@ -692,7 +692,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Gardening',
-          name: 'Gardening in the Community Gardens',
+          eventName: 'Gardening in the Community Gardens',
           date: new Date('07/02/2019'),
           fixed: false ,
           location: 'Hackney',
@@ -718,7 +718,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Meal',
-          name: 'Family Friendly BBQ',
+          eventName: 'Family Friendly BBQ',
           date: new Date('07/13/2019'),
           fixed: false ,
           location: 'Hyde Park',
@@ -744,7 +744,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Art Gallery',
-          name: 'Natalia Goncharova Exhibtion',
+          eventName: 'Natalia Goncharova Exhibtion',
           date: new Date('07/03/2019'),
           fixed: false ,
           location: 'Tate Modern',
@@ -770,7 +770,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'Art Gallery',
-          name: 'Natalia Goncharova Exhibtion',
+          eventName: 'Natalia Goncharova Exhibtion',
           date: new Date('07/05/2019'),
           fixed: false ,
           location: 'Tate Modern',
@@ -796,7 +796,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'British Museum Visit',
-          name: 'Day at the British Museum',
+          eventName: 'Day at the British Museum',
           date: new Date('07/23/2019'),
           fixed: false ,
           location: 'Bloomsbury',
@@ -822,7 +822,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         },
         {
           eventType: 'British Museum Visit',
-          name: 'Day at the British Museum',
+          eventName: 'Day at the British Museum',
           date: new Date('07/12/2019'),
           fixed: false ,
           location: 'Bloomsbury',
@@ -845,7 +845,56 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           image: '',
           tags: ['history', 'eduction', 'museum', 'learning' ],
           skillLevel: ''
+        },
+        {
+          eventType: 'Sport',
+          eventName: 'Bouldering',
+          date: new Date('07/12/2019'),
+          location: 'Bermondsey',
+          description: 'An hour or more bouldering at the Bermondsey Arch climbing wall',
+          schedule: 'Warm up, climb, drink coffee, climb, repeat',
+          startTime: 900,
+          endTime: 1100,
+          tickets: '',
+          ticketLink: '',
+          eventLink: '',
+          preparation: '',
+          cost: 10,
+          catered: '',
+          provided: '',
+          whatToBring: 'Sports clothes and chalk if you have it',
+          maxSize: 4,
+          minSize: 0,
+          idealGroupSize: 3,
+          anythingElse: '',
+          image: '',
+          tags: ['sport', 'climbing']
+        },
+        {
+          eventType: 'Culture',
+          eventName: 'Theatre',
+          date: new Date('07/12/2019'),
+          location: 'Bermondsey',
+          description: 'An hour or more bouldering at the Bermondsey Arch climbing wall',
+          schedule: 'Warm up, climb, drink coffee, climb, repeat',
+          startTime: 900,
+          endTime: 1100,
+          tickets: '',
+          ticketLink: '',
+          eventLink: '',
+          preparation: '',
+          cost: 10,
+          catered: '',
+          provided: '',
+          whatToBring: 'Sports clothes and chalk if you have it',
+          maxSize: 4,
+          minSize: 0,
+          idealGroupSize: 3,
+          anythingElse: '',
+          image: '',
+          tags: ['sport', 'climbing']
         }
+
       ])
     })
     .then(() => console.log('EVENTS-TASTIC!'))

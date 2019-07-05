@@ -29,7 +29,7 @@ const eventSchema = new mongoose.Schema({
   minSize: { type: Number },
   idealGroupSize: { type: Number },
   anythingElse: { type: String },
-  image: { type: String },
+  partyImage: { type: String, default: 'http://www.thegatenewcastle.co.uk/images/layout/headers/mobile/party-planner.jpg' },
   tags: { type: Array },
   skillLevel: { type: String }
   // comments: [ eventCommentSchema ],
