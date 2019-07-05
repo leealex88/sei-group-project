@@ -1,5 +1,6 @@
-const mongoose = require('mongoose')
 const { dbURI } = require('../config/environment')
+const mongoose = require('mongoose')
+const Event = require('../models/events')
 
 
 
@@ -208,7 +209,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           ticketLink: '',
           eventLink: '',
           preparation: '',
-          cost: 'Roughly a tenner',
+          cost: 10,
           catered: '',
           provided: '',
           whatToBring: 'Money and an appetite!',
@@ -495,14 +496,14 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           ticketLink: '',
           eventLink: '',
           preparation: '',
-          cost: 'We will pay for what we each eat/drink just to keep things as simple as possible',
+          cost: 0,
           catered: 'WELL YES',
           provided: 'good conversation!',
           whatToBring: '',
           maxSize: 3,
           minSize: 3,
           idealGroupSize: '',
-          anythingElse: '',
+          anythingElse: 'We will pay for what we each eat/drink just to keep things as simple as possible',
           image: '',
           tags: ['food', 'fine-dining', 'spanish', 'restaurant'],
           skillLevel: ''
@@ -847,7 +848,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         }
       ])
     })
-    .then(() => console.log('tracks galore!'))
+    .then(() => console.log('EVENTS-TASTIC!'))
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close())
 
