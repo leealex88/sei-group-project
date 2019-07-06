@@ -1,6 +1,7 @@
 const { dbURI } = require('../config/environment')
 const mongoose = require('mongoose')
 const Event = require('../models/events')
+const User = require('../models/user')
 
 
 
@@ -8,6 +9,38 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
   if (err) return console.log(err)
   db.dropDatabase()
     .then(() => {
+      return User.create([
+        {
+          username: 'Ola',
+          email: 'ola@email.com',
+          bio: 'great person',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: 'https://i.imgur.com/ZFhlV9A.jpg'
+
+        }, {
+          username: 'Charlie',
+          email: 'charlie@email',
+          bio: 'great person',
+          password: 'password',
+          passwordConfirmation: 'password'
+
+        },
+        {
+          username: 'lily',
+          email: 'lily@email',
+          bio: 'total div',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: 'https://static1.squarespace.com/static/5ada91e331d4df2af37677c2/t/5ae3c9f270a6adc561f22176/1524877811615/irvin+yalom.jpeg?format=1000w'
+
+        }
+      ])
+    })
+    .then(users => {
+      console.log(`ooh, you have made ${users.length} users!`)
+
+
       return Event.create([
         {
           eventType: 'game',

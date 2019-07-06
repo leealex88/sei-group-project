@@ -9,7 +9,7 @@ const eventCommentSchema = new mongoose.Schema({
 
 const eventSchema = new mongoose.Schema({
   eventType: { type: String, required: true },
-  eventName: { type: String },
+  eventName: { type: String, required: true },
   date: { type: Date, required: true },
   fixedDate: { type: Boolean },
   location: { type: String },
@@ -31,13 +31,15 @@ const eventSchema = new mongoose.Schema({
   anythingElse: { type: String },
   partyImage: { type: String, default: 'http://www.thegatenewcastle.co.uk/images/layout/headers/mobile/party-planner.jpg' },
   tags: { type: Array },
-  skillLevel: { type: String }
-  // comments: [ eventCommentSchema ],
+  skillLevel: { type: String },
+  comments: [ eventCommentSchema ]
   // user: { type: mongoose.Schema.ObjectId, ref: 'User', default: 'user' }
 }, {
   timestamps: true
 })
 
 eventSchema.plugin(require('mongoose-unique-validator'))
+
+module.exports = mongoose.model('Event', eventSchema)
 
 module.exports = mongoose.model('Event', eventSchema)
