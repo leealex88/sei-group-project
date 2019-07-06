@@ -13,12 +13,10 @@ const App = () => {
     <BrowserRouter>
       <main>
         <Switch>
-
-
+          <Route path="/events/:id" component={EventsShow} />
           <Route path="/events/" component={EventsIndex} />
 
-          <Route path="/events/:id" component={EventsShow} />
-          <Route path="/login" component={Register} />
+          <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
         </Switch>
 
