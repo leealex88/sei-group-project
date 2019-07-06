@@ -1,4 +1,4 @@
-const Event = require('../models/events')
+const Event = require('../models/event')
 
 function indexRoute(req, res) {
 
@@ -18,6 +18,8 @@ function showRoute(req, res) {
     })
     .catch(err => console.log(err))
 }
+
+
 
 
 
