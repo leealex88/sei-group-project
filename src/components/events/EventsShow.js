@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 // import RatingTotal from './RatingTotal'
-// import { Link } from 'react-router-dom'
+
 // import Auth from '../../lib/Auth'
 
 class EventsShow extends React.Component {
@@ -26,11 +26,9 @@ class EventsShow extends React.Component {
 
 
   render() {
+    console.log(this.state.event)
     if (!this.state.event) return null
-
-
     return (
-
       <div >
 
         <h1 className="eventTitle">{this.state.event.eventName}</h1>
@@ -41,15 +39,6 @@ class EventsShow extends React.Component {
         <hr/>
         <p> {this.state.event.location} </p>
       </div>
-
-
-
-
-
-
-
-
-
     )
   }
 }
