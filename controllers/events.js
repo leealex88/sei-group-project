@@ -1,10 +1,21 @@
-const Event = require('../models/events')
+const Event = require('../models/event')
 
 function indexRoute(req, res) {
-  console.log(req)
+
   Event
     .find(req.query)
     .then(events => res.status(200).json(events))
+    .catch(err => console.log(err))
+}
+
+function showRoute(req, res) {
+  console.log('showing')
+  Event
+    .findById(req.params.id)
+    .then(event => {
+      if (!event) throw new Error('Not Found')
+      return res.status(200).json(event)
+    })
     .catch(err => console.log(err))
 }
 
@@ -12,7 +23,10 @@ function indexRoute(req, res) {
 
 
 
+
+
 module.exports = {
-  index: indexRoute
+  index: indexRoute,
+  show: showRoute
 
 }
