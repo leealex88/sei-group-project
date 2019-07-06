@@ -1,17 +1,27 @@
 const router = require('express').Router()
 const events = require('../controllers/events')
 
+const users = require('../controllers/users')
+
 router.route('/events')
   .get(events.index)
 
 router.route('/events/:id')
   .get(events.show)
 
-// router.route('/login')
-//   .get(events.register)
-//
-// router.route('/register')
-//   .get(events.login)
+router.route('/login')
+  .post(users.login)
+
+router.route('/register')
+  .post(users.register)
+
+router.route('/users')
+  .get(users.showUsers)
+
+router.route('/users/:userid')
+  .get(users.showUser)
+
+
 
 
 

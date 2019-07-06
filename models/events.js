@@ -41,5 +41,3 @@ const eventSchema = new mongoose.Schema({
 eventSchema.plugin(require('mongoose-unique-validator'))
 
 module.exports = mongoose.model('Event', eventSchema)
-
-module.exports = mongoose.model('Event', eventSchema)

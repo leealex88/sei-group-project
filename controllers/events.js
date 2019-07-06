@@ -1,7 +1,8 @@
 const Event = require('../models/events')
 
-function indexRoute(req, res) {
 
+function indexRoute(req, res) {
+  console.log(req.body)
   Event
     .find(req.query)
     .then(events => res.status(200).json(events))
@@ -9,7 +10,7 @@ function indexRoute(req, res) {
 }
 
 function showRoute(req, res) {
-  console.log('showing')
+  console.log(req, 'showing')
   Event
     .findById(req.params.id)
     .then(event => {
@@ -18,6 +19,8 @@ function showRoute(req, res) {
     })
     .catch(err => console.log(err))
 }
+
+
 
 
 
