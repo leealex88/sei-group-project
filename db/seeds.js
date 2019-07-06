@@ -1,6 +1,6 @@
 const { dbURI } = require('../config/environment')
 const mongoose = require('mongoose')
-const Event = require('../models/events')
+const Event = require('../models/event')
 const User = require('../models/user')
 
 

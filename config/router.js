@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const events = require('../controllers/events')
 
-const users = require('../controllers/auth')
+const users = require('../controllers/users')
 
 router.route('/events')
   .get(events.index)
@@ -14,6 +14,8 @@ router.route('/login')
 
 router.route('/register')
   .get(users.register)
+router.route('/event/new')
+  .get(events.new)
 
 
 
