@@ -7,12 +7,18 @@ const eventCommentSchema = new mongoose.Schema({
   timestamps: true
 })
 
+function setLngLat(v){
+  if (typeof v === 'string')
+    return '138.73 -35.015'
+}
+
 const eventSchema = new mongoose.Schema({
   eventType: { type: String, required: true },
   eventName: { type: String },
   date: { type: Date, required: true },
   fixedDate: { type: Boolean },
-  location: { type: String },
+  location: { type: String, set: setLngLat, default: 'string' },
+  // lnglat: { type: String, set: setLngLat },
   description: { type: String },
   schedule: { type: String },
   startTime: { type: Number },
@@ -31,12 +37,16 @@ const eventSchema = new mongoose.Schema({
   anythingElse: { type: String },
   partyImage: { type: String, default: 'http://www.thegatenewcastle.co.uk/images/layout/headers/mobile/party-planner.jpg' },
   tags: { type: Array },
-  skillLevel: { type: String }
-  // comments: [ eventCommentSchema ],
+  skillLevel: { type: String },
+  comments: [ eventCommentSchema ]
   // user: { type: mongoose.Schema.ObjectId, ref: 'User', default: 'user' }
 }, {
   timestamps: true
 })
+
+
+
+
 
 eventSchema.plugin(require('mongoose-unique-validator'))
 

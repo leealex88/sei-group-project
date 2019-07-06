@@ -3,19 +3,26 @@ const events = require('../controllers/events')
 
 const users = require('../controllers/users')
 
-router.route('/events')
+router.route('/events/')
   .get(events.index)
+  .post(events.create)
 
 router.route('/events/:id')
   .get(events.show)
 
 router.route('/login')
-  .get(users.login)
+  .post(users.login)
 
 router.route('/register')
-  .get(users.register)
-router.route('/event/new')
-  .get(events.new)
+  .post(users.register)
+
+router.route('/users')
+  .get(users.showUsers)
+
+router.route('/users/:userid')
+  .get(users.showUser)
+
+
 
 
 
