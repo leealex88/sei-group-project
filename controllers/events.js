@@ -20,6 +20,15 @@ function showRoute(req, res) {
     .catch(err => console.log(err))
 }
 
+function eventCreate(req, res) {
+  console.log(req, 'showing')
+  Event
+    .create(req.body)
+    .then(event =>  res.status(201).json(event))
+    .catch(err => console.log(err))
+}
+
+
 
 
 
@@ -28,6 +37,7 @@ function showRoute(req, res) {
 
 module.exports = {
   index: indexRoute,
-  show: showRoute
+  show: showRoute,
+  create: eventCreate
 
 }

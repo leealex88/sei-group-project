@@ -1,7 +1,9 @@
 import React from 'react'
 import axios from 'axios'
 
-// import RatingTotal from './RatingTotal'
+import Map from './Map'
+
+
 
 // import Auth from '../../lib/Auth'
 
@@ -21,24 +23,28 @@ class EventsShow extends React.Component {
 
   }
 
-
-
-
-
   render() {
-    console.log(this.state.event)
+
     if (!this.state.event) return null
+    console.log(parseInt(this.state.event.location.slice(0,6)))
+    console.log(parseInt(this.state.event.location.slice(7,13)))
     return (
-      <div >
+      <main>
+        <div >
 
-        <h1 className="eventTitle">{this.state.event.eventName}</h1>
+          <h1 className="eventTitle">{this.state.event.eventName}</h1>
 
-        <p> {this.state.event.description} </p>
-        <hr/>
-        <p> {this.state.event.date} </p>
-        <hr/>
-        <p> {this.state.event.location} </p>
-      </div>
+          <p> {this.state.event.description} </p>
+          <hr/>
+          <p> {this.state.event.date} </p>
+          <hr/>
+          <p> {this.state.event.location} </p>
+        </div>
+
+        <Map locations = {this.state.event}/>
+      </main>
+
+
     )
   }
 }

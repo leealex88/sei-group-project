@@ -25,7 +25,7 @@ class EventsIndex extends React.Component {
   render() {
 
     if (!this.state.events) return null
-    console.log(this.state.events)
+    console.log(this.state.events[1].location)
 
     return (
       <main>
