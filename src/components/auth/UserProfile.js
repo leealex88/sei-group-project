@@ -41,7 +41,7 @@ class UserProfile extends React.Component {
         <h1> {this.state.user.username} </h1>
         <a onClick={this.logout}>Logout</a>
 
-      
+        < UserEvents />
 
 
       </div>

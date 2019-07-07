@@ -72,13 +72,6 @@ function showTheirEvents(req, res, next) {
 }
 
 
-
-
-
-
-
-
-
 function showUsers(req, res) {
   User
     .find(req.query)
@@ -113,6 +106,19 @@ function commentDeleteRoute(req, res) {
     .catch(err => res.json(err))
 }
 
+function getEventCreator(req, res, next) {
+  Event
+    .findById(req.params.id)
+    .then(event =>
+      User
+        .findById(event.user)
+        .then(user => res.status(201).json(user))
+        .catch(next)
+
+    )
+
+}
+
 
 module.exports = {
   login: login,
@@ -123,6 +129,7 @@ module.exports = {
   userCommentDelete: commentDeleteRoute,
   showCurrentUser: showCurrentUser,
   showCreatedEvents: showCreatedEvents,
-  showTheirEvents: showTheirEvents
+  showTheirEvents: showTheirEvents,
+  getEventCreator: getEventCreator
 
 }

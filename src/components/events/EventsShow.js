@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
 import Map from './Map'
+import EventCreator from './EventCreator'
+
 
 class eventShow extends React.Component {
   constructor() {
@@ -57,8 +59,10 @@ class eventShow extends React.Component {
       <section >
         <div >
           <Fragment>
-            <h2 >{event.name}</h2>
+            <h2 >Event: {event.eventName}</h2>
+
             <hr />
+            <EventCreator event={this.props.match.params.id}/>
             <div >
               <div >
 

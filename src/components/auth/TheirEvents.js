@@ -4,7 +4,7 @@ import Auth from '../../lib/Auth'
 import { Link } from 'react-router-dom'
 
 
-class UserEvents extends React.Component {
+class TheirEvents extends React.Component {
   constructor() {
     super()
     this.state = { events: null }
@@ -17,12 +17,9 @@ class UserEvents extends React.Component {
 
   componentDidMount() {
 
-    axios.get('/api/myevents', {
-      headers: { Authorization: `Bearer ${Auth.getToken()}` }
-    })
-
+    axios.get(`/api/users/${this.props.user}/events`)
       .then(res => this.setState({ events: res.data }))
-      .catch(() => this.setState({ error: 'Invalid Crendentials' }))
+      .catch(err => console.log(err))
 
   }
 
@@ -63,4 +60,4 @@ class UserEvents extends React.Component {
 
 
 
-export default UserEvents
+export default TheirEvents

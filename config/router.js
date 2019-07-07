@@ -9,6 +9,9 @@ router.route('/events/')
 
 router.route('/events/:id')
   .get(events.show)
+  .post(users.getEventCreator)
+
+
 
 router.route('/events/:id/comments')
   .post(secureRoute, events.commentCreate)
@@ -37,6 +40,8 @@ router.route('/register')
 
 router.route('/myevents')
   .get(secureRoute, users.showCreatedEvents)
+
+
 
 router.route('/users')
   .get(users.showUsers)

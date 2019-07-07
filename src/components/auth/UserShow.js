@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
+import TheirEvents from './TheirEvents'
 
 class UserShow extends React.Component {
   constructor() {
@@ -97,7 +98,7 @@ class UserShow extends React.Component {
           <button className="button" type="submit">Comment</button>
         </form>}
 
-
+        <TheirEvents user={this.props.match.params.userid} />
 
       </div>
     )
