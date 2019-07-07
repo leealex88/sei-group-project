@@ -16,9 +16,9 @@ const App = () => {
     <BrowserRouter>
       <main>
         <Switch>
+          <Route path="/events/new/" component={EventsNew} />
           <Route path="/events/:id" component={EventsShow} />
           <Route path="/events/" component={EventsIndex} />
-          <Route path="/events/new/" component={EventsNew} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/users/:userid" component={UserShow} />

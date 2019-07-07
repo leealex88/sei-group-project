@@ -66,6 +66,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['cards', 'strategy game'],
+          user: users[0],
           skillLevel: 'intermediate'
         },
 
@@ -93,6 +94,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['sober', 'non-alcoholic', 'day time', 'park'],
+          user: users[0],
           skillLevel: ''
         },
 
@@ -120,6 +122,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['sober', 'non-alcoholic', 'day time', 'park'],
+          user: users[0],
           skillLevel: ''
         },
 
@@ -147,6 +150,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['yoga', 'mindfulness', 'buddhism', 'mental health', 'health', 'fitness'],
+          user: users[0],
           skillLevel: ''
         },
 
@@ -174,6 +178,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: 'Only women please!',
           image: '',
           tags: ['chitchat', 'girls-only', 'cake', 'baking'],
+          user: users[0],
           skillLevel: ''
         },
 
@@ -201,6 +206,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: 'I have slightly out there taste in clothes, you have been warned!',
           image: '',
           tags: ['fashion', 'vinatge', 'hipster', 'day time', 'shopping'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -227,6 +233,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: 'My level is intermediate but yours doesn\'t matter',
           image: '',
           tags: ['languages', 'French'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -253,6 +260,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: 'NO VEGANS OR VEGGOS!!!',
           image: '',
           tags: ['breakfast', 'meat', 'food', 'morning', 'eggs'],
+          user: users[0],
           skillLevel: 'PROFESSIONAL EATER LEVEL (joking!)'
         },
         {
@@ -279,6 +287,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['cinema', 'film', 'hollywood'],
+          user: users[0],
           skillLevel: ''
         },
 
@@ -306,6 +315,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['dogs', 'walking', 'talking', 'listening'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -332,6 +342,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['ping-pong', 'sport', 'game', 'ball-game', 'activity', 'competition', 'toureventNament'],
+          user: users[0],
           skillLevel: 'Advanced!'
         },
         {
@@ -358,12 +369,13 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['ping-pong', 'sport', 'game', 'ball-game', 'activity', 'competition', 'toureventNament'],
+          user: users[0],
           skillLevel: 'Advanced!'
         },
         {
           eventType: 'Jam Session',
           eventName: 'Casual (indie rock) Jam Session',
-          date: new Date('08/15/2019'),
+          date: new Date('08/12/2019'),
           fixed: true ,
           location: 'Dalston',
           description: 'I play guitar and I\'ve got a big garage and a drum kit, would love to spend an afternoon jamming (and maybe drinking beer!) with a few fellow music lovers and your instruments',
@@ -384,6 +396,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['music', 'rock', 'guitar', 'band', 'live-music', 'jamming'],
+          user: users[0],
           skillLevel: 'intermediate'
         },
         {
@@ -410,6 +423,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['game', 'strategy', 'nerdy', 'fantasy', 'story-telling', 'role-play'],
+          user: users[0],
           skillLevel: 'any'
         },
         {
@@ -436,6 +450,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['make-up', 'make-over', 'sparkles', 'LGBTQ', 'drag', 'dress-up'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -462,6 +477,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['footie', 'lads', 'sport', 'watching', 'beer', 'banter'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -488,6 +504,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['running', 'fitness', 'morning', 'exercise'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -514,6 +531,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['chess', 'strategy', 'intellectual chat'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -540,6 +558,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: 'We will pay for what we each eat/drink just to keep things as simple as possible',
           image: '',
           tags: ['food', 'fine-dining', 'spanish', 'restaurant'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -566,6 +585,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['coffee', 'cake', 'chat', 'company', 'friendship', 'listening'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -592,6 +612,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['politics', 'green', 'environmental', 'activism', 'door-knocking'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -618,6 +639,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['mexican', 'food', 'cocktails', 'drink', 'friendship', 'fun', 'party'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -643,7 +665,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: '',
           anythingElse: '',
           image: '',
-          tags: ['tea', 'biscuits', 'coffee', 'cake', 'chat', 'company', 'friendship', 'listening'],
+          tags: ['tea', 'biscuits', 'coffee', 'cake', 'chat', 'company', 'friendship', 'listening'], user: users[0],
           skillLevel: ''
         },
         {
@@ -670,6 +692,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['charity', 'homelessnes', 'community', 'helping'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -696,6 +719,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['charity', 'homelessnes', 'community', 'helping'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -722,6 +746,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['kids', 'chat', 'friendship', 'park', 'play', 'parenting'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -748,6 +773,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['community', 'gardening', 'helping'],
+          user: users[0],
           skillLevel: 'beginner garneners more than welcome!'
         },
         {
@@ -774,6 +800,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['family', 'picnic', 'park', 'community', 'fun', 'games'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -800,12 +827,13 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['art', 'modern art', 'learning', 'painting'],
+          user: users[0],
           skillLevel: ''
         },
         {
           eventType: 'Museum',
           eventName: 'Wander Around the Natural History Museum',
-          date: new Date('06/08/2019'),
+          date: new Date('08/08/2019'),
           fixed: false ,
           location: 'Kensington',
           description: 'I would just love to have some company while I wander around this marvellous place. I am such a huge, huge fan of the natural world and I have always wanted to share this passion with other people. I\'ve literally never met anyone else who likes old stuff though so I have only ever been to museums alone!',
@@ -826,6 +854,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['museum', 'history', 'nature', 'learning', 'education', 'tourist'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -852,6 +881,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['history', 'eduction', 'museum', 'learning' ],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -878,6 +908,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['history', 'eduction', 'museum', 'learning' ],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -902,7 +933,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: 3,
           anythingElse: '',
           image: '',
-          tags: ['sport', 'climbing']
+          tags: ['sport', 'climbing'],
+          user: users[0]
         },
         {
           eventType: 'Culture',
@@ -926,12 +958,13 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: 3,
           anythingElse: '',
           image: '',
-          tags: ['sport', 'climbing']
+          tags: ['sport', 'climbing'],
+          user: users[0]
         },
         {
           eventType: 'Walk',
           eventName: 'Long walk in the woods',
-          date: new Date('03/09/2019'),
+          date: new Date('09/09/2019'),
           fixed: false ,
           location: 'Farringdon',
           description: 'A relaxed stroll through the woodlands, I\'m a big fan of wildlife and trees and stuff so I like to stop and look at things.',
@@ -952,6 +985,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['kids', 'chat', 'friendship', 'park', 'play', 'parenting'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -978,6 +1012,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['community', 'gardening', 'helping'],
+          user: users[0],
           skillLevel: 'beginner garneners more than welcome!'
         },
         {
@@ -1004,6 +1039,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['family', 'picnic', 'park', 'community', 'fun', 'games'],
+          user: users[0],
           skillLevel: ''
         },
         {
@@ -1030,12 +1066,13 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['art', 'modern art', 'learning', 'painting'],
+          user: users[0],
           skillLevel: ''
         },
         {
           eventType: 'Performance',
           eventName: 'Spoken Word Poetry Night',
-          date: new Date('10/08/2019'),
+          date: new Date('08/10/2019'),
           fixed: false ,
           location: 'Brent',
           description: 'I am planning on performing at an open mic spoken word poetry event, it is my first time and I am very nervous. I have only ever performed to myself in the mirror and sadly I have no friends to ask to come and hold my hand so I would really appreciate some support from some kind stranger out there!',
@@ -1056,12 +1093,13 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['poetry', 'performance', 'open-mic', 'creativity', 'art'],
+          user: users[0],
           skillLevel: ''
         },
         {
           eventType: 'Workshop',
           eventName: 'Pottery Workshop',
-          date: new Date('15/08/2019'),
+          date: new Date('08/15/2019'),
           fixed: false ,
           location: 'Tower Hamlets',
           description: 'I have heard great things about this class and have been meaning to go for ages but I\'m a bit reluctant to go alone- it\'s always funner to be "in it together" at things like this isn\'t it? I\'ve heard you get to make some really cool stuff like egg cups even.',
@@ -1082,12 +1120,13 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['crafts', 'arts', 'learning', 'workshop', 'creativity', 'workshop' ],
+          user: users[0],
           skillLevel: 'beginner'
         },
         {
           eventType: 'Religious',
           eventName: 'Bible Study',
-          date: new Date('28/07/2019'),
+          date: new Date('07/28/2019'),
           fixed: true ,
           location: 'Wandsworth',
           description: 'I don\'t have any Christian friends as I am far from home and my local churches aren\'t the right denomination (I am a Hutterite). I am missing God-based discussion though and would really welcome a good bible read and chat about our lord with any fellow believers out there. Be you Catholic or Lutheran!',
@@ -1108,12 +1147,13 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           tags: ['religion', 'christianity', 'prayer', 'god', 'companionship' ],
+          user: users[0],
           skillLevel: ''
         },
         {
           eventType: 'Sport',
           eventName: 'Five-a-Side',
-          date: new Date('10/08/2019'),
+          date: new Date('08/10/2019'),
           location: 'Lambeth',
           description: 'Casual kick about in the local park, lost all my usual mates to their misseses (you know how it is in your thirties!!!) so in need of a new gang. Don\'t take it too serious so no Renaldo-wannabe nobheads need apply!!',
           startTime: 900,
@@ -1131,12 +1171,13 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: 10,
           anythingElse: '',
           image: '',
-          tags: ['sport', 'climbing']
+          tags: ['sport', 'climbing'],
+          user: users[0]
         },
         {
           eventType: 'Comedy',
           eventName: 'Open-Mic',
-          date: new Date('07/12/2019'),
+          date: new Date('12/07/2019'),
           location: 'Hounslow',
           description: 'I love a laugh- a chuckle, a guffaw, a hehehehehe - whatever you want to call it- if you do to then join me for a night of proper hearty giggles! Well, I hope we will laugh anyhow. If we do not then something has gone wrong somewhere! ',
           startTime: '1900',
@@ -1154,7 +1195,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: 3,
           anythingElse: '',
           image: '',
-          tags: ['comedy', 'performance', 'stand-up', 'amateur', 'fun', 'laughter']
+          tags: ['comedy', 'performance', 'stand-up', 'amateur', 'fun', 'laughter'],
+          user: users[0]
         }
 
 

@@ -2,8 +2,6 @@ const User = require('../models/user')
 const jwt = require('jsonwebtoken')
 const { secret } = require('../config/environment')
 
-
-
 function register(req, res) {
   console.log(req.body)
   User
@@ -15,16 +13,17 @@ function register(req, res) {
 }
 
 
-function  login(req, res) {
-  console.log(req)
+function login(req, res) {
   User
     .findOne({ email: req.body.email })
     .then(user => {
       console.log(req.body)
       if (!user || !user.validatePassword(req.body.password)) {
+        console.log('unauthorized')
         throw new Error('Unauthorized')
       }
       const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '72h' })
+      console.log(token)
       res.status(200).json({ message: `Why hello there ${user.username}, it's nice to see you again!`,
         token
       })
@@ -33,22 +32,45 @@ function  login(req, res) {
 }
 
 function showUser(req, res, next) {
-
-  console.log( req.params)
   User
     .findById(req.params.userid)
     .populate('user')
-
     .then(users => res.status(200).json(users))
     .catch(next)
 }
 
 function showUsers(req, res) {
-  console.log(req.body)
   User
     .find(req.query)
     .then(users => res.status(200).json(users))
     .catch(err => console.log(err))
+}
+
+function commentCreateRoute(req, res) {
+  req.body.user = req.currentUser
+  User
+    .findById(req.params.id)
+    .then(user => {
+      if (!user) return res.status(404).json({ message: 'Not found' })
+      user.comments.push(req.body)
+      return user.save()
+    })
+    .then(user => res.status(201).json(user))
+    .catch(err => res.json(err))
+}
+
+
+function commentDeleteRoute(req, res) {
+  User
+    .findById(req.params.id)
+    .then(user => {
+      if (!user) return res.status(404).json({ message: 'Not found' })
+      const comment = user.comments.id(req.params.commentId)
+      comment.remove()
+      return user.save()
+    })
+    .then(user => res.status(200).json(user))
+    .catch(err => res.json(err))
 }
 
 
@@ -56,6 +78,8 @@ module.exports = {
   login: login,
   register: register,
   showUser: showUser,
-  showUsers: showUsers
+  showUsers: showUsers,
+  userCommentCreate: commentCreateRoute,
+  userCommentDelete: commentDeleteRoute
 
 }

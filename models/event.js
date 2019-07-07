@@ -7,15 +7,9 @@ const eventCommentSchema = new mongoose.Schema({
   timestamps: true
 })
 
-// function setLngLat(v){
-//   if (typeof v === 'string')
-//     return '138.73 -35.015'
-// }
-
 function setLngLat(v){
   if (v === 'Barking & Dagenham')
     return '0.1337 51.545'
-
   else if (v === 'Barnet')
     return '0.1337 51.545'
   else if (v === 'Bexley')
@@ -111,8 +105,8 @@ const eventSchema = new mongoose.Schema({
   partyImage: { type: String, default: 'http://www.thegatenewcastle.co.uk/images/layout/headers/mobile/party-planner.jpg' },
   tags: { type: Array },
   skillLevel: { type: String },
-  comments: [ eventCommentSchema ]
-  // user: { type: mongoose.Schema.ObjectId, ref: 'User', default: 'user' }
+  comments: [ eventCommentSchema ],
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 }, {
   timestamps: true
 })

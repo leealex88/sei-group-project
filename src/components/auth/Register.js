@@ -1,5 +1,6 @@
 import React from 'react'
-// import axios from 'axios'
+import axios from 'axios'
+import Auth from '../../lib/Auth'
 
 class Register extends React.Component {
   constructor() {
@@ -8,6 +9,7 @@ class Register extends React.Component {
     this.state = { data: {} }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(e) {
@@ -17,7 +19,12 @@ class Register extends React.Component {
   }
 
   handleSubmit(e) {
+    console.log('this.state')
     e.preventDefault()
+
+    axios.post('/api/register', this.state.data)
+      .then(() => this.props.history.push('/login'))
+      .catch(err => this.setState({ errors: err.response.data.errors }))
 
   }
 
