@@ -4,6 +4,8 @@ const bcrypt = require('bcrypt')
 const userCommentSchema = new mongoose.Schema({
   text: { type: String, require: true },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+}, {
+  timestamps: true
 })
 
 const userSchema = new mongoose.Schema({
@@ -14,11 +16,7 @@ const userSchema = new mongoose.Schema({
   gender: { type: String },
   avatar: { type: String, default:
 'https://i.pinimg.com/736x/97/09/dc/9709dc4b91379a7ccb4e0f609e7a0384--alpacas-funny-animals.jpg' },
-  comments: [ userCommentSchema ],
-  createdEvents: { type: mongoose.Schema.ObjectId },
-  attendedEvents: { type: mongoose.Schema.ObjectId },
-  createdComments: { type: mongoose.Schema.ObjectId }
-
+  comments: [ userCommentSchema ]
 
 })
 

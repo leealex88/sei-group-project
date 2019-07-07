@@ -22,6 +22,11 @@ router.route('/users/:id/comments')
 router.route('/users/:id/comments/:commentId')
   .delete(secureRoute, users.userCommentDelete)
 
+router.route('/users/:id/events')
+  .get(users.showTheirEvents)
+
+router.route('/myprofile')
+  .get(secureRoute, users.showCurrentUser)
 
 
 router.route('/login')
@@ -30,12 +35,17 @@ router.route('/login')
 router.route('/register')
   .post(users.register)
 
+router.route('/myevents')
+  .get(secureRoute, users.showCreatedEvents)
+
 router.route('/users')
   .get(users.showUsers)
 
 router.route('/users/:userid')
   .get(users.showUser)
 
+router.route('/*')
+  .all((req, res) => res.status(404).json({ message: 'Not Found' }))
 
 
 

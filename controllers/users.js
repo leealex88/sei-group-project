@@ -1,4 +1,5 @@
 const User = require('../models/user')
+const Event = require('../models/event')
 const jwt = require('jsonwebtoken')
 const { secret } = require('../config/environment')
 
@@ -38,6 +39,45 @@ function showUser(req, res, next) {
     .then(users => res.status(200).json(users))
     .catch(next)
 }
+
+
+
+//users own profile
+function showCurrentUser(req, res, next) {
+  req.body.user = req.currentUser
+  console.log(req.body.user._id)
+  User
+    .findById(req.body.user._id)
+    .then(user => res.status(201).json(user))
+    .catch(next)
+}
+//user's own created event
+function showCreatedEvents(req, res, next) {
+  req.body.user = req.currentUser
+  console.log(req.body.user._id)
+  Event
+    .find({ user: req.body.user._id } )
+    .then(event => res.status(201).json(event))
+    .catch(next)
+}
+
+//created events of specific user
+function showTheirEvents(req, res, next) {
+
+  console.log(req.params.id)
+  Event
+    .find({ user: req.params.id } )
+    .then(event => res.status(201).json(event))
+    .catch(next)
+}
+
+
+
+
+
+
+
+
 
 function showUsers(req, res) {
   User
@@ -80,6 +120,9 @@ module.exports = {
   showUser: showUser,
   showUsers: showUsers,
   userCommentCreate: commentCreateRoute,
-  userCommentDelete: commentDeleteRoute
+  userCommentDelete: commentDeleteRoute,
+  showCurrentUser: showCurrentUser,
+  showCreatedEvents: showCreatedEvents,
+  showTheirEvents: showTheirEvents
 
 }

@@ -24,7 +24,7 @@ class UserShow extends React.Component {
 
   getData() {
     axios.get(`/api/users/${this.props.match.params.userid}`)
-      .then(res => this.setState({ user: res.data }))
+      .then(res => this.setState({ user: res.data, comment: {} }))
       .catch(err => console.log(err))
   }
 
@@ -44,7 +44,7 @@ class UserShow extends React.Component {
   }
 
   handleCommentDelete(comment) {
-    axios.delete(`/api/events/${this.props.match.params.id}/comments/${comment._id}`, {
+    axios.delete(`/api/users/${this.props.match.params.id}/comments/${comment._id}`, {
       headers: { 'Authorization': Auth.getToken() }
     })
       .then(() => this.getData())

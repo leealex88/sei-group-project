@@ -7,6 +7,10 @@ const eventCommentSchema = new mongoose.Schema({
   timestamps: true
 })
 
+const likeSchema = new mongoose.Schema({
+  user: { type: mongoose.Schema.ObjectId, ref: 'User' }
+})
+
 function setLngLat(v){
   if (v === 'Barking & Dagenham')
     return '0.1337 51.545'
@@ -106,10 +110,17 @@ const eventSchema = new mongoose.Schema({
   tags: { type: Array },
   skillLevel: { type: String },
   comments: [ eventCommentSchema ],
+  likes: [ likeSchema ],
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 }, {
   timestamps: true
 })
+
+eventSchema
+  .virtual('likeCount')
+  .get(function() {
+    return this.likes.length
+  })
 
 
 

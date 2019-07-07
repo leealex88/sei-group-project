@@ -92,6 +92,7 @@ class eventShow extends React.Component {
             ))}
             <hr />
             {Auth.isAuthenticated() &&
+
             <form onSubmit={this.handleSubmit}>
               <div className="field">
                 <div className="control">
@@ -102,9 +103,10 @@ class eventShow extends React.Component {
                     value={this.state.comment.text || ''}
                   >
                   </textarea>
+                  <button className="button" type="submit">Comment</button>
                 </div>
               </div>
-              <button className="button" type="submit">Comment</button>
+
             </form>}
           </Fragment>
         </div>
