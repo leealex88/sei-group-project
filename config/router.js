@@ -14,7 +14,8 @@ router.route('/events/:id')
 router.route('/users/:id/privateMessages')
   .post(secureRoute, users.privateMessageCreateRoute)
 
-
+router.route('/users/:id/')
+  .post(users.getUserName)
 
 router.route('/events/:id/comments')
   .post(secureRoute, events.commentCreate)

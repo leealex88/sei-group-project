@@ -9,6 +9,7 @@ class UserProfile extends React.Component {
     super()
     this.state = { user: null }
     this.logout = this.logout.bind(this)
+    this.messageSenders = []
 
 
   }
@@ -18,33 +19,44 @@ class UserProfile extends React.Component {
     this.props.history.push('/')
   }
 
+  requestFunction() {
+    const requests = this.state.user.privateMessages.filter(message => message.request === true)
+
+    return requests.map(message =>
+      axios.post(`/api/users/${message.user}`, {
+        headers: { Authorization: ` ${Auth.getToken()}` }
+      })
+        .then(res => this.messageSenders.push(res.data))
+        .catch(() => this.setState({ error: 'Invalid Crendentials' }))
+
+
+    )
+
+  }
+
   componentDidMount() {
 
     axios.get('/api/myprofile', {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
       .then(res => this.setState({ user: res.data }))
+
       .catch(() => this.setState({ error: 'Invalid Crendentials' }))
 
-  }
-
-  requestFunction() {
-    return this.state.user.privateMessages.filter(message => message.request === true).length
 
   }
 
+  componentDidUpdate() {
+
+    this.requestFunction()
+    console.log(this.messageSenders)
+  }
 
   render(){
-
-
     if (!this.state.user) return null
 
     return (
-
-
       <div>
-
-
         <h1> {this.state.user.username} </h1>
         <a onClick={this.logout}>Logout</a>
 
@@ -56,6 +68,7 @@ class UserProfile extends React.Component {
           <p key ={message._id} > {message} </p> ))}
 
         <p> You have {this.state.user.privateMessages.filter(message => message.request === true).length} invitation requests </p>
+        <p> {this.state.user.privateMessages.filter(message => message.request === true).map(message => console.log(message.user)) }</p>
 
         < UserEvents />
 

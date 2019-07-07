@@ -3,25 +3,22 @@ import axios from 'axios'
 import Auth from '../../lib/Auth'
 import Map from './Map'
 import EventCreator from './EventCreator'
+import EventComments from './EventComments'
 
 
 class eventShow extends React.Component {
   constructor() {
     super()
 
-    this.state = { event: null, comment: {} }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleCommentDelete = this.handleCommentDelete.bind(this)
+    this.state = { event: null }
+
   }
 
   componentDidMount() {
     this.getData()
   }
 
-  handleChange(e) {
-    this.setState({ comment: { text: e.target.value } })
-  }
+
 
   getData() {
     axios.get(`/api/events/${this.props.match.params.id}`)
@@ -29,27 +26,7 @@ class eventShow extends React.Component {
       .catch(err => console.log(err))
   }
 
-  handleSubmit(e) {
-    e.preventDefault()
 
-    axios.post(`/api/events/${this.props.match.params.id}/comments`, this.state.comment, {
-      headers: { 'Authorization': `${Auth.getToken()}` }
-    })
-      .then(() => this.getData())
-      .catch(err => console.log(err))
-  }
-
-  isOwner(comment) {
-    return Auth.getPayload().sub === comment.user._id
-  }
-
-  handleCommentDelete(comment) {
-    axios.delete(`/api/events/${this.props.match.params.id}/comments/${comment._id}`, {
-      headers: { 'Authorization': Auth.getToken() }
-    })
-      .then(() => this.getData())
-      .catch(err => console.log(err))
-  }
 
   render() {
     if (!this.state.event) return null
@@ -83,36 +60,9 @@ class eventShow extends React.Component {
 
             </div>
             <hr />
-            {event.comments.map(comment => (
-              <div key={comment._id} className="card">
-                <div className="card-content">
-                  {comment.text} - {new Date(comment.createdAt).toLocaleString()}
-                </div>
-                {this.isOwner(comment) && <button
 
-                  onClick={() => this.handleCommentDelete(comment)}
-                >Delete
-                </button>}
-              </div>
-            ))}
-            <hr />
-            {Auth.isAuthenticated() &&
+            <EventComments event={this.state.event}/>
 
-            <form onSubmit={this.handleSubmit}>
-              <div className="field">
-                <div className="control">
-                  <textarea
-                    className="textarea"
-                    placeholder="Comment..."
-                    onChange={this.handleChange}
-                    value={this.state.comment.text || ''}
-                  >
-                  </textarea>
-                  <button className="button" type="submit">Comment</button>
-                </div>
-              </div>
-
-            </form>}
           </Fragment>
         </div>
         <Map locations = {this.state.event}/>
