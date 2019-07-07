@@ -28,10 +28,17 @@ class UserProfile extends React.Component {
 
   }
 
+  requestFunction() {
+    return this.state.user.privateMessages.filter(message => message.request === true).length
+
+  }
+
 
   render(){
-    console.log(this.state.user)
+
+
     if (!this.state.user) return null
+
     return (
 
 
@@ -40,6 +47,15 @@ class UserProfile extends React.Component {
 
         <h1> {this.state.user.username} </h1>
         <a onClick={this.logout}>Logout</a>
+
+        <h3> You have {this.state.user.privateMessages.length} messages </h3>
+
+        {this.state.user.privateMessages.forEach(message => (
+
+
+          <p key ={message._id} > {message} </p> ))}
+
+        <p> You have {this.state.user.privateMessages.filter(message => message.request === true).length} invitation requests </p>
 
         < UserEvents />
 

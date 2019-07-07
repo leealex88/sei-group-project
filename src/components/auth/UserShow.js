@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
 import TheirEvents from './TheirEvents'
+import { Link } from 'react-router-dom'
 
 class UserShow extends React.Component {
   constructor() {
@@ -68,6 +69,8 @@ class UserShow extends React.Component {
 
         <p> {user.bio} </p>
         <img src={user.avatar}/>
+
+        <Link to={`/users/${user._id}/message`}> <button> Private Message </button> </Link>
 
         {user.comments.map(comment => (
           <div key={comment._id} className="card">

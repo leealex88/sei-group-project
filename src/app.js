@@ -8,6 +8,7 @@ import EventsShow from './components/events/EventsShow'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import UserProfile from './components/auth/UserProfile'
+import PrivateMessage from './components/auth/PrivateMessage'
 import UserShow from './components/auth/UserShow'
 import UsersIndex from './components/auth/UsersIndex'
 import EventsNew from './components/events/EventsNew'
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/events/" component={EventsIndex} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
+          <Route path="/users/:userid/message" component={PrivateMessage} />
           <Route path="/users/:userid" component={UserShow} />
           <Route path="/users/" component={UsersIndex} />
           <Route path="/myprofile" component={UserProfile} />

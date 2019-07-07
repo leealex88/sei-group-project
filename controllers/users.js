@@ -93,6 +93,22 @@ function commentCreateRoute(req, res) {
 }
 
 
+function privateMessageCreateRoute(req, res) {
+  req.body.user = req.currentUser
+  User
+    .findById(req.params.id)
+
+    .then(user => {
+      if (!user) return res.status(404).json({ message: 'Not found' })
+      user.privateMessages.push(req.body)
+      return user.save()
+    })
+    .then(user => res.status(201).json(user.privateMessages))
+    .catch(err => res.json(err))
+}
+
+
+
 function commentDeleteRoute(req, res) {
   User
     .findById(req.params.id)
@@ -130,6 +146,7 @@ module.exports = {
   showCurrentUser: showCurrentUser,
   showCreatedEvents: showCreatedEvents,
   showTheirEvents: showTheirEvents,
-  getEventCreator: getEventCreator
+  getEventCreator: getEventCreator,
+  privateMessageCreateRoute: privateMessageCreateRoute
 
 }

@@ -11,6 +11,9 @@ router.route('/events/:id')
   .get(events.show)
   .post(users.getEventCreator)
 
+router.route('/users/:id/privateMessages')
+  .post(secureRoute, users.privateMessageCreateRoute)
+
 
 
 router.route('/events/:id/comments')

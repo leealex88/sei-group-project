@@ -80,6 +80,7 @@ class eventShow extends React.Component {
 
                 <hr />
               </div>
+
             </div>
             <hr />
             {event.comments.map(comment => (

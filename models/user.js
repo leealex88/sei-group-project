@@ -2,7 +2,15 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
 const userCommentSchema = new mongoose.Schema({
-  text: { type: String, require: true },
+  text: { type: String, required: true },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+}, {
+  timestamps: true
+})
+
+const privateMessageSchema = new mongoose.Schema({
+  text: { type: String },
+  request: { type: Boolean, default: false },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 }, {
   timestamps: true
@@ -16,7 +24,8 @@ const userSchema = new mongoose.Schema({
   gender: { type: String },
   avatar: { type: String, default:
 'https://i.pinimg.com/736x/97/09/dc/9709dc4b91379a7ccb4e0f609e7a0384--alpacas-funny-animals.jpg' },
-  comments: [ userCommentSchema ]
+  comments: [ userCommentSchema ],
+  privateMessages: [ privateMessageSchema ]
 
 })
 
