@@ -15,7 +15,6 @@ class EventType extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="control ten columns">
         <button

@@ -33,30 +33,7 @@ const EventForm = ({  handleChange }) => (
           />
         </div>
         <p className="control ten columns">Is the date fixed?</p>
-        <div className="ten columns">
-          <div className="control">
-            <label className="radio">
-              <input
-                type="radio"
-                checked=""
-                name="yes"
-                value="yes"
-                onChange={handleChange}
-              />
-                Yes
-            </label>
-            <label className="radio">
-              <input
-                type="radio"
-                checked=""
-                name="no"
-                value=""
-                onChange={handleChange}
-              />
-                  No
-            </label>
-          </div>
-        </div>
+
         <br />
         <div className="control ten columns">
           <label htmlFor="exampleEmailInput">
