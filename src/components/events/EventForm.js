@@ -1,8 +1,8 @@
 import React from 'react'
 // import ReactFilestack from 'filestack-react'
-import Calendar from 'react-calendar'
+import EventCalendar from './EventCalendar'
 
-const EventForm = ({  handleChange, handleDate }) => (
+const EventForm = ({  handleChange }) => (
   <form className="eventForm">
     <div className="container" id="newEvent">
       <div className="row">
@@ -31,8 +31,8 @@ const EventForm = ({  handleChange, handleDate }) => (
         <div className="control ten columns">
           <label htmlFor="exampleEmailInput">
             Date of the Event</label>
-          <Calendar
-            onChange={handleDate}
+          <EventCalendar
+
           />
         </div>
         <p className="control ten columns">Is the date fixed?</p>
