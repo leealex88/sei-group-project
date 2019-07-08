@@ -1,6 +1,6 @@
 class Auth {
 
-  
+
   static setToken(token) {
     console.log(localStorage)
     console.log('setting', token)

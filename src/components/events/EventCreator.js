@@ -27,7 +27,7 @@ class EventCreator extends React.Component {
   }
 
   handleClick() {
-    axios.post(`/api/users/${this.state.user._id}/privateMessages`, { request: true }, {
+    axios.post(`/api/users/${this.state.user._id}/privateMessages`, { request: true, requestEvent: this.props.event }, {
       headers: { 'Authorization': `${Auth.getToken()}` }
     })
 
@@ -40,7 +40,7 @@ class EventCreator extends React.Component {
 
 
   render() {
-    console.log(this.props.event)
+    console.log('event', this.props.event)
     if (!this.state.user) return null
     const { user } = this.state
     return (

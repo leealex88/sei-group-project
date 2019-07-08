@@ -9,6 +9,7 @@ import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import UserProfile from './components/auth/UserProfile'
 import PrivateMessage from './components/auth/PrivateMessage'
+import Request from './components/auth/Request'
 import UserShow from './components/auth/UserShow'
 import UsersIndex from './components/auth/UsersIndex'
 import EventsNew from './components/events/EventsNew'
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/users/:userid/message" component={PrivateMessage} />
           <Route path="/users/:userid" component={UserShow} />
           <Route path="/users/" component={UsersIndex} />
+          <Route path="/myprofile/requests" component={Request} />
           <Route path="/myprofile" component={UserProfile} />
         </Switch>
 
