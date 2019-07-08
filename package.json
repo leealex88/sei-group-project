@@ -49,6 +49,7 @@
     "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1",
     "react-select": "^3.0.4",
+    "react-simple-timefield": "^2.0.3",
     "react-time-picker": "^3.5.2",
     "skeleton": "^0.1.2"
   }
