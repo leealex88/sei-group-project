@@ -14,7 +14,7 @@ const Homepage = () => {
         </div>
         <div className="panel panel3">
           <p>Experience</p>
-          <p>Welcom</p>
+          <p></p>
           <p>Today</p>
         </div>
         <div className="panel panel5">
