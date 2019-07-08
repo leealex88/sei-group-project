@@ -32,29 +32,32 @@ class EventsIndex extends React.Component {
 
 
         <section className="frontSection">
-          <div className="container front">
+          <div className="containerFront">
 
 
             <div className="frontSection">
 
               {this.state.events.map(event => (
 
-                <section  key={event._id} >
-
-                  <Link to={`/events/${event._id}`}>
-                    <div>
-                      <img src={event.partyImage}/>
-                      <span key={event._id}>
+                <section  key={event._id}>
+                  <div className="eachCard">
 
 
-                        <h3 key={event._id}>
+                    <Link to={`/events/${event._id}`}>
+                      <div>
+                        <img src={event.partyImage}/>
+                        <span key={event._id}>
 
-                          {event.eventName}
 
-                        </h3></span>
-                    </div>
-                  </Link>
+                          <h3 key={event._id}>
 
+                            {event.eventName}
+
+                          </h3>
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
                 </section>
 
               ))}
