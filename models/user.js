@@ -11,7 +11,7 @@ const userCommentSchema = new mongoose.Schema({
 const privateMessageSchema = new mongoose.Schema({
   text: { type: String },
   request: { type: Boolean, default: false },
-  requestEvent: { type: String },
+  requestEvent: { type: mongoose.Schema.ObjectId },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 }, {
   timestamps: true
@@ -26,7 +26,8 @@ const userSchema = new mongoose.Schema({
   avatar: { type: String, default:
 'https://i.pinimg.com/736x/97/09/dc/9709dc4b91379a7ccb4e0f609e7a0384--alpacas-funny-animals.jpg' },
   comments: [ userCommentSchema ],
-  privateMessages: [ privateMessageSchema ]
+  privateMessages: [ privateMessageSchema ],
+  events: { type: Array }
 
 })
 

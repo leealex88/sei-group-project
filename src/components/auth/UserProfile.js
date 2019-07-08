@@ -34,9 +34,9 @@ class UserProfile extends React.Component {
   }
 
   messagesFunction() {
-    const requests = this.state.user.privateMessages.filter(message => message.request === false)
-    requests.concat(requests.map(request => request.user))
-    this.setState({ messages: message })
+    const messages = this.state.user.privateMessages.filter(message => message.request === false)
+    messages.concat(messages.map(message => message.user))
+    this.setState({ messages: messages })
 
 
   }
@@ -47,7 +47,6 @@ class UserProfile extends React.Component {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
       .then(res => this.setState({ user: res.data }))
-
       .catch(() => this.setState({ error: 'Invalid Crendentials' }))
 
 
@@ -81,16 +80,18 @@ class UserProfile extends React.Component {
           )} </div>
 
         <p> You have {this.state.user.privateMessages.filter(message => message.request === false).length} private messages </p>
-        <button onClick={this.meesagesFunction}>See Messages</button>
+        <div onClick={this.messagesFunction}>See Messages</div>
 
         <div>
           {this.state.messages.map(message =>
-            <button key={message}>
+            <div key={message}>
               <Message message={message} />
-            </button>
+            </div>
 
 
           )} </div>
+
+
 
         < UserEvents />
 

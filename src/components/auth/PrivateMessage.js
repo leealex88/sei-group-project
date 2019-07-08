@@ -7,7 +7,7 @@ class PrivateMessage extends React.Component {
   constructor() {
     super()
 
-    this.state = { user: null, message: {} }
+    this.state = { user: null, message: { text: '' } }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
 
@@ -20,7 +20,7 @@ class PrivateMessage extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({ message: { message: e.target.value } })
+    this.setState({ message: { text: e.target.value } })
   }
 
   getData() {
@@ -30,7 +30,8 @@ class PrivateMessage extends React.Component {
   }
 
   handleSubmit(e) {
-    console.log('submitting')
+    console.log('submitting', this.state.message)
+
     e.preventDefault()
 
     axios.post(`/api/users/${this.props.match.params.userid}/privateMessages`, this.state.message, {
@@ -38,6 +39,7 @@ class PrivateMessage extends React.Component {
     })
       .then(() => this.getData())
       .catch(err => console.log(err))
+
   }
 
   render() {
@@ -59,7 +61,7 @@ class PrivateMessage extends React.Component {
                 className="textarea"
                 placeholder="message..."
                 onChange={this.handleChange}
-                value={this.state.message.message || ''}
+                value={this.state.message.text || ''}
               >
               </textarea>
             </div>

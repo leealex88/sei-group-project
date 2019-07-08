@@ -100,6 +100,7 @@ class UserShow extends React.Component {
           </div>
           <button className="button" type="submit">Comment</button>
         </form>}
+        <p> {user.username} is attending these events: {user.events.map(event => <Link to={`/events/${event}/`} key={event}/>) }</p>
 
         <TheirEvents user={this.props.match.params.userid} />
 
