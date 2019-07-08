@@ -6,7 +6,8 @@ class EventCalendar extends React.Component {
     super()
 
     this.state = {
-      date: new Date()
+      date: new Date(),
+      fixed: ''
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -26,6 +27,7 @@ class EventCalendar extends React.Component {
         <Calendar
           onChange = {this.handleChange}
         />
+        {/*add buttons*/}
       </div>
 
     )
