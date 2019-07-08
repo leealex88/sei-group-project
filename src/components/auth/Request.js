@@ -7,7 +7,8 @@ class Request extends React.Component {
   constructor() {
     super()
 
-    this.messageSender = ''
+    this.state = { messageSender: '' }
+    this.acceptFunction = this.acceptFunction.bind(this)
 
 
   }
@@ -20,8 +21,16 @@ class Request extends React.Component {
     axios.post(`/api/users/${this.props.request.user}`, {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
-      .then(res => this.messageSender = res.data)
-    // .then(res => this.messageSenders.push(res.data))
+      .then(res => this.setState({ messageSender: res.data }))
+
+      .catch(() => this.setState({ error: 'Invalid Crendentials' }))
+  }
+
+  acceptFunction() {
+    console.log('request:', this.props.request.requestEvent)
+    axios.post(`api/users/${this.props.request.user}/accept`,  { events: this.props.request.requestEvent } ,  {
+      headers: { Authorization: ` ${Auth.getToken()}` }
+    })
       .catch(() => this.setState({ error: 'Invalid Crendentials' }))
   }
 
@@ -36,16 +45,21 @@ class Request extends React.Component {
     if (!this.props.request.user) return null
     console.log('sender', `/events/${this.props.request.requestEvent}`)
     return (
-      <div>
+      <section>
+        <div>
 
 
-        <h6> You have a request from {this.messageSender} to go to </h6>
-        <Link to={`/events/${this.props.request.requestEvent}`}> this event </Link>
+          <h6> You have a request from {this.state.messageSender} to go to </h6>
+          <Link to={`/events/${this.props.request.requestEvent}`}> this event </Link>
+        </div>
+        <div>
 
-
-
-      </div>
-
+          <Link to={`/users/${this.props.request.user}`}>
+            {this.state.messageSender}<p>s profile</p>
+          </Link>
+          <div onClick={this.acceptFunction}> Accept Request </div>
+        </div>
+      </section>
     )
   }
 }

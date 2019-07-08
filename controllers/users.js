@@ -106,6 +106,36 @@ function getUserName(req, res){
     .catch(err => res.json(err))
 }
 
+function acceptRequest(req, res){
+  console.log('accepting', req.params.id, 'body:', req.body)
+  User
+    .findById(req.params.id)
+    .populate('user')
+    .then(user => {
+      if (!user) return res.status(404).json({ message: 'Not found' })
+
+      user.events.push(req.body.events)
+
+      return user.save()
+    })
+    .then(user => res.status(201).json(user.events))
+    .catch(err => res.json(err))
+
+}
+
+function attendingUsers(req, res) {
+  console.log('attending users', req.params.id)
+  User
+    .find({ events: req.params.id })
+    .populate('user')
+    .then(users => {
+      if (!users) return res.status(404).json({ message: 'Not found' })
+      res.status(200).json(users)
+    })
+    .catch(err => console.log(err))
+}
+
+
 
 function privateMessageCreateRoute(req, res) {
   req.body.user = req.currentUser
@@ -166,6 +196,8 @@ module.exports = {
   showTheirEvents: showTheirEvents,
   getEventCreator: getEventCreator,
   privateMessageCreateRoute: privateMessageCreateRoute,
-  getUserName: getUserName
+  getUserName: getUserName,
+  acceptRequest: acceptRequest,
+  attendingUsers: attendingUsers
 
 }

@@ -6,7 +6,7 @@ class Message extends React.Component {
   constructor() {
     super()
 
-    this.messageSender = ''
+    this.state = { messageSender: '' }
 
 
   }
@@ -15,10 +15,10 @@ class Message extends React.Component {
 
 
   MessageFunction() {
-    axios.post(`/api/users/${this.props.Message.user}`, {
+    axios.post(`/api/users/${this.props.message.user}`, {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
-      .then(res => this.messageSender = res.data)
+      .then(res => this.setState({ messageSender: res.data }))
     // .then(res => this.messageSenders.push(res.data))
       .catch(() => this.setState({ error: 'Invalid Crendentials' }))
 
@@ -35,13 +35,17 @@ class Message extends React.Component {
   }
 
   render(){
-    if (!this.props.message.user) return null
-    console.log('sender', this.messageSender)
+    if (!this.props.message.user && !this.state.messageSender) return null
+    console.log('message', this.props.message)
     return (
 
+      <section>
 
+        <h6> You have a Message from {this.state.messageSender} </h6>
 
-      <h6> You have a Message from {this.messageSender} </h6>
+        <p> {this.props.message.text} </p>
+
+      </section>
 
 
 
