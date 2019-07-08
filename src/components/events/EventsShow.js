@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import axios from 'axios'
-
+import Auth from '../../lib/Auth'
 import Map from './Map'
+import EventCreator from './EventCreator'
+import EventComments from './EventComments'
 
 
-
-// import Auth from '../../lib/Auth'
-
-class EventsShow extends React.Component {
+class eventShow extends React.Component {
   constructor() {
     super()
 
@@ -16,37 +15,61 @@ class EventsShow extends React.Component {
   }
 
   componentDidMount() {
-
-    axios.get(`/api/events/${this.props.match.params.id}`)
-      .then(res => this.setState({ event: res.data }))
-      .catch(err => console.log(err))
-
+    this.getData()
   }
 
+
+
+  getData() {
+    axios.get(`/api/events/${this.props.match.params.id}`)
+      .then(res => this.setState({ event: res.data, comment: {} }))
+      .catch(err => console.log(err))
+  }
+
+
+
   render() {
-
     if (!this.state.event) return null
-    console.log(parseInt(this.state.event.location.slice(0,6)))
-    console.log(parseInt(this.state.event.location.slice(7,13)))
+    const { event } = this.state
+    console.log(this.state)
     return (
-      <main>
+      <section >
         <div >
+          <Fragment>
+            <h2 >Event: {event.eventName}</h2>
 
-          <h1 className="eventTitle">{this.state.event.eventName}</h1>
+            <hr />
+            <EventCreator event={this.props.match.params.id}/>
+            <div >
+              <div >
 
-          <p> {this.state.event.description} </p>
-          <hr/>
-          <p> {this.state.event.date} </p>
-          <hr/>
-          <p> {this.state.event.location} </p>
+                <img src={event.partyImage} alt={event.name} />
+
+              </div>
+              <div >
+                <h4 >Description</h4>
+                <p>{event.description}</p>
+                <hr />
+                <h4 >Location</h4>
+                <p>{event.location}</p>
+                <hr />
+                <h4 >What else?</h4>
+
+                <hr />
+              </div>
+
+            </div>
+            <hr />
+
+            <EventComments event={this.state.event}/>
+
+          </Fragment>
         </div>
-
         <Map locations = {this.state.event}/>
-      </main>
 
-
+      </section>
     )
   }
 }
 
-export default EventsShow
+export default eventShow

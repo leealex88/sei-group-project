@@ -11,15 +11,27 @@ $text: 'Roboto Mono', monospace;
 * {
   box-sizing: border-box;
 }
+.mapMarker {
+  width: 5px;
+  height: 5px
+}
 
+.marker {
+  background-size: contain;
+
+  cursor: pointer;
 img {
   width: 100px;
 }
 
+.mapMarker {
+  width: 5px;
+  height: 5px
+}
 
 .map {
-  width: 300px;
-  height: 300px;
+  width: 800px;
+  height: 800px;
   margin: 0 auto;
   top: -25px;
 

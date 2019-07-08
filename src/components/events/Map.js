@@ -15,13 +15,13 @@ class Map extends React.Component {
     this.map = new mapboxgl.Map({
       container: this.mapDiv,
       style: 'mapbox://styles/mapbox/streets-v10',
-      zoom: 1.5,
+      zoom: 10,
       center: [lng, lat]
 
     })
     const el = document.createElement('div')
-    el.className = 'marker'
-    el.innerHTML = `<img src="${this.props.locations.location.image}" />`
+    el.className = 'marker mapMarker'
+    el.innerHTML = '<img src="../assets/star.svg"/>'
     return new mapboxgl.Marker(el)
       .setLngLat({ lng: lng, lat: lat  })
       .addTo(this.map)
@@ -40,8 +40,10 @@ class Map extends React.Component {
     console.log(this.props)
     if (!this.props.locations.location) return null
     return (
+      <main>
 
-      <div className="map" ref={el => this.mapDiv = el}/>
+        <div className="map" ref={el => this.mapDiv = el}/>
+      </main>
     )
   }
 }
