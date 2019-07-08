@@ -1,5 +1,7 @@
 import React from 'react'
 import Calendar from 'react-calendar'
+import TimePicker from 'react-time-picker'
+
 
 class EventCalendar extends React.Component {
   constructor() {
@@ -7,16 +9,27 @@ class EventCalendar extends React.Component {
 
     this.state = {
       date: new Date(),
-      fixed: ''
+      startTime: '10:00',
+      endTime: '10:00'
     }
 
     this.handleChange = this.handleChange.bind(this)
+    this.onChangeStart = this.onChangeStart.bind(this)
+    this.onChangeEnd = this.onChangeEnd.bind(this)
   }
 
   handleChange(date) {
     this.setState({ date })
     console.log(date)
   }
+
+  onChangeStart (e, startTime) {
+    this.setState({ startTime })
+  }
+  onChangeEnd (e, endTime) {
+    this.setState({ endTime })
+  }
+
 
   render() {
 
@@ -27,8 +40,20 @@ class EventCalendar extends React.Component {
         <Calendar
           onChange = {this.handleChange}
         />
-        {/*add buttons*/}
+
+        <label> Start Time</label>
+        <TimePicker
+          onChange={this.onChangeStart}
+          value={this.state.startTime}
+        />
+        <label> Start Time</label>
+        <TimePicker
+          onChange={this.onChangeEnd}
+          value={this.state.endTime}
+        />
       </div>
+
+
 
     )
   }

@@ -1,10 +1,7 @@
 @import 'normalize.css';
 @import 'skeleton.css';
-
 @import '~mapbox-gl/dist/mapbox-gl.css';
-
-
-@import url('https://fonts.googleapis.com/css?family=Roboto%7CRoboto+Mono&display=swap');
+@import url('https://fonts.googleapis.comß/css?family=Roboto%7CRoboto+Mono&display=swap');
 $title: 'Roboto', sans-serif;
 $text: 'Roboto Mono', monospace;
 
@@ -46,7 +43,7 @@ img {
     padding: 70px;
     border: solid 1px;
     border-color: #DCDCDC;
-    box-shadow: 2px 10px 20px #483D8B;
+    box-shadow: 2px 5px 20px #483D8B;
   }
 
 #registerForm {
@@ -55,7 +52,7 @@ img {
   padding: 70px;
   border: solid 1px;
   border-color: #DCDCDC;
-  box-shadow: 2px 10px 20px #483D8B;
+  box-shadow: 2px 5px 20px #483D8B;
   width: 80%;
   margin: 10px auto;
 }
@@ -66,7 +63,7 @@ img {
   padding: 70px;
   border: solid 1px;
   border-color: #DCDCDC;
-  box-shadow: 2px 10px 20px #483D8B;
+  box-shadow: 2px 5px 20px #483D8B;
   width: 80%;
   margin: 10px auto;
 }
@@ -95,7 +92,7 @@ border-radius: 20%;
 display: flex;
 flex-wrap: wrap;
 border: solid 1px;
-box-shadow: 2px 10px 20px #483D8B;
+box-shadow: 2px 5px 20px #483D8B;
 }
 .eachCard, h3{
   color:#483D8B;
@@ -106,7 +103,9 @@ html {
   background: white;
   font-family: 'helvetica neue';
 }
-
+#eventDescription {
+  height: 300px;
+}
 body {
   margin: 0;
   color: #373737;
