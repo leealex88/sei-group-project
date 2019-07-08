@@ -17,8 +17,14 @@ router.route('/users/:id/privateMessages')
 router.route('/users/:id/')
   .post(users.getUserName)
 
+router.route('/users/:id/accept')
+  .post(secureRoute, users.acceptRequest)
+
 router.route('/events/:id/comments')
   .post(secureRoute, events.commentCreate)
+
+router.route('/events/:id/attending')
+  .get(secureRoute, users.attendingUsers)
 
 router.route('/events/:id/comments/:commentId')
   .delete(secureRoute, events.commentDelete)
