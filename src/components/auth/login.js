@@ -30,35 +30,37 @@ class Login extends React.Component {
 
   render() {
     return (
-      <main className="container">
-        <form onSubmit={ this.handleSubmit }>
-          <div className="row">
-            <div className="six columns">
-              <label htmlFor="emailInput">Your email</label>
-              <input
-                className="u-full-width"
-                type="email"
-                name="email"
-                placeholder="example@mail.com"
-                id="email"
-                onChange={ this.handleChange }
-              />
-            </div>
-            <div className="six columns">
-              <label htmlFor="passwordInput">Password</label>
-              <input
-                className="u-full-width"
-                type="password"
-                name="password"
-                placeholder="Password"
-                id="password"
-                onChange={ this.handleChange }
-              />
-            </div>
+      <form onSubmit={ this.handleSubmit }>
+        <div className="row" id="loginForm">
+          <h2>Login</h2>
+          <div className="control ten columns">
+            <label htmlFor="emailInput">Your email</label>
+            <input
+              className="u-full-width"
+              type="email"
+              name="email"
+              placeholder="example@mail.com"
+              id="email"
+              onChange={ this.handleChange }
+            />
           </div>
-          <button type="submit" className="button">Submit</button>
-        </form>
-      </main>
+          <div className="control ten columns">
+            <label htmlFor="passwordInput">Password</label>
+            <input
+              className="u-full-width"
+              type="password"
+              name="password"
+              placeholder="Password"
+              id="password"
+              onChange={ this.handleChange }
+            />
+          </div>
+          <div className="control ten columns">
+            <button type="submit" className="button">Submit</button>
+          </div>
+        </div>
+      </form>
+
     )
   }
 }
