@@ -11,6 +11,7 @@ const userCommentSchema = new mongoose.Schema({
 const privateMessageSchema = new mongoose.Schema({
   text: { type: String },
   request: { type: Boolean, default: false },
+  requestEvent: { type: String },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 }, {
   timestamps: true

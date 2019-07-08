@@ -41,12 +41,8 @@ class UserEvents extends React.Component {
               <div>
                 <img src={event.partyImage}/>
                 <span key={event._id}>
-
-
                   <h3 key={event._id}>
-
                     {event.eventName}
-
                   </h3></span>
               </div>
             </Link>

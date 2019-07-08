@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import axios from 'axios'
-import Auth from '../../lib/Auth'
 import Map from './Map'
 import EventCreator from './EventCreator'
 import EventComments from './EventComments'
