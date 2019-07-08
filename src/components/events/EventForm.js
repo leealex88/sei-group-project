@@ -1,5 +1,8 @@
 import React from 'react'
-import ReactFilestack from 'filestack-react'
+// import ReactFilestack from 'filestack-react'
+import EventCalendar from './EventCalendar'
+import Select from 'react-select'
+import { borough } from './EventBorough'
 
 const EventForm = ({  handleChange }) => (
   <form className="eventForm">
@@ -30,13 +33,8 @@ const EventForm = ({  handleChange }) => (
         <div className="control ten columns">
           <label htmlFor="exampleEmailInput">
             Date of the Event</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password"
-            id="exampleEmailInput"
-            onChange={handleChange}
+          <EventCalendar
+
           />
         </div>
         <p className="control ten columns">Is the date fixed?</p>
@@ -70,16 +68,10 @@ const EventForm = ({  handleChange }) => (
             <p>Location</p>
             <h6>Which Borough in London is the event taking place?</h6>
           </label>
-
-          <input
-            className="input is-primary"
-            type="text"
-            placeholder="Borough"
-            onChange={handleChange}
-            // value={this.state.searchTerm}
+          <Select
+            defaultValue = {borough[0]}
+            options= {borough}
           />
-
-
         </div>
         <div className="control ten columns">
           <label htmlFor="exampleEmailInput">Describe the Event</label>
@@ -228,96 +220,97 @@ const EventForm = ({  handleChange }) => (
           />
         </div>
         <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Max Size</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Min Size</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Ideal size of the group</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Anything else</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Party Image</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Tags</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="field">
-          <div className="control ten columns">
-            <select
-              onChange={handleChange} name="skillLevel">
-              <option disabled value="">Skill level</option>
-              <option value="1">Beginner</option>
-              <option value="2">Intermediate</option>
-              <option value="3">Expert</option>
+          <p>
+            <label htmlFor="exampleEmailInput">Max Size</label>
+            <select id = "myList">
+              <option value = "1">1</option>
+              <option value = "2">2</option>
+              <option value = "3">3</option>
+              <option value = "4">4</option>
             </select>
+          </p>
+
+          <div className="control ten columns">
+            <label htmlFor="exampleEmailInput">Min Size</label>
+            <input
+              className="u-full-width"
+              type="input"
+              placeholder=""
+              name="password confirmation"
+              id="exampleEmailInput"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="control ten columns">
+            <label htmlFor="exampleEmailInput">Ideal size of the group</label>
+            <input
+              className="u-full-width"
+              type="input"
+              placeholder=""
+              name="password confirmation"
+              id="exampleEmailInput"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="control ten columns">
+            <label htmlFor="exampleEmailInput">Anything else</label>
+            <input
+              className="u-full-width"
+              type="input"
+              placeholder=""
+              name="password confirmation"
+              id="exampleEmailInput"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="control ten columns">
+            <label htmlFor="exampleEmailInput">Party Image</label>
+            <input
+              className="u-full-width"
+              type="input"
+              placeholder=""
+              name="password confirmation"
+              id="exampleEmailInput"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="control ten columns">
+            <label htmlFor="exampleEmailInput">Tags</label>
+            <input
+              className="u-full-width"
+              type="input"
+              placeholder=""
+              name="password confirmation"
+              id="exampleEmailInput"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="field">
+            <div className="control ten columns">
+              <select
+                onChange={handleChange} name="skillLevel">
+                <option disabled value="">Skill level</option>
+                <option value="1">Beginner</option>
+                <option value="2">Intermediate</option>
+                <option value="3">Expert</option>
+              </select>
+            </div>
+          </div>
+          <div className="control ten columns">
+            <label htmlFor="exampleEmailInput">Comments</label>
+            <input
+              className="u-full-width"
+              type="input"
+              placeholder=""
+              name="password confirmation"
+              id="exampleEmailInput"
+              onChange={handleChange}
+            />
           </div>
         </div>
         <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Comments</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
-            onChange={handleChange}
-          />
+          <button type="submit" className="button">Submit</button>
         </div>
-      </div>
-      <div className="control ten columns">
-        <button type="submit" className="button">Submit</button>
       </div>
     </div>
   </form>

@@ -17,14 +17,15 @@ class EventNew extends React.Component {
     console.log(data)
   }
 
+
   filterJobs() {
     const regexp = new RegExp(this.state.searchTerm, 'i')
     return this.state.data.filter(item => regexp.test(item.title))
   }
 
-
+  //write handleSubmit function
+  
   render() {
-    console.log('test')
     return (
 
 
