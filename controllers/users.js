@@ -53,6 +53,16 @@ function showCurrentUser(req, res, next) {
     .then(user => res.status(201).json(user))
     .catch(next)
 }
+
+//users own profile
+function getCurrentUser(req, res, next) {
+  User
+    .findById(req.currentUser._id)
+    .then(user => res.status(201).json(user._id))
+    .catch(next)
+}
+
+
 //user's own created event
 function showCreatedEvents(req, res, next) {
   req.body.user = req.currentUser
@@ -198,6 +208,7 @@ module.exports = {
   privateMessageCreateRoute: privateMessageCreateRoute,
   getUserName: getUserName,
   acceptRequest: acceptRequest,
-  attendingUsers: attendingUsers
+  attendingUsers: attendingUsers,
+  getCurrentUser: getCurrentUser
 
 }

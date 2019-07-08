@@ -40,7 +40,7 @@ class EventCreator extends React.Component {
 
 
   render() {
-    console.log('event', this.props.event)
+    // console.log('event', this.props.event)
     if (!this.state.user) return null
     const { user } = this.state
     return (

@@ -41,6 +41,8 @@ class UserShow extends React.Component {
       .catch(err => console.log(err))
   }
 
+
+
   isOwner(comment) {
     return Auth.getPayload().sub === comment.user._id
   }

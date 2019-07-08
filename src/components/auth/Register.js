@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import Auth from '../../lib/Auth'
+// import Auth from '../../lib/Auth'
 
 class Register extends React.Component {
   constructor() {
@@ -32,9 +32,9 @@ class Register extends React.Component {
 
     return (
       <form>
-        <div className="row" id="registerForm">
+        <div className="row">
           <h2>Register</h2>
-          <div className="control ten columns">
+          <div className="six columns">
             <label htmlFor="exampleEmailInput">Username</label>
             <input
               className="u-full-width"
@@ -44,7 +44,7 @@ class Register extends React.Component {
               id="exampleEmailInput"
               onChange={this.handleChange}/>
           </div>
-          <div className="control ten columns">
+          <div className="six columns">
             <label htmlFor="exampleEmailInput">Email</label>
             <input
               className="u-full-width"
@@ -55,7 +55,7 @@ class Register extends React.Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className="control ten columns">
+          <div className="six columns">
             <label htmlFor="exampleEmailInput">Password</label>
             <input
               className="u-full-width"
@@ -66,7 +66,7 @@ class Register extends React.Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className="control ten columns">
+          <div className="six columns">
             <label htmlFor="exampleEmailInput">Password Confirmation</label>
             <input
               className="u-full-width"
@@ -77,8 +77,8 @@ class Register extends React.Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className="control ten columns">
-            <button type="submit" className="button">Submit</button>
+          <div>
+            <input className="button-primary" type="submit" value="Submit"/>
           </div>
         </div>
       </form>
