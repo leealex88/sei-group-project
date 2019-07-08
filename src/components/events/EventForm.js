@@ -1,8 +1,9 @@
 import React from 'react'
 // import ReactFilestack from 'filestack-react'
-import EventCalendar from './EventCalendar'
 import Select from 'react-select'
-import { borough } from './EventBorough'
+import EventCalendar from './EventFormParts/EventCalendar'
+import EventType from './EventFormParts/EventType'
+import { borough } from './EventFormParts/EventBorough'
 
 const EventForm = ({  handleChange }) => (
   <form className="eventForm">
@@ -11,13 +12,7 @@ const EventForm = ({  handleChange }) => (
         <h2>Things</h2>
         <div className="control ten columns">
           <label htmlFor="exampleEmailInput">Type of the Event</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="username"
-            id="exampleEmailInput"
-            onChange={handleChange}/>
+          <EventType />
         </div>
         <div className="control ten columns">
           <label htmlFor="exampleEmailInput">Name of the Event</label>
@@ -318,3 +313,12 @@ const EventForm = ({  handleChange }) => (
 )
 
 export default EventForm
+
+
+// <input
+//   className="u-full-width"
+//   type="input"
+//   placeholder=""
+//   name="username"
+//   id="exampleEmailInput"
+//   onChange={handleChange}/>
