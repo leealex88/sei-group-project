@@ -322,25 +322,3 @@ const EventForm = ({  handleChange, handleDate }) => (
 )
 
 export default EventForm
-
-
-<<<<<<< HEAD
-//   <input
-//     className="u-full-width"
-//     type="input"
-//     placeholder=""
-//     name="password confirmation"
-//     id="exampleEmailInput"
-//     onChange={handleChange}
-//   />
-// </div>
-=======
-// <input
-//   className="u-full-width"
-//   type="input"
-//   placeholder=""
-//   name="password"
-//   id="exampleEmailInput"
-//   onChange={handleChange}
-// />
->>>>>>> development
