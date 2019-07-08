@@ -17,6 +17,10 @@ class EventNew extends React.Component {
     console.log(data)
   }
 
+  handleDate() {
+    console.log('date clicked')
+  }
+
   filterJobs() {
     const regexp = new RegExp(this.state.searchTerm, 'i')
     return this.state.data.filter(item => regexp.test(item.title))
