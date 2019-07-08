@@ -1,6 +1,8 @@
 import React from 'react'
 // import ReactFilestack from 'filestack-react'
 import EventCalendar from './EventCalendar'
+import Select from 'react-select'
+import { borough } from './EventBorough'
 
 const EventForm = ({  handleChange }) => (
   <form className="eventForm">
@@ -66,16 +68,10 @@ const EventForm = ({  handleChange }) => (
             <p>Location</p>
             <h6>Which Borough in London is the event taking place?</h6>
           </label>
-
-          <input
-            className="input is-primary"
-            type="text"
-            placeholder="Borough"
-            onChange={handleChange}
-            // value={this.state.searchTerm}
+          <Select
+            defaultValue = {borough[0]}
+            options= {borough}
           />
-
-
         </div>
         <div className="control ten columns">
           <label htmlFor="exampleEmailInput">Describe the Event</label>
