@@ -1,10 +1,7 @@
 @import 'normalize.css';
 @import 'skeleton.css';
-
 @import '~mapbox-gl/dist/mapbox-gl.css';
-
-
-@import url('https://fonts.googleapis.com/css?family=Roboto%7CRoboto+Mono&display=swap');
+@import url('https://fonts.googleapis.comß/css?family=Roboto%7CRoboto+Mono&display=swap');
 $title: 'Roboto', sans-serif;
 $text: 'Roboto Mono', monospace;
 
@@ -106,7 +103,9 @@ html {
   background: white;
   font-family: 'helvetica neue';
 }
-
+#eventDescription {
+  height: 300px;
+}
 body {
   margin: 0;
   color: #373737;

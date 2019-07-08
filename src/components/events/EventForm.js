@@ -5,6 +5,9 @@ import EventCalendar from './EventFormParts/EventCalendar'
 import EventType from './EventFormParts/EventType'
 import { borough } from './EventFormParts/EventBorough'
 
+
+
+
 const EventForm = ({  handleChange }) => (
   <form className="eventForm">
     <div className="container" id="newEvent">
@@ -46,30 +49,20 @@ const EventForm = ({  handleChange }) => (
           />
         </div>
         <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Describe the Event</label>
-          <input
+          <label>Describe the Event</label>
+          <textarea
             className="u-full-width"
-            type="input"
+            maxLength="460"
+            type="text"
             placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
+            name="Describe the Event"
+            id="eventDescription"
             onChange={handleChange}
           />
         </div>
         <div className="control ten columns">
           <label htmlFor="exampleEmailInput">Schedule</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Start Time</label>
-          <input
+          <textarea
             className="u-full-width"
             type="input"
             placeholder=""
