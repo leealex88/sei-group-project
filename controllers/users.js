@@ -17,6 +17,7 @@ function register(req, res) {
 function login(req, res) {
   User
     .findOne({ email: req.body.email })
+    .populate('user')
     .then(user => {
       console.log(req.body)
       if (!user || !user.validatePassword(req.body.password)) {
@@ -48,6 +49,7 @@ function showCurrentUser(req, res, next) {
   console.log(req.body.user._id)
   User
     .findById(req.body.user._id)
+    .populate('user')
     .then(user => res.status(201).json(user))
     .catch(next)
 }
@@ -75,6 +77,7 @@ function showTheirEvents(req, res, next) {
 function showUsers(req, res) {
   User
     .find(req.query)
+    .populate('user')
     .then(users => res.status(200).json(users))
     .catch(err => console.log(err))
 }
@@ -83,6 +86,7 @@ function commentCreateRoute(req, res) {
   req.body.user = req.currentUser
   User
     .findById(req.params.id)
+    .populate('user')
     .then(user => {
       if (!user) return res.status(404).json({ message: 'Not found' })
       user.comments.push(req.body)
@@ -93,8 +97,11 @@ function commentCreateRoute(req, res) {
 }
 
 function getUserName(req, res){
+  console.log(req.params.id)
   User
     .findById(req.params.id)
+    .populate('user')
+
     .then(user => res.status(201).json(user.username))
     .catch(err => res.json(err))
 }
@@ -104,7 +111,7 @@ function privateMessageCreateRoute(req, res) {
   req.body.user = req.currentUser
   User
     .findById(req.params.id)
-
+    .populate('user')
     .then(user => {
       if (!user) return res.status(404).json({ message: 'Not found' })
       console.log(req.body.user)
@@ -121,6 +128,7 @@ function privateMessageCreateRoute(req, res) {
 function commentDeleteRoute(req, res) {
   User
     .findById(req.params.id)
+    .populate('user')
     .then(user => {
       if (!user) return res.status(404).json({ message: 'Not found' })
       const comment = user.comments.id(req.params.commentId)
@@ -134,6 +142,7 @@ function commentDeleteRoute(req, res) {
 function getEventCreator(req, res, next) {
   Event
     .findById(req.params.id)
+    .populate('user')
     .then(event =>
       User
         .findById(event.user)

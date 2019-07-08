@@ -5,6 +5,7 @@ function indexRoute(req, res) {
   console.log(req.body)
   Event
     .find(req.query)
+    .populate('user')
     .then(events => res.status(200).json(events))
     .catch(err => console.log(err))
 }
@@ -13,8 +14,7 @@ function showRoute(req, res) {
   console.log(req, 'showing')
   Event
     .findById(req.params.id)
-
-
+    .populate('user')
     .then(event => {
       if (!event) throw new Error('Not Found')
       return res.status(200).json(event)
@@ -27,6 +27,7 @@ function eventCreate(req, res) {
   console.log(req, 'showing')
   Event
     .create(req.body)
+    .populate('user')
     .then(event =>  res.status(201).json(event))
     .catch(err => console.log(err))
 }
@@ -35,6 +36,7 @@ function eventCreate(req, res) {
 function deleteRoute(req, res) {
   Event
     .findByIdAndRemove(req.params.id)
+    .populate('user')
     .then(() => res.sendStatus(204))
     .catch(err => res.status(404).json(err))
 }
@@ -44,6 +46,7 @@ function commentCreateRoute(req, res) {
   console.log(req.body)
   Event
     .findById(req.params.id)
+    .populate('user')
     .then(event => {
       if (!event) return res.status(404).json({ message: 'Not found' })
       event.comments.push(req.body)
@@ -57,6 +60,7 @@ function commentCreateRoute(req, res) {
 function commentDeleteRoute(req, res) {
   Event
     .findById(req.params.id)
+    .populate('user')
     .then(event => {
       if (!event) return res.status(404).json({ message: 'Not found' })
       const comment = event.comments.id(req.params.commentId)

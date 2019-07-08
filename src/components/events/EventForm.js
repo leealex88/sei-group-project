@@ -1,7 +1,8 @@
 import React from 'react'
-import ReactFilestack from 'filestack-react'
+// import ReactFilestack from 'filestack-react'
+import Calendar from 'react-calendar'
 
-const EventForm = ({  handleChange }) => (
+const EventForm = ({  handleChange, handleDate }) => (
   <form className="eventForm">
     <div className="container" id="newEvent">
       <div className="row">
@@ -30,13 +31,8 @@ const EventForm = ({  handleChange }) => (
         <div className="control ten columns">
           <label htmlFor="exampleEmailInput">
             Date of the Event</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password"
-            id="exampleEmailInput"
-            onChange={handleChange}
+          <Calendar
+            onChange={handleDate}
           />
         </div>
         <p className="control ten columns">Is the date fixed?</p>
@@ -328,6 +324,7 @@ const EventForm = ({  handleChange }) => (
 export default EventForm
 
 
+<<<<<<< HEAD
 //   <input
 //     className="u-full-width"
 //     type="input"
@@ -337,3 +334,13 @@ export default EventForm
 //     onChange={handleChange}
 //   />
 // </div>
+=======
+// <input
+//   className="u-full-width"
+//   type="input"
+//   placeholder=""
+//   name="password"
+//   id="exampleEmailInput"
+//   onChange={handleChange}
+// />
+>>>>>>> development
