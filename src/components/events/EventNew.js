@@ -25,7 +25,7 @@ class EventNew extends React.Component {
 
   handleClick(e) {
     e.preventDefault()
-    this.setState({ eventType: e.target.value  })
+    this.setState({ ...this.state.data, eventType: e.target.value  })
   }
 
   handleDate(e) {
@@ -49,8 +49,9 @@ class EventNew extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    console.log('this.state is', this.state.data)
-    axios.post('/api/events/', this.state.data, {
+    const data = this.state.data
+    console.log('data is', data)
+    axios.post('/api/events/', data, {
       headers: { 'Authorization': `${Auth.getToken()}` }
     })
       .then(() => this.props.history.push('/events'))
