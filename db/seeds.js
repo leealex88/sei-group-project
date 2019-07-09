@@ -13,7 +13,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         {
           username: 'Ola',
           email: 'ola@email.com',
-          bio: 'great person',
+          bio: 'Grammi is another old bear who is the matriarch of Gummi-Glen. She acts as the groups mother, who cooks, cleans, and is the Gummi who prepares the Gummiberry Juice. She holds the secret recipe. She has an intense rivalry with Gruffi Gummi, and tends to bicker with him. Her cooking is disliked by most of the others, especially Gruffi.',
           password: 'password',
           passwordConfirmation: 'password',
           avatar: 'https://i.imgur.com/ZFhlV9A.jpg'
@@ -21,7 +21,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         }, {
           username: 'Charlie',
           email: 'charlie@email',
-          bio: 'great person',
+          bio: 'Zummi is an aged bear who is the Gummi-Glen Gummis leader, although he often defers to the more practical Grammi and Gruffi. He is the "Keeper of Gummi Wisdom" and later the holder of the Gummi-Medallion which he uses to read his magic book to become the groups magician. He is forgetful (he is nearly always shown reciting spells from notes instead of from memory) and clumsy, mis-speaking often with spoonerisms, and his spells tend to back-fire. He also has a fear of heights.',
           password: 'password',
           passwordConfirmation: 'password'
 
@@ -29,7 +29,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
         {
           username: 'lily',
           email: 'lily@email',
-          bio: 'total div',
+          bio: 'Sunni is a preteen Gummi, who dreams about becoming a princess just like her best friend, the human Princess Calla. Sunni is the most curious about human culture and human fashion, and least concerned with Gummi history. She is the second oldest of the kid Gummis, behind only Tummi Gummi. Later in the series, she is shown to have a crush on Gusto, and becomes close friends with Buddy.',
           password: 'password',
           passwordConfirmation: 'password',
           avatar: 'https://static1.squarespace.com/static/5ada91e331d4df2af37677c2/t/5ae3c9f270a6adc561f22176/1524877811615/irvin+yalom.jpeg?format=1000w'

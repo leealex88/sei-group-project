@@ -34,8 +34,13 @@ class Register extends React.Component {
       <form>
         <div className="row">
           <h2>Register</h2>
+<<<<<<< HEAD
           <div className="six columns">
             <label htmlFor="exampleEmailInput">Username</label>
+=======
+          <div className="control ten columns">
+            <label htmlFor="username">Username</label>
+>>>>>>> 3a88ec9ea9284bdd5517a0a68530b7cb11b4aa81
             <input
               className="u-full-width"
               type="email"
@@ -55,8 +60,13 @@ class Register extends React.Component {
               onChange={this.handleChange}
             />
           </div>
+<<<<<<< HEAD
           <div className="six columns">
             <label htmlFor="exampleEmailInput">Password</label>
+=======
+          <div className="control ten columns">
+            <label htmlFor="password">Password</label>
+>>>>>>> 3a88ec9ea9284bdd5517a0a68530b7cb11b4aa81
             <input
               className="u-full-width"
               type="password"
@@ -66,8 +76,13 @@ class Register extends React.Component {
               onChange={this.handleChange}
             />
           </div>
+<<<<<<< HEAD
           <div className="six columns">
             <label htmlFor="exampleEmailInput">Password Confirmation</label>
+=======
+          <div className="control ten columns">
+            <label htmlFor="passwordConfirmation">Password Confirmation</label>
+>>>>>>> 3a88ec9ea9284bdd5517a0a68530b7cb11b4aa81
             <input
               className="u-full-width"
               type="password"
@@ -77,8 +92,26 @@ class Register extends React.Component {
               onChange={this.handleChange}
             />
           </div>
+<<<<<<< HEAD
           <div>
             <input className="button-primary" type="submit" value="Submit"/>
+=======
+          <div className="control ten columns">
+            <label htmlFor="bio">Bio</label>
+            <textarea
+              minLength="20"
+              maxLength="600"
+              className="u-full-width"
+              type="password"
+              placeholder=""
+              name="password"
+              id="exampleEmailInput"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="control ten columns">
+            <button type="submit" className="button">Submit</button>
+>>>>>>> 3a88ec9ea9284bdd5517a0a68530b7cb11b4aa81
           </div>
         </div>
       </form>

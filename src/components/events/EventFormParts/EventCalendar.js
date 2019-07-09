@@ -32,6 +32,8 @@ class EventCalendar extends React.Component {
 
 
   render() {
+    console.log(this.state.startTime)
+    console.log(this.state.endTime)
     return (
 
       <div className="control ten columns">
@@ -41,15 +43,27 @@ class EventCalendar extends React.Component {
         />
 
         <label>Start Time</label>
-        <TimeField
-          value={this.state.startTime}
-          onChange={this.onChangeStart}
-        />
-        <label>End Time</label>
-        <TimeField
-          onChange={this.onChangeEnd}
-          value={this.state.endTime}
-        />
+        <div
+          style={{
+            
+          }}
+        >
+          <TimeField
+            value={this.state.startTime}
+            onChange={this.onChangeStart}
+            style={{
+              width: 60
+            }}
+          />
+          <label>End Time</label>
+          <TimeField
+            onChange={this.onChangeEnd}
+            value={this.state.endTime}
+            style={{
+              width: 60
+            }}
+          />
+        </div>
       </div>
 
 
