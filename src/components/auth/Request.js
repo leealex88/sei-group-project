@@ -23,7 +23,7 @@ class Request extends React.Component {
   }
 
   requestFunction() {
-
+    this.getData()
     console.log(this.props.request)
     axios.post(`/api/users/${this.props.request.user}`, {
       headers: { Authorization: ` ${Auth.getToken()}` }
@@ -38,11 +38,12 @@ class Request extends React.Component {
     axios.post(`api/users/${this.props.request.user}/accept`,  { events: this.props.request.requestEvent } ,  {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
+      .then(() => this.getData())
       .catch(() => this.setState({ error: 'Invalid Crendentials' }))
     this.removeRequestFunction()
     document.querySelector('.request').style.display = 'none'
 
-    axios.post(`/api/users/${this.props.request.user}/privateMessages`, { text: 'Your request was accepted, you can now join in the chat and find out all the details!' }, {
+    axios.post(`/api/users/${this.props.request.user}/privateMessages`, { text: `Your request to ${this.state.event.eventName} was accepted, you can now join in the chat and find out all the  details!` }, {
       headers: { 'Authorization': `${Auth.getToken()}` }
     })
       .then(() => this.getData())
@@ -50,8 +51,6 @@ class Request extends React.Component {
   }
 
   removeRequestFunction() {
-    console.log('user:', this.props.user._id)
-    console.log(`api/users/${this.props.user._id}/privateMessages/${this.props.request._id}`)
     axios.put(`api/users/${this.props.user._id}/privateMessages/${this.props.request._id}`, null, {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
@@ -73,9 +72,9 @@ class Request extends React.Component {
 
   render(){
     if (!this.props.request.user) return null
-    console.log('sender', `/events/${this.props.request.requestEvent}`)
+
     return (
-      <section>
+      <section className="request">
         <div>
 
 

@@ -57,11 +57,6 @@ class UserShow extends React.Component {
       .catch(err => console.log(err))
   }
 
-
-
-
-
-
   render() {
     console.log(this.state.user)
     if (!this.state.user) return null
@@ -106,51 +101,13 @@ class UserShow extends React.Component {
             </div>
             <button type="submit">Comment</button>
           </form>}
-
-
-          <p> {user.username} is attending these events: {user.events.map(event => <Link to={`/events/${event}/`} key={event}/>) }
-          </p>
-
-
-
-          {user.comments.map(comment => (
-            <div key={comment._id} className="card">
-              <div className="card-content">
-                {comment.text} - {new Date(comment.createdAt).toLocaleString()}
-              </div>
-              {this.isOwner(comment) && <button
-
-                onClick={() => this.handleCommentDelete(comment)}
-              >Delete
-              </button>}
-            </div>
-          ))}
-
-          {Auth.isAuthenticated() &&
-        <form onSubmit={this.handleSubmit}>
-          <div className="field">
-            <div className="control">
-              <textarea
-                className="textarea"
-                placeholder="Comment..."
-                onChange={this.handleChange}
-                value={this.state.comment.text || ''}
-              >
-              </textarea>
-            </div>
-          </div>
-          <button className="button" type="submit">Comment</button>
-        </form>}
-
-          <p> {user.username} is attending these events: </p>
-
-          <form className="userEventCards">
-
-
-            <TheirEvents user={this.props.match.params.userid} />
-
-          </form>
         </div>
+        <section className="usersEventsSection">
+          <div className="usersEvents">
+            <p> {user.username} is attending these events: </p>
+            <TheirEvents user={this.props.match.params.userid} />
+          </div>
+        </section>
       </div>
     )
   }

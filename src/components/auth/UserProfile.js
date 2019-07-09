@@ -28,13 +28,14 @@ class UserProfile extends React.Component {
   requestFunction() {
     const requests = this.state.user.privateMessages.filter(message => message.request === true)
     requests.concat(requests.map(request => request.user))
+    console.log(requests)
     this.setState({ requests: requests })
 
 
   }
 
   messagesFunction() {
-    const messages = this.state.user.privateMessages.filter(message => message.request === false)
+    const messages = this.state.user.privateMessages.filter(message => message.request === false && message.text !== '')
     messages.concat(messages.map(message => message.user))
     this.setState({ messages: messages })
 
@@ -52,6 +53,16 @@ class UserProfile extends React.Component {
 
   }
 
+  getEvent(){
+    axios.get('/api/event', {
+      headers: { Authorization: ` ${Auth.getToken()}` }
+    })
+      .then(res => this.setState({ user: res.data }))
+      .catch(() => this.setState({ error: 'Invalid Crendentials' }))
+
+
+  }
+
 
 
 
@@ -59,13 +70,13 @@ class UserProfile extends React.Component {
 
   render(){
     if (!this.state.user) return null
+
     return (
       <div>
         <h1> {this.state.user.username} </h1>
         <a onClick={this.logout}>Logout</a>
 
-        {/* { this.state.user.events && <h2>It is confirmed! You are attending these events: {this.state.user.events.map(event => <p key={event}> {event.eventName} </p>)},
-      you can now join in the event chat and find out all the details. </h2>} */}
+
 
         <h3> You have {this.state.user.privateMessages.length} messages </h3>
 
@@ -78,20 +89,20 @@ class UserProfile extends React.Component {
         <button onClick={this.requestFunction}>See Requests</button>
 
         <div>
-          {this.state.requests.map(request =>
-            <button key={request.index}>
-              <Request request={request} user={this.state.user} />
-            </button>
+          {this.state.requests.map((request, i) =>
+
+            <Request key={i} request={request} user={this.state.user} />
+
 
 
           )} </div>
 
-        <p> You have {this.state.user.privateMessages.filter(message => message.request === false).length} private messages </p>
-        <div onClick={this.messagesFunction}>See Messages</div>
+        <p> You have {this.state.user.privateMessages.filter(message => message.request === false && message.text !== '').length} private messages </p>
+        <button onClick={this.messagesFunction}>See Messages</button>
 
         <div>
-          {this.state.messages.map(message =>
-            <div key={message}>
+          {this.state.messages.map((message, i) =>
+            <div key={i}>
               <Message message={message} />
             </div>
 
@@ -99,6 +110,7 @@ class UserProfile extends React.Component {
           )} </div>
 
 
+        <h3> Your events: </h3>
 
         < UserEvents />
 

@@ -34,11 +34,11 @@ function eventCreate(req, res) {
       User
         .findById(req.currentUser._id)
         .then(user => {
+          event = event._id.toString()
           if (!user) return res.status(404).json({ message: 'Not found' })
-          user.events.push(event._id)
+          user.events.push(event)
           return user.save()
         }))
-    .then(user => res.status(201).json(user))
     .then(event => res.status(201).json(event))
     .catch(err => res.json(err))
 
