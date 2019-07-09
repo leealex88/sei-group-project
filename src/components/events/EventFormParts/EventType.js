@@ -6,13 +6,9 @@ class EventType extends React.Component {
 
     this.state = {  type: {} }
 
-    this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(e) {
-    e.preventDefault()
-    this.setState({ type: e.target.value  })
-  }
+
 
   render() {
     return (
@@ -20,31 +16,31 @@ class EventType extends React.Component {
         <button
           value="art"
           className="button"
-          onClick={this.handleClick}>
+          onClick={this.props.handleClick}>
         Art & Culture
         </button>
         <button
           value="nature"
           className="button"
-          onClick={this.handleClick}>
+          onClick={this.props.handleClick}>
         Nature & Outdoors
         </button>
         <button
           value="entertainment"
           className="button"
-          onClick={this.handleClick}>
+          onClick={this.props.handleClick}>
         Entertainment
         </button>
         <button
           value="sport"
           className="button"
-          onClick={this.handleClick}>
+          onClick={this.props.handleClick}>
         Sports & Wellness
         </button>
         <button
           value="food"
           className="button"
-          onClick={this.handleClick}>
+          onClick={this.props.handleClick}>
         Food & Drink
         </button>
       </div>

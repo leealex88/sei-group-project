@@ -11,9 +11,8 @@ class EventCalendar extends React.Component {
       startTime: '10:00',
       endTime: '12:00'
     }
-    
-  }
 
+  }
 
   render() {
     // const {startTime} = this.props
