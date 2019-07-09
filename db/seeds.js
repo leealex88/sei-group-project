@@ -34,6 +34,222 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           passwordConfirmation: 'password',
           avatar: 'https://static1.squarespace.com/static/5ada91e331d4df2af37677c2/t/5ae3c9f270a6adc561f22176/1524877811615/irvin+yalom.jpeg?format=1000w'
 
+        },
+        {
+          username: 'mickey',
+          email: 'mickey@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'minnie',
+          email: 'minnie@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'tom',
+          email: 'tom@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'tallah',
+          email: 'tallah@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'shane',
+          email: 'shane@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'guy',
+          email: 'guy@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'jack',
+          email: 'jack@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'wes',
+          email: 'wes@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'cliff',
+          email: 'cliff@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'sim',
+          email: 'sim@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'daniela',
+          email: 'daniela@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'shema',
+          email: 'shema@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'kasia',
+          email: 'kasia@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'mia',
+          email: 'mia@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'mia',
+          email: 'mia@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'amy',
+          email: 'amy@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'david',
+          email: 'david@email',
+          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'gruffi',
+          email: 'gruffi@email',
+          bio: 'Gruffi is an old-fashioned bear who prefers to do things "the Gummi way." An extremely skilled craftsman and mechanic, he fixes the old Gummi technology and trap doors, as well as building traps around the Glen to deal with humans and ogres. Gruffi is a perfectionist, which can be his undoing at times. However and at other times, he is respected as the voice of stability and practical solutions when the other Gummis fall into despair.',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'gruffi',
+          email: 'gruffi@email',
+          bio: 'Gruffi is an old-fashioned bear who prefers to do things "the Gummi way." An extremely skilled craftsman and mechanic, he fixes the old Gummi technology and trap doors, as well as building traps around the Glen to deal with humans and ogres. Gruffi is a perfectionist, which can be his undoing at times. However and at other times, he is respected as the voice of stability and practical solutions when the other Gummis fall into despair.',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'tummi',
+          email: 'tummi@email',
+          bio: 'Tummi is an overweight Gummi, stated to be a little younger than Gusto, who enjoys a good meal, and would much rather be eating the Gummiberries than picking them. Of all the Gummi cubs in Gummi Glen, Tummi is the oldest. He has a rather relaxed and easygoing personality, which often gets him caught up in Cubbi\'s schemes. However and in dangerous situations, Tummi has shown exceptional bravery, and throughout the series, he demonstrates a natural talent as a sailor, gardener, artist and craftsman.',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'cubbi',
+          email: 'cubbi@email',
+          bio: 'Cubbi is the youngest Gummi-Glen Gummi (according to the official series\' bible around the equivalent of an 8-year-old), and dreams of becoming a great Gummi knight. He is impetuous and gets distracted by anything mysterious or exciting, but his open-mindedness oftentimes enables him to find simple solutions to sticky problems. He sometimes dons a mask and becomes a vigilante known as the Crimson Avenger. He is best friends with the human Cavin, and he was the first Gummi that Cavin encountered.',
+          password: 'password',
+          passwordConfirmation: 'password',
+          avatar: ''
+        },
+        {
+          username: 'archer',
+          email: 'archer@email',
+          bio: 'A narcissistic womaniser. Possibly the greatest spy that ever lived.',
+          password: 'guest',
+          passwordConfirmation: 'guest',
+          avatar: ''
+        },
+        {
+          username: 'mallory',
+          email: 'mallory@email',
+          bio: 'Sterling\'s mother, Mallory Archer is almost as self-absorbed as her son and is constantly on the look out for ways to keep her employees under control.',
+          password: 'guest',
+          passwordConfirmation: 'guest',
+          avatar: ''
+        },
+        {
+          username: 'kreiger',
+          email: 'kreiger@email',
+          bio: 'Definitely a scientist, apparently a doctor (though no one is entirely sure what type of doctor), probably insane. Also maybe a clone of Hitler.',
+          password: 'guest',
+          passwordConfirmation: 'guest',
+          avatar: ''
+        },
+        {
+          username: 'lana',
+          email: 'lana@email',
+          bio: 'Possibly the most professional spy at ISIS. This is not saying a huge amount. Kinda like being awarded the title of the World\'s Tallest Midget',
+          password: 'guest',
+          passwordConfirmation: 'guest',
+          avatar: ''
+        },
+        {
+          username: 'pam',
+          email: 'pam@email',
+          bio: 'HR Supremo. Basically spends most of her time trying to instigate a sexual harrassment case against herself.',
+          password: 'guest',
+          passwordConfirmation: 'guest',
+          avatar: ''
+        },
+        {
+          username: 'cheryl',
+          email: 'cheryl@email',
+          bio: 'Check with HR, she may have changed her name again. Either way, don\'t let her near sharp objects. Or glue.',
+          password: 'guest',
+          passwordConfirmation: 'guest',
+          avatar: ''
         }
       ])
     })
