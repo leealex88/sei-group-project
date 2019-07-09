@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
 import { Link } from 'react-router-dom'
+import Navbar from '../common/Navbar'
 
 class Message extends React.Component {
   constructor() {
@@ -34,13 +35,15 @@ class Message extends React.Component {
     return (
 
       <section>
+        <div>
+          <Navbar />
 
-        <h6> You have a Message from {this.state.messageSender} </h6>
+          <h6> You have a Message from {this.state.messageSender} </h6>
 
-        <p> {this.props.message.text} </p>
+          <p> {this.props.message.text} </p>
 
-        <p> Click <Link to={`/users/${this.props.message.user}/message`}> here </Link> to reply. </p>
-
+          <p> Click <Link to={`/users/${this.props.message.user}/message`}> here </Link> to reply. </p>
+        </div>
       </section>
 
 

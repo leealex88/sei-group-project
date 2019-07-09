@@ -5,7 +5,7 @@ import UserEvents from './UserEvents'
 import Request from './Request'
 import Message from './Message'
 import { Link } from 'react-router-dom'
-
+import Navbar from '../common/Navbar'
 
 class UserProfile extends React.Component {
   constructor() {
@@ -60,7 +60,9 @@ class UserProfile extends React.Component {
   render(){
     if (!this.state.user) return null
     return (
+
       <div>
+        <Navbar />
         <h1> {this.state.user.username} </h1>
         <a onClick={this.logout}>Logout</a>
 

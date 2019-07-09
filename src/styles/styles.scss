@@ -193,7 +193,7 @@ body {
 }
 .panel.open {
   font-size: 15px;
-  flex: 8;
+  flex: 3.5;
 }
 
 
@@ -251,7 +251,7 @@ p, {
 }
 
 .commentSection {
-  width: 1000%;
+  width: 100%;
   // border-style: solid  2px;
   border-color: #483D8B;
   // border-radius: 5px;
@@ -260,6 +260,9 @@ p, {
   height: 300px;
 }
 
+.userCommentSection {
+  width: 100%;
+}
 .userEventCards section {
   width: 45%;
   height: 200px;
@@ -269,4 +272,21 @@ p, {
   border: solid 1px;
   box-shadow: 2px 5px 20px #483D8B;
   margin-top: 80px;
+}
+
+.submit {
+  width: 200px;
+}
+
+.navComponents {
+  width: 20%;
+  text-align: center;
+}
+
+// Navbar
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

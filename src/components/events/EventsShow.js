@@ -5,8 +5,7 @@ import EventCreator from './EventCreator'
 import EventComments from './EventComments'
 import Attendees from './Attendees'
 import Auth from '../../lib/Auth'
-
-
+import Navbar from '../common/Navbar'
 
 class eventShow extends React.Component {
   constructor() {
@@ -24,9 +23,6 @@ class eventShow extends React.Component {
 
 
   }
-
-
-
 
   getMe() {
     console.log('attending')
@@ -69,6 +65,7 @@ class eventShow extends React.Component {
 
     return (
       <section >
+        <Navbar />
         <div >
 
           <Fragment>

@@ -99,7 +99,7 @@ class UserShow extends React.Component {
                 </textarea>
               </div>
             </div>
-            <button type="submit">Comment</button>
+            <button type="submit">Post a Comment</button>
           </form>}
         </div>
         <section className="usersEventsSection">
