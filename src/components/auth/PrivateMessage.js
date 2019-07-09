@@ -30,7 +30,7 @@ class PrivateMessage extends React.Component {
   }
 
   handleSubmit(e) {
-    console.log('submitting', this.state.message)
+    console.log(this.props.match.params.userid)
 
     e.preventDefault()
 

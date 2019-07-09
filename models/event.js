@@ -84,7 +84,7 @@ function setLngLat(v){
 
 
 const eventSchema = new mongoose.Schema({
-  eventType: { type: String },
+  eventType: { type: String, required: true, default: 'event' },
   eventName: { type: String, required: true },
   date: { type: Date, required: true },
   fixed: { type: Boolean },

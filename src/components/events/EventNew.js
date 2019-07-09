@@ -24,8 +24,10 @@ class EventNew extends React.Component {
   }
 
   handleClick(e) {
+
     const data = { ...this.state.data, eventType: e.target.value  }
-    this.setState({ data })
+    this.setState({ data  })
+
   }
 
   handleDate(e) {
