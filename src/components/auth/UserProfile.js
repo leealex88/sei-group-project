@@ -53,12 +53,19 @@ class UserProfile extends React.Component {
   }
 
 
+
+
+
+
   render(){
     if (!this.state.user) return null
     return (
       <div>
         <h1> {this.state.user.username} </h1>
         <a onClick={this.logout}>Logout</a>
+
+        {/* { this.state.user.events && <h2>It is confirmed! You are attending these events: {this.state.user.events.map(event => <p key={event}> {event.eventName} </p>)},
+      you can now join in the event chat and find out all the details. </h2>} */}
 
         <h3> You have {this.state.user.privateMessages.length} messages </h3>
 
@@ -72,8 +79,8 @@ class UserProfile extends React.Component {
 
         <div>
           {this.state.requests.map(request =>
-            <button key={request}>
-              <Request request={request} />
+            <button key={request.index}>
+              <Request request={request} user={this.state.user} />
             </button>
 
 

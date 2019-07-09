@@ -88,7 +88,7 @@ const eventSchema = new mongoose.Schema({
   eventName: { type: String },
   date: { type: Date, required: true },
   fixed: { type: Boolean },
-  location: { type: String, set: setLngLat, default: 'Westminster' },
+  location: { type: String, set: setLngLat, default: '-0.117 51.5555' },
   // lnglat: { type: String, set: setLngLat },
   description: { type: String },
   schedule: { type: String },

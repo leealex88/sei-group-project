@@ -6,15 +6,13 @@ import EventType from './EventFormParts/EventType'
 import { borough } from './EventFormParts/EventBorough'
 
 
-
-
 const EventForm = ({  handleChange }) => (
   <form className="eventForm">
     <div className="container" id="newEvent">
       <div className="row">
         <h2>Things</h2>
         <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Type of the Event</label>
+          <label>Type of the Event</label>
           <EventType />
         </div>
         <div className="control ten columns">
@@ -23,26 +21,30 @@ const EventForm = ({  handleChange }) => (
             className="u-full-width"
             type="input"
             placeholder=""
-            name="email"
-            id="exampleEmailInput"
+            name="eventName"
             onChange={handleChange}
           />
         </div>
         <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">
-            Date of the Event</label>
-          <EventCalendar
-
+          <label>Date & Time</label>
+          <EventCalendar />
+        </div>
+        <div className="control ten columns">
+          <label>Schedule</label>
+          <textarea
+            className="u-full-width"
+            type="input"
+            placeholder=""
+            name="schedule"
+            onChange={handleChange}
           />
         </div>
-        <p className="control ten columns">Is the date fixed?</p>
 
         <br />
         <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">
-            <p>Location</p>
-            <h6>Which Borough in London is the event taking place?</h6>
-          </label>
+          <label>Location</label>
+          <h6>Which Borough in London is the event taking place?</h6>
+
           <Select
             defaultValue = {borough[0]}
             options= {borough}
@@ -55,35 +57,14 @@ const EventForm = ({  handleChange }) => (
             minLength="50"
             maxLength="460"
             type="text"
-            placeholder=""
-            name="Describe the Event"
-            id="eventDescription"
+            placeholder="..."
+            name="description"
+            id="description"
             onChange={handleChange}
           />
         </div>
-        <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Schedule</label>
-          <textarea
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">End Time</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
-            onChange={handleChange}
-          />
-        </div>
-        <p className="control ten columns">Is the ticket necessery to buy?</p>
+        {/* condense all ticket questions into component. tickets to be Boolean, ticketLink to be string */}
+        <p className="control ten columns">Do you need a ticket?</p>
         <div className="ten columns">
           <div className="control">
             <label className="radio">
@@ -99,7 +80,7 @@ const EventForm = ({  handleChange }) => (
             <label className="radio">
               <input
                 type="radio"
-                checked=""
+                checked="yes"
                 name="no"
                 value=""
                 onChange={handleChange}
@@ -109,46 +90,32 @@ const EventForm = ({  handleChange }) => (
           </div>
         </div>
         <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Link to the tickets</label>
+          <label>Link to the tickets</label>
           <input
             className="u-full-width"
             type="input"
             placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
+            name="ticketLink"
             onChange={handleChange}
           />
         </div>
         <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Link to the event</label>
+          <label>Link to the event</label>
           <input
             className="u-full-width"
             type="input"
             placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
+            name="eventLink"
             onChange={handleChange}
           />
         </div>
         <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Link to the tickets</label>
+          <label>Preparation</label>
           <input
             className="u-full-width"
             type="input"
             placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Preparation</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
+            name="preparation"
             onChange={handleChange}
           />
         </div>
@@ -158,36 +125,33 @@ const EventForm = ({  handleChange }) => (
             className="u-full-width"
             type="input"
             placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
+            name="cost"
             onChange={handleChange}
           />
         </div>
         <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Provided</label>
+          <label>Is any equipment provided?</label>
           <input
             className="u-full-width"
             type="input"
             placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
+            name="provided"
             onChange={handleChange}
           />
         </div>
         <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">What you need to bring with.</label>
+          <label>What you need to bring with you.</label>
           <input
             className="u-full-width"
             type="input"
             placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
+            name="whatToBring"
             onChange={handleChange}
           />
         </div>
         <div className="control ten columns">
           <p>
-            <label htmlFor="exampleEmailInput">Max Size</label>
+            <label>Max Size</label>
             <select id = "myList">
               <option value = "1">1</option>
               <option value = "2">2</option>

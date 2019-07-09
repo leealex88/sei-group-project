@@ -7,9 +7,17 @@ router.route('/events/')
   .get(events.index)
   .post(secureRoute, events.create)
 
+router.route('/events/:id/attending')
+  .get(users.attendingUsers)
+
 router.route('/events/:id')
   .get(events.show)
   .post(users.getEventCreator)
+
+router.route('/me')
+  .get(secureRoute, users.getCurrentUser)
+
+
 
 router.route('/users/:id/privateMessages')
   .post(secureRoute, users.privateMessageCreateRoute)
@@ -20,11 +28,13 @@ router.route('/users/:id/')
 router.route('/users/:id/accept')
   .post(secureRoute, users.acceptRequest)
 
+router.route('/users/:id/privateMessages/:commentId')
+  .put(secureRoute, users.deleteAcceptedRequest)
+
 router.route('/events/:id/comments')
   .post(secureRoute, events.commentCreate)
 
-router.route('/events/:id/attending')
-  .get(secureRoute, users.attendingUsers)
+
 
 router.route('/events/:id/comments/:commentId')
   .delete(secureRoute, events.commentDelete)

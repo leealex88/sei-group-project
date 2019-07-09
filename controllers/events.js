@@ -1,4 +1,5 @@
 const Event = require('../models/event')
+const User = require('../models/user')
 
 //show all events
 function indexRoute(req, res) {
@@ -21,16 +22,30 @@ function showRoute(req, res) {
     })
     .catch(err => console.log(err))
 }
+
+
 //create an event
 function eventCreate(req, res) {
   req.body.user = req.currentUser
   console.log(req, 'showing')
   Event
     .create(req.body)
-    .populate('user')
-    .then(event =>  res.status(201).json(event))
-    .catch(err => console.log(err))
+    .then(event =>
+      User
+        .findById(req.currentUser._id)
+        .then(user => {
+          if (!user) return res.status(404).json({ message: 'Not found' })
+          user.events.push(event._id)
+          return user.save()
+        }))
+    .then(user => res.status(201).json(user))
+    .then(event => res.status(201).json(event))
+    .catch(err => res.json(err))
+
 }
+
+
+
 
 //delete event
 function deleteRoute(req, res) {
