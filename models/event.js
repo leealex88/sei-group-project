@@ -85,7 +85,7 @@ function setLngLat(v){
 
 const eventSchema = new mongoose.Schema({
   eventType: { type: String, required: true },
-  eventName: { type: String },
+  eventName: { type: String, required: true },
   date: { type: Date, required: true },
   fixed: { type: Boolean },
   location: { type: String, set: setLngLat, default: '-0.117 51.5555' },
@@ -105,7 +105,7 @@ const eventSchema = new mongoose.Schema({
   maxSize: { type: Number },
   minSize: { type: Number },
   idealGroupSize: { type: Number },
-  anythingElse: { type: String },
+  privateInfo: { type: String },
   partyImage: { type: String, default: 'http://www.thegatenewcastle.co.uk/images/layout/headers/mobile/party-planner.jpg' },
   tags: { type: Array },
   skillLevel: { type: String },
