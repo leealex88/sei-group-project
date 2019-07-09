@@ -105,7 +105,7 @@ const eventSchema = new mongoose.Schema({
   maxSize: { type: Number },
   minSize: { type: Number },
   idealGroupSize: { type: Number },
-  anythingElse: { type: String },
+  anythingElse: { type: String, default: 'I will PM you with my exact address and phone number :) ' },
   partyImage: { type: String, default: 'http://www.thegatenewcastle.co.uk/images/layout/headers/mobile/party-planner.jpg' },
   tags: { type: Array },
   skillLevel: { type: String },

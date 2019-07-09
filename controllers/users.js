@@ -151,7 +151,6 @@ function attendingUsers(req, res) {
   console.log('attending users', req.params.id)
   User
     .find({ events: req.params.id })
-    .populate('user')
     .then(users => {
       if (!users) return res.status(404).json({ message: 'Not found' })
       res.status(200).json(users)
