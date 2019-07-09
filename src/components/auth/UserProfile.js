@@ -78,7 +78,7 @@ class UserProfile extends React.Component {
 
 
 
-        <h3> You have {this.state.user.privateMessages.length} messages </h3>
+
 
         {this.state.user.privateMessages.forEach(message => (
 
@@ -97,11 +97,11 @@ class UserProfile extends React.Component {
 
           )} </div>
 
-        <p> You have {this.state.user.privateMessages.filter(message => message.request === false && message.text !== '').length} private messages </p>
+        <p> You have {this.state.user.privateMessages.filter(message => message.request === false && message.text).length} private messages </p>
         <button onClick={this.messagesFunction}>See Messages</button>
 
         <div>
-          {this.state.messages.map((message, i) =>
+          {this.state.messages.filter(message => message.request === false && message.text).map((message, i) =>
             <div key={i}>
               <Message message={message} />
             </div>

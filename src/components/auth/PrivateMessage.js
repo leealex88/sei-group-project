@@ -36,7 +36,14 @@ class PrivateMessage extends React.Component {
 
     axios.post(`/api/users/${this.props.match.params.userid}/privateMessages`, this.state.message, {
       headers: { 'Authorization': `${Auth.getToken()}` }
+
     })
+      .then(() => {
+        this.getData()
+
+        this.props.history.push('/myprofile')
+
+      })
       .then(() => this.getData())
       .catch(err => console.log(err))
 
