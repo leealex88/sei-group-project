@@ -35,7 +35,17 @@ const EventForm = ({  handleChange }) => (
 
           />
         </div>
-        <p className="control ten columns">Is the date fixed?</p>
+        <div className="control ten columns">
+          <label htmlFor="exampleEmailInput">Schedule</label>
+          <textarea
+            className="u-full-width"
+            type="input"
+            placeholder=""
+            name="password confirmation"
+            id="exampleEmailInput"
+            onChange={handleChange}
+          />
+        </div>
 
         <br />
         <div className="control ten columns">
@@ -57,28 +67,6 @@ const EventForm = ({  handleChange }) => (
             placeholder=""
             name="Describe the Event"
             id="eventDescription"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">Schedule</label>
-          <textarea
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label htmlFor="exampleEmailInput">End Time</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="password confirmation"
-            id="exampleEmailInput"
             onChange={handleChange}
           />
         </div>
