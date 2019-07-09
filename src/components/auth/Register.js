@@ -35,7 +35,7 @@ class Register extends React.Component {
         <div className="row" id="registerForm">
           <h2>Register</h2>
           <div className="control ten columns">
-            <label htmlFor="exampleEmailInput">Username</label>
+            <label htmlFor="username">Username</label>
             <input
               className="u-full-width"
               type="email"
@@ -56,7 +56,7 @@ class Register extends React.Component {
             />
           </div>
           <div className="control ten columns">
-            <label htmlFor="exampleEmailInput">Password</label>
+            <label htmlFor="password">Password</label>
             <input
               className="u-full-width"
               type="password"
@@ -67,12 +67,25 @@ class Register extends React.Component {
             />
           </div>
           <div className="control ten columns">
-            <label htmlFor="exampleEmailInput">Password Confirmation</label>
+            <label htmlFor="passwordConfirmation">Password Confirmation</label>
             <input
               className="u-full-width"
               type="password"
               placeholder=""
               name="password confirmation"
+              id="exampleEmailInput"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="control ten columns">
+            <label htmlFor="bio">Bio</label>
+            <textarea
+              minLength="20"
+              maxLength="600"
+              className="u-full-width"
+              type="password"
+              placeholder=""
+              name="password"
               id="exampleEmailInput"
               onChange={this.handleChange}
             />

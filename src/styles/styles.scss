@@ -1,9 +1,9 @@
 @import 'normalize.css';
 @import 'skeleton.css';
 @import '~mapbox-gl/dist/mapbox-gl.css';
-@import url('https://fonts.googleapis.comß/css?family=Roboto%7CRoboto+Mono&display=swap');
-$title: 'Roboto', sans-serif;
-$text: 'Roboto Mono', monospace;
+// @import url('https://fonts.googleapis.comß/css?family=Roboto%7CRoboto+Mono&display=swap');
+// $title: 'Roboto', sans-serif;
+// $text: 'Roboto Mono', monospace;
 
 * {
   box-sizing: border-box;
@@ -142,12 +142,12 @@ body {
   display: flex;
   flex-direction: column;
 }
-// .panel1 { background-image:url(https://images.pexels.com/photos/1587646/pexels-photo-1587646.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500); }
-//
-// .panel3 { background-image:url(https://images.pexels.com/photos/1855269/pexels-photo-1855269.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500); }
-//
-// .panel5 { background-image:url(https://images.pexels.com/photos/1267693/pexels-photo-1267693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500); }
-// /* Flex Children */
+.panel1 { background-image:url(https://images.pexels.com/photos/1587646/pexels-photo-1587646.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500); }
+
+.panel3 { background-image:url(https://images.pexels.com/photos/1855269/pexels-photo-1855269.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500); }
+
+.panel5 { background-image:url(https://images.pexels.com/photos/1267693/pexels-photo-1267693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500); }
+/* Flex Children */
 
 
 .panel > * {
@@ -177,4 +177,77 @@ body {
 .panel.open {
   font-size: 40px;
   flex: 5;
+}
+
+
+// userProfileMain
+
+#userProfileMain {
+  border-radius: 5px;
+  text-align: left;
+  padding: 70px;
+  border: solid 1px;
+  border-color: #DCDCDC;
+  box-shadow: 2px 5px 20px #483D8B;
+  width: 80%;
+  margin: 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.userPicture {
+   border-radius: 100%;
+   height: 100px;
+   transform:scale(1.005);
+   box-shadow: 2px 5px 20px #483D8B;
+}
+
+.userPicture:hover {
+   transform:scale(1.07);
+}
+
+div.userBio {
+  width: 870px;
+  margin: 30px 0px 30px 30px;
+  border: solid 1px #483D8B;
+  padding: 10px;
+  border-radius: 5px;
+   text-align: justify;
+}
+
+.messanger {
+  // border: solid 1px #483D8B;
+  border-radius: 5px;
+  text-align: center;
+    align-items: center;
+
+
+}
+
+p, {
+    margin-bottom: 1rem;
+}
+
+.commentSection {
+  width: 1000%;
+  // border-style: solid  2px;
+  border-color: #483D8B;
+  border-radius: 5px;
+  border: dotted 1.5px #483D8B;
+  padding: 10px;
+  height: 300px;
+}
+
+.userEventCards div {
+  width: 150px;
+  height: 200px;
+  padding: 30px 20px;
+  margin: 20px;
+  border-radius: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 1px;
+  box-shadow: 2px 5px 20px #483D8B;
+  margin-top: 80px;
 }

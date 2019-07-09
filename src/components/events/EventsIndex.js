@@ -31,7 +31,6 @@ class EventsIndex extends React.Component {
     return (
       <main>
 
-
         <section className="frontSection">
           <div className="containerFront">
 

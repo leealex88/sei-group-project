@@ -52,6 +52,7 @@ const EventForm = ({  handleChange }) => (
           <label>Describe the Event</label>
           <textarea
             className="u-full-width"
+            minLength="50"
             maxLength="460"
             type="text"
             placeholder=""
