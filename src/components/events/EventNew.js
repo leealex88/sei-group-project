@@ -24,8 +24,8 @@ class EventNew extends React.Component {
   }
 
   handleClick(e) {
-    e.preventDefault()
-    this.setState({ ...this.state.data, eventType: e.target.value  })
+    const data = { ...this.state.data, eventType: e.target.value  }
+    this.setState({ data })
   }
 
   handleDate(e) {

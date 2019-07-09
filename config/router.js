@@ -17,8 +17,6 @@ router.route('/events/:id')
 router.route('/me')
   .get(secureRoute, users.getCurrentUser)
 
-
-
 router.route('/users/:id/privateMessages')
   .post(secureRoute, users.privateMessageCreateRoute)
 
