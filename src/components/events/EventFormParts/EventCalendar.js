@@ -43,11 +43,7 @@ class EventCalendar extends React.Component {
         />
 
         <label>Start Time</label>
-        <div
-          style={{
-            
-          }}
-        >
+        <div>
           <TimeField
             value={this.state.startTime}
             onChange={this.onChangeStart}
