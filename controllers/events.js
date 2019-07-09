@@ -40,7 +40,7 @@ function eventCreate(req, res) {
           return user.save()
         }))
     .then(event => res.status(201).json(event))
-    .catch(err => res.json(err))
+    .catch(err => console.log(err))
 
 }
 
