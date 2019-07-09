@@ -1,5 +1,7 @@
 import React from 'react'
 import EventForm from './EventForm'
+import axios from 'axios'
+import Auth from '../../lib/Auth'
 
 class EventNew extends React.Component {
   constructor() {
@@ -8,23 +10,48 @@ class EventNew extends React.Component {
     this.state = { data: {} }
 
     this.handleChange = this.handleChange.bind(this)
-
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleDate = this.handleDate.bind(this)
+    this.handleTimeStart = this.handleTimeStart.bind(this)
+    this.handleTimeEnd = this.handleTimeEnd.bind(this)
   }
 
   handleChange(e) {
     const data = { ...this.state.data, [e.target.name]: e.target.value }
     this.setState({ data, error: '' })
-    console.log(data)
   }
-
 
   filterJobs() {
     const regexp = new RegExp(this.state.searchTerm, 'i')
     return this.state.data.filter(item => regexp.test(item.title))
   }
 
+  handleDate(e) {
+    const data = { ...this.state.data, date: e }
+    this.setState({ data })
+  }
+
+  handleTimeStart (e) {
+    const data = { ...this.state.data, startTime: e }
+    this.setState({ data })
+  }
+  handleTimeEnd (e) {
+    const data = { ...this.state.data, endTime: e }
+    this.setState({ data })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    console.log('submitting')
+    console.log('this.state is', this.state.data)
+    axios.post('/api/events/', this.state.data, {
+      headers: { 'Authorization': `${Auth.getToken()}` }
+    })
+      .then(() => this.props.history.push('/events'))
+      .catch(err => console.log(err))
+  }
   //write handleSubmit function
-  
+
   render() {
     return (
 
@@ -33,6 +60,9 @@ class EventNew extends React.Component {
 
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
+        handleDate={this.handleDate}
+        handleTimeStart={this.handleTimeStart}
+        handleTimeEnd={this.handleTimeEnd}
       />
 
 
