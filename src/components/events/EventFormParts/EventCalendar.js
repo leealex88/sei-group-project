@@ -1,6 +1,6 @@
 import React from 'react'
 import Calendar from 'react-calendar'
-import TimePicker from 'react-time-picker'
+import TimeField from 'react-simple-timefield'
 
 
 class EventCalendar extends React.Component {
@@ -10,7 +10,7 @@ class EventCalendar extends React.Component {
     this.state = {
       date: new Date(),
       startTime: '10:00',
-      endTime: '10:00'
+      endTime: '12:00'
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -23,16 +23,15 @@ class EventCalendar extends React.Component {
     console.log(date)
   }
 
-  onChangeStart (e, startTime) {
+  onChangeStart (startTime) {
     this.setState({ startTime })
   }
-  onChangeEnd (e, endTime) {
+  onChangeEnd (endTime) {
     this.setState({ endTime })
   }
 
 
   render() {
-
     return (
 
       <div className="control ten columns">
@@ -41,13 +40,13 @@ class EventCalendar extends React.Component {
           onChange = {this.handleChange}
         />
 
-        <label> Start Time</label>
-        <TimePicker
-          onChange={this.onChangeStart}
+        <label>Start Time</label>
+        <TimeField
           value={this.state.startTime}
+          onChange={this.onChangeStart}
         />
-        <label> Start Time</label>
-        <TimePicker
+        <label>End Time</label>
+        <TimeField
           onChange={this.onChangeEnd}
           value={this.state.endTime}
         />
