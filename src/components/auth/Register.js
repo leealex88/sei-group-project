@@ -19,7 +19,7 @@ class Register extends React.Component {
   }
 
   handleSubmit(e) {
-    console.log('this.state')
+    console.log(this.state)
     e.preventDefault()
 
     axios.post('/api/register', this.state.data)
@@ -31,7 +31,7 @@ class Register extends React.Component {
   render() {
 
     return (
-      <form>
+      <form onSubmit={ this.handleSubmit }>
         <div className="row" id="registerForm">
           <h2>Register</h2>
           <div className="control ten columns">
@@ -72,7 +72,7 @@ class Register extends React.Component {
               className="u-full-width"
               type="password"
               placeholder=""
-              name="password confirmation"
+              name="passwordConfirmation"
               id="exampleEmailInput"
               onChange={this.handleChange}
             />
@@ -85,7 +85,7 @@ class Register extends React.Component {
               className="u-full-width"
               type="text"
               placeholder=""
-              name="text"
+              name="bio"
               id="exampleEmailInput"
               onChange={this.handleChange}
             />

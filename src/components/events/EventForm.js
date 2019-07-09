@@ -6,14 +6,16 @@ import EventType from './EventFormParts/EventType'
 import { borough } from './EventFormParts/EventBorough'
 
 
-const EventForm = ({  handleChange, handleSubmit, handleDate, handleTimeStart, handleTimeEnd }) => (
+const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handleTimeStart, handleTimeEnd, handleBorough }) => (
   <form className="eventForm" onSubmit={handleSubmit}>
     <div className="container" id="newEvent">
       <div className="row">
         <h2>Things</h2>
         <div className="control ten columns">
           <label>Type of the Event (required)</label>
-          <EventType />
+          <EventType
+            handleClick={handleClick}
+          />
         </div>
         <div className="control ten columns">
           <label htmlFor="exampleEmailInput">Name of the Event (required)</label>
@@ -50,6 +52,7 @@ const EventForm = ({  handleChange, handleSubmit, handleDate, handleTimeStart, h
           <Select
             defaultValue = {borough[0]}
             options= {borough}
+            onChange={handleBorough}
           />
         </div>
         <div className="control ten columns">
@@ -79,91 +82,93 @@ const EventForm = ({  handleChange, handleSubmit, handleDate, handleTimeStart, h
           <hr />
         </div>
         {/* condense all ticket questions into component. tickets to be Boolean, ticketLink to be string */}
-        <h4>Tickets, links and equipment</h4>
-        <label className="control ten columns">Do you need a ticket?</label>
-        <div className="ten columns">
-          <div className="control">
-            <label className="radio">
-              <input
-                type="radio"
-                checked=""
-                name="yes"
-                value="yes"
-                onChange={handleChange}
-              />
-                Yes
-            </label>
-            <label className="radio">
-              <input
-                type="radio"
-                checked="yes"
-                name="no"
-                value=""
-                onChange={handleChange}
-              />
-                  No
-            </label>
+        <div className="control ten columns">
+          <h4>Tickets, links and equipment</h4>
+          <label className="control ten columns">Do you need a ticket?</label>
+          <div className="ten columns">
+            <div className="control">
+              <label className="radio">
+                <input
+                  type="radio"
+                  checked=""
+                  name="yes"
+                  value="yes"
+                  onChange={handleChange}
+                />
+                  Yes
+              </label>
+              <label className="radio">
+                <input
+                  type="radio"
+                  checked="yes"
+                  name="no"
+                  value=""
+                  onChange={handleChange}
+                />
+                    No
+              </label>
+            </div>
           </div>
-        </div>
-        <div className="control ten columns">
-          <label>Cost</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="cost"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label>Link to the tickets</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="ticketLink"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label>Link to the event</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="eventLink"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label>Preparation</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="preparation"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label>Is any equipment provided?</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="provided"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="control ten columns">
-          <label>What you need to bring with you.</label>
-          <input
-            className="u-full-width"
-            type="input"
-            placeholder=""
-            name="whatToBring"
-            onChange={handleChange}
-          />
+          <div className="control ten columns">
+            <label>Cost</label>
+            <input
+              className="u-full-width"
+              type="input"
+              placeholder=""
+              name="cost"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="control ten columns">
+            <label>Link to the tickets</label>
+            <input
+              className="u-full-width"
+              type="input"
+              placeholder=""
+              name="ticketLink"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="control ten columns">
+            <label>Link to the event</label>
+            <input
+              className="u-full-width"
+              type="input"
+              placeholder=""
+              name="eventLink"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="control ten columns">
+            <label>Preparation</label>
+            <input
+              className="u-full-width"
+              type="input"
+              placeholder=""
+              name="preparation"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="control ten columns">
+            <label>Is any equipment provided?</label>
+            <input
+              className="u-full-width"
+              type="input"
+              placeholder=""
+              name="provided"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="control ten columns">
+            <label>What you need to bring with you</label>
+            <input
+              className="u-full-width"
+              type="input"
+              placeholder=""
+              name="whatToBring"
+              onChange={handleChange}
+            />
+          </div>
         </div>
         <div className="control ten columns">
           <div className="control eight columns">

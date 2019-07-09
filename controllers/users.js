@@ -151,7 +151,6 @@ function attendingUsers(req, res) {
   console.log('attending users', req.params.id)
   User
     .find({ events: req.params.id })
-    .populate('user')
     .then(users => {
       if (!users) return res.status(404).json({ message: 'Not found' })
       res.status(200).json(users)
@@ -162,6 +161,7 @@ function attendingUsers(req, res) {
 
 
 function privateMessageCreateRoute(req, res) {
+  console.log('pming')
   req.body.user = req.currentUser
   User
     .findById(req.params.id)
@@ -170,7 +170,6 @@ function privateMessageCreateRoute(req, res) {
       if (!user) return res.status(404).json({ message: 'Not found' })
       console.log(req.body.user)
       user.privateMessages.push(req.body)
-
       return user.save()
     })
     .then(user => res.status(201).json(user.privateMessages))

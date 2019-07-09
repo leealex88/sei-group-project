@@ -4,6 +4,7 @@ import Map from './Map'
 import EventCreator from './EventCreator'
 import EventComments from './EventComments'
 import Attendees from './Attendees'
+import AttendeeInfo from './AttendeeInfo'
 import Auth from '../../lib/Auth'
 import Navbar from '../common/Navbar'
 
@@ -60,9 +61,6 @@ class eventShow extends React.Component {
 
   render() {
     if (!this.state.event) return null
-    console.log(this.state)
-    console.log(this.isAttending())
-
     return (
       <section >
         <Navbar />
@@ -94,15 +92,16 @@ class eventShow extends React.Component {
             </div>
 
             <hr />
-            {this.isAttending() &&
-            <EventComments event={this.state.event} getEventData={this.getData}/>
-            }
+
+            <EventComments event={this.state.event} getEventData={this.getData} attendees={this.state.attendees} me={this.state.me}/>
+
 
           </Fragment>
         </div>
-
+        <h3>These people are  members of this event group: </h3>
         <Attendees attendees={this.state.attendees} />
 
+        {this.isAttending() && this.state.event && <AttendeeInfo event={this.state.event}/>}
 
         <Map locations = {this.state.event}/>
 

@@ -49,15 +49,20 @@ class EventComments extends React.Component {
       .catch(err => console.log(err))
   }
 
+  isAttending(){
+    if (this.props.attendees)
+      return this.props.attendees.map(attendee => attendee._id).includes(this.props.me)
+  }
+
   render() {
     if (!this.props.event) return null
-    const { event } = this.props
+    // const { event } = this.props
     console.log(this.state)
     return (
 
       <section >
         <div >
-          {event.comments.map(comment => (
+          {this.props.event.comments.map(comment => (
             <div key={comment._id} className="card">
 
               <div className="card-content">
@@ -73,7 +78,8 @@ class EventComments extends React.Component {
           ))}
 
           <hr />
-          {Auth.isAuthenticated() &&
+
+          {Auth.isAuthenticated() && this.isAttending() &&
 
             <form onSubmit={this.handleSubmit}>
               <div className="field">

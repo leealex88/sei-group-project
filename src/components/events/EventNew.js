@@ -11,10 +11,12 @@ class EventNew extends React.Component {
     this.state = { data: {} }
 
     this.handleChange = this.handleChange.bind(this)
+    this.handleClick = this.handleClick.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDate = this.handleDate.bind(this)
     this.handleTimeStart = this.handleTimeStart.bind(this)
     this.handleTimeEnd = this.handleTimeEnd.bind(this)
+    this.handleBorough = this.handleBorough.bind(this)
   }
 
   handleChange(e) {
@@ -22,9 +24,11 @@ class EventNew extends React.Component {
     this.setState({ data, error: '' })
   }
 
-  filterJobs() {
-    const regexp = new RegExp(this.state.searchTerm, 'i')
-    return this.state.data.filter(item => regexp.test(item.title))
+  handleClick(e) {
+
+    const data = { ...this.state.data, eventType: e.target.value  }
+    this.setState({ data  })
+
   }
 
   handleDate(e) {
@@ -41,11 +45,16 @@ class EventNew extends React.Component {
     this.setState({ data })
   }
 
+  handleBorough(e) {
+    const data = { ...this.state.data, location: e.value }
+    this.setState({ data })
+  }
+
   handleSubmit(e) {
     e.preventDefault()
-    console.log('submitting')
-    console.log('this.state is', this.state.data)
-    axios.post('/api/events/', this.state.data, {
+    const data = this.state.data
+    console.log('data is', data)
+    axios.post('/api/events/', data, {
       headers: { 'Authorization': `${Auth.getToken()}` }
     })
       .then(() => this.props.history.push('/events'))
