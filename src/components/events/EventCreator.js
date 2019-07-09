@@ -30,17 +30,17 @@ class EventCreator extends React.Component {
     axios.post(`/api/users/${this.state.user._id}/privateMessages`, { request: true, requestEvent: this.props.event }, {
       headers: { 'Authorization': `${Auth.getToken()}` }
     })
-
-
       .catch(err => console.log(err))
-    console.log(this.state.user.privateMessages)
+    document.querySelector('.inviteButton').style.display = 'none'
+    document.querySelector('.invited').style.display = 'block'
+
   }
 
 
 
 
   render() {
-    console.log('event', this.props.event)
+    // console.log('event', this.props.event)
     if (!this.state.user) return null
     const { user } = this.state
     return (
@@ -50,8 +50,8 @@ class EventCreator extends React.Component {
         <Link to={`/users/${user._id}`}>
           {user.username}</Link>
         <br/>
-        <button onClick={this.handleClick}> Interested? Click here to request an invite! </button>
-
+        <button className="inviteButton" onClick={this.handleClick}> Interested? Click here to request an invite! </button>
+        <button className="invited"> Your request has been sent, you will be notified when the host accepts! </button>
 
 
       </div>

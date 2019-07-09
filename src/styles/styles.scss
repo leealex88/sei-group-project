@@ -180,6 +180,10 @@ body {
 }
 
 
+.invited {
+  display: none;
+}
+
 // userProfileMain
 
 #userProfileMain {
@@ -250,4 +254,5 @@ p, {
   border: solid 1px;
   box-shadow: 2px 5px 20px #483D8B;
   margin-top: 80px;
+
 }

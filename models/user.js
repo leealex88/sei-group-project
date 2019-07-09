@@ -27,7 +27,9 @@ const userSchema = new mongoose.Schema({
 'https://i.pinimg.com/736x/97/09/dc/9709dc4b91379a7ccb4e0f609e7a0384--alpacas-funny-animals.jpg' },
   comments: [ userCommentSchema ],
   privateMessages: [ privateMessageSchema ],
-  events: { type: Array }
+  events: { type: Array },
+  interests: { type: Array },
+  tags: { type: Array }
 
 })
 
