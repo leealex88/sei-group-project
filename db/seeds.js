@@ -148,14 +148,6 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           avatar: ''
         },
         {
-          username: 'mia',
-          email: 'mia@email',
-          bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
-          password: 'password',
-          passwordConfirmation: 'password',
-          avatar: ''
-        },
-        {
           username: 'amy',
           email: 'amy@email',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
@@ -167,14 +159,6 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           username: 'david',
           email: 'david@email',
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
-          password: 'password',
-          passwordConfirmation: 'password',
-          avatar: ''
-        },
-        {
-          username: 'gruffi',
-          email: 'gruffi@email',
-          bio: 'Gruffi is an old-fashioned bear who prefers to do things "the Gummi way." An extremely skilled craftsman and mechanic, he fixes the old Gummi technology and trap doors, as well as building traps around the Glen to deal with humans and ogres. Gruffi is a perfectionist, which can be his undoing at times. However and at other times, he is respected as the voice of stability and practical solutions when the other Gummis fall into despair.',
           password: 'password',
           passwordConfirmation: 'password',
           avatar: ''
