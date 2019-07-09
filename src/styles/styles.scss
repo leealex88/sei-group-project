@@ -237,8 +237,8 @@ p, {
   width: 1000%;
   // border-style: solid  2px;
   border-color: #483D8B;
-  border-radius: 5px;
-  border: dotted 1.5px #483D8B;
+  // border-radius: 5px;
+  border-top: solid 1px #483D8B;
   padding: 10px;
   height: 300px;
 }
@@ -254,5 +254,11 @@ p, {
   border: solid 1px;
   box-shadow: 2px 5px 20px #483D8B;
   margin-top: 80px;
+
+}
+
+textarea.userCommentSection {
+
+width: 800px;
 
 }

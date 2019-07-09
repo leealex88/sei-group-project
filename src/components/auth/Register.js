@@ -38,7 +38,7 @@ class Register extends React.Component {
             <label htmlFor="username">Username</label>
             <input
               className="u-full-width"
-              type="email"
+              type="username"
               placeholder=""
               name="username"
               id="exampleEmailInput"
@@ -83,9 +83,9 @@ class Register extends React.Component {
               minLength="20"
               maxLength="600"
               className="u-full-width"
-              type="password"
+              type="text"
               placeholder=""
-              name="password"
+              name="text"
               id="exampleEmailInput"
               onChange={this.handleChange}
             />

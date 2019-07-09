@@ -92,11 +92,11 @@ class UserShow extends React.Component {
             </div>
           ))}
           {Auth.isAuthenticated() &&
-          <form onSubmit={this.handleSubmit}>
+          <form  onSubmit={this.handleSubmit}>
             <div className="field">
               <div className="control">
                 <textarea
-                  className="textarea"
+                  className="userCommentSection"
                   placeholder="Comment..."
                   onChange={this.handleChange}
                   value={this.state.comment.text || ''}
@@ -104,7 +104,7 @@ class UserShow extends React.Component {
                 </textarea>
               </div>
             </div>
-            <button className="button" type="submit">Comment</button>
+            <button type="submit">Comment</button>
           </form>}
 
 
