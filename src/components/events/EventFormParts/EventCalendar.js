@@ -8,56 +8,38 @@ class EventCalendar extends React.Component {
     super()
 
     this.state = {
-      date: new Date(),
       startTime: '10:00',
       endTime: '12:00'
     }
-
-    this.handleChange = this.handleChange.bind(this)
-    this.onChangeStart = this.onChangeStart.bind(this)
-    this.onChangeEnd = this.onChangeEnd.bind(this)
-  }
-
-  handleChange(date) {
-    this.setState({ date })
-    console.log(date)
-  }
-
-  onChangeStart (startTime) {
-    this.setState({ startTime })
-  }
-  onChangeEnd (endTime) {
-    this.setState({ endTime })
+    
   }
 
 
   render() {
-    console.log(this.state.startTime)
-    console.log(this.state.endTime)
+    // const {startTime} = this.props
+    // or this.props.startTime
+    console.log()
     return (
 
       <div className="control ten columns">
 
         <Calendar
-          onChange = {this.handleChange}
+          onChange={this.props.handleDate}
         />
 
         <label>Start Time</label>
-        <div
-          style={{
-            
-          }}
-        >
+        <div>
           <TimeField
             value={this.state.startTime}
-            onChange={this.onChangeStart}
+            name="startTime"
+            onChange={this.props.handleTimeStart}
             style={{
               width: 60
             }}
           />
           <label>End Time</label>
           <TimeField
-            onChange={this.onChangeEnd}
+            onChange={this.props.handleTimeEnd}
             value={this.state.endTime}
             style={{
               width: 60

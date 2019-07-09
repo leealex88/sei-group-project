@@ -27,7 +27,7 @@ function showRoute(req, res) {
 //create an event
 function eventCreate(req, res) {
   req.body.user = req.currentUser
-  console.log(req, 'showing')
+  console.log('showing', req.body)
   Event
     .create(req.body)
     .then(event =>

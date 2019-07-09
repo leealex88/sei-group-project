@@ -30,7 +30,7 @@ class TheirEvents extends React.Component {
     return (
 
 
-      <div>
+      <div className="userEventCards">
         {this.state.events.map(event => (
 
           <section  key={event._id} >
