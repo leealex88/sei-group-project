@@ -112,21 +112,21 @@ class UserShow extends React.Component {
           </p>
 
 
-<<<<<<< HEAD
-        {user.comments.map(comment => (
-          <div key={comment._id} className="card">
-            <div className="card-content">
-              {comment.text} - {new Date(comment.createdAt).toLocaleString()}
+
+          {user.comments.map(comment => (
+            <div key={comment._id} className="card">
+              <div className="card-content">
+                {comment.text} - {new Date(comment.createdAt).toLocaleString()}
+              </div>
+              {this.isOwner(comment) && <button
+
+                onClick={() => this.handleCommentDelete(comment)}
+              >Delete
+              </button>}
             </div>
-            {this.isOwner(comment) && <button
+          ))}
 
-              onClick={() => this.handleCommentDelete(comment)}
-            >Delete
-            </button>}
-          </div>
-        ))}
-
-        {Auth.isAuthenticated() &&
+          {Auth.isAuthenticated() &&
         <form onSubmit={this.handleSubmit}>
           <div className="field">
             <div className="control">
@@ -142,10 +142,10 @@ class UserShow extends React.Component {
           <button className="button" type="submit">Comment</button>
         </form>}
 
-        <p> {user.username} is attending these events: </p>
-=======
+          <p> {user.username} is attending these events: </p>
+
           <form className="userEventCards">
->>>>>>> development
+
 
             <TheirEvents user={this.props.match.params.userid} />
 
