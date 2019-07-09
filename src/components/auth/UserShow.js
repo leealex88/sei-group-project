@@ -67,15 +67,52 @@ class UserShow extends React.Component {
     if (!this.state.user) return null
     const { user } = this.state
     return (
-      <div >
+      <div id="userProfileMain">
+        <img className="userPicture" src={user.avatar}/>
+        <div className="userBio">
+          <h5 className="userTitle">{user.username}</h5>
+          <p>{ user.bio }</p>
+        </div>
 
-        <h1 className="userTitle">{user.username}</h1>
+        <div className="messanger">
+          <p>Have a Chat with Me!  </p>
+          <Link to={`/users/${user._id}/message`}> <button> 💬 Private Message </button> </Link>
+        </div>
 
-        <p> {user.bio} </p>
-        <img src={user.avatar}/>
+        <div className="commentSection">
+          {user.comments.map(comment => (
+            <div key={comment._id} className="card">
+              <div className="card-content">
+                {comment.text} - {new Date(comment.createdAt).toLocaleString()}
+              </div>
+              {this.isOwner(comment) && <button
+                onClick={() => this.handleCommentDelete(comment)}
+              >Delete
+              </button>}
+            </div>
+          ))}
+          {Auth.isAuthenticated() &&
+          <form onSubmit={this.handleSubmit}>
+            <div className="field">
+              <div className="control">
+                <textarea
+                  className="textarea"
+                  placeholder="Comment..."
+                  onChange={this.handleChange}
+                  value={this.state.comment.text || ''}
+                >
+                </textarea>
+              </div>
+            </div>
+            <button className="button" type="submit">Comment</button>
+          </form>}
 
-        <Link to={`/users/${user._id}/message`}> <button> Private Message </button> </Link>
 
+          <p> {user.username} is attending these events: {user.events.map(event => <Link to={`/events/${event}/`} key={event}/>) }
+          </p>
+
+
+<<<<<<< HEAD
         {user.comments.map(comment => (
           <div key={comment._id} className="card">
             <div className="card-content">
@@ -106,9 +143,14 @@ class UserShow extends React.Component {
         </form>}
 
         <p> {user.username} is attending these events: </p>
+=======
+          <form className="userEventCards">
+>>>>>>> development
 
-        <TheirEvents user={this.props.match.params.userid} />
+            <TheirEvents user={this.props.match.params.userid} />
 
+          </form>
+        </div>
       </div>
     )
   }
