@@ -117,21 +117,35 @@ function getUserName(req, res){
 }
 
 function acceptRequest(req, res){
-  console.log('accepting', req.params.id, 'body:', req.body)
+  req.body.user = req.currentUser
   User
     .findById(req.params.id)
     .populate('user')
     .then(user => {
       if (!user) return res.status(404).json({ message: 'Not found' })
-
       user.events.push(req.body.events)
-
       return user.save()
     })
     .then(user => res.status(201).json(user.events))
     .catch(err => res.json(err))
 
 }
+
+function deleteAcceptedRequest(req, res) {
+  req.body.user = req.currentUser
+  User
+    .findById(req.currentUser._id)
+    .then(user => {
+      if (!user) return res.status(401).json({ message: 'no users' })
+      const request = user.privateMessages.id(req.params.commentId)
+      request.request = false
+      user.save()
+    })
+    .then(user => res.status(200).json(user))
+    .catch(err => console.log(err))
+
+}
+
 
 function attendingUsers(req, res) {
   console.log('attending users', req.params.id)
@@ -209,6 +223,7 @@ module.exports = {
   getUserName: getUserName,
   acceptRequest: acceptRequest,
   attendingUsers: attendingUsers,
-  getCurrentUser: getCurrentUser
+  getCurrentUser: getCurrentUser,
+  deleteAcceptedRequest: deleteAcceptedRequest
 
 }

@@ -30,6 +30,8 @@ class UserShow extends React.Component {
       .catch(err => console.log(err))
   }
 
+
+
   handleSubmit(e) {
     console.log('submitting')
     e.preventDefault()
@@ -61,7 +63,7 @@ class UserShow extends React.Component {
 
 
   render() {
-    console.log(this.props.match.params.userid)
+    console.log(this.state.user)
     if (!this.state.user) return null
     const { user } = this.state
     return (
@@ -102,7 +104,8 @@ class UserShow extends React.Component {
           </div>
           <button className="button" type="submit">Comment</button>
         </form>}
-        <p> {user.username} is attending these events: {user.events.map(event => <Link to={`/events/${event}/`} key={event}/>) }</p>
+
+        <p> {user.username} is attending these events: </p>
 
         <TheirEvents user={this.props.match.params.userid} />
 

@@ -50,10 +50,6 @@ class PrivateMessage extends React.Component {
       <div >
 
         <h1 className="userTitle">{user.username}</h1>
-
-
-
-
         <form onSubmit={this.handleSubmit}>
           <div className="field">
             <div className="control">

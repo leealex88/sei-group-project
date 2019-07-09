@@ -28,6 +28,9 @@ router.route('/users/:id/')
 router.route('/users/:id/accept')
   .post(secureRoute, users.acceptRequest)
 
+router.route('/users/:id/privateMessages/:commentId')
+  .put(secureRoute, users.deleteAcceptedRequest)
+
 router.route('/events/:id/comments')
   .post(secureRoute, events.commentCreate)
 

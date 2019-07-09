@@ -3,7 +3,7 @@ import axios from 'axios'
 import Map from './Map'
 import EventCreator from './EventCreator'
 import EventComments from './EventComments'
-import { Link } from 'react-router-dom'
+import Attendees from './Attendees'
 import Auth from '../../lib/Auth'
 
 
@@ -26,6 +26,8 @@ class eventShow extends React.Component {
   }
 
 
+
+
   getMe() {
     console.log('attending')
     axios.get('/api/me', {
@@ -41,7 +43,8 @@ class eventShow extends React.Component {
   }
 
   isAttending(){
-    return this.state.attendees.map(attendee => attendee._id).includes(this.state.me)
+    if (this.state.attendees)
+      return this.state.attendees.map(attendee => attendee._id).includes(this.state.me)
   }
 
   getData() {
@@ -72,7 +75,7 @@ class eventShow extends React.Component {
             <h2 >Event: {this.state.event.eventName}</h2>
 
             <hr />
-            <EventCreator event={this.props.match.params.id}/>
+            {!this.isAttending() && <EventCreator event={this.props.match.params.id} eventDetails={this.state.event}/>}
             <div >
               <div >
 
@@ -101,13 +104,7 @@ class eventShow extends React.Component {
           </Fragment>
         </div>
 
-        {this.state.attendees && this.state.attendees.map(attendee =>
-          <div key={attendee._id}>
-
-            <Link to={`/users/${attendee._id}`} key={attendee._id}> <p> {attendee.username} </p></Link>
-          </div>
-        )
-        }
+        <Attendees attendees={this.state.attendees} />
 
 
         <Map locations = {this.state.event}/>

@@ -1,7 +1,7 @@
 @import 'normalize.css';
 @import 'skeleton.css';
 @import '~mapbox-gl/dist/mapbox-gl.css';
-@import url('https://fonts.googleapis.comß/css?family=Roboto%7CRoboto+Mono&display=swap');
+// @import url('https://fonts.googleapis.comß/css?family=Roboto%7CRoboto+Mono&display=swap');
 $title: 'Roboto', sans-serif;
 $text: 'Roboto Mono', monospace;
 
@@ -177,4 +177,8 @@ body {
 .panel.open {
   font-size: 40px;
   flex: 5;
+}
+
+.invited {
+  display: none;
 }
