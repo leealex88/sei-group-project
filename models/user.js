@@ -10,7 +10,7 @@ const userCommentSchema = new mongoose.Schema({
 
 const privateMessageSchema = new mongoose.Schema({
   text: { type: String },
-  readMessages: { type: String },
+  read: { type: Boolean, default: false },
   request: { type: Boolean, default: false },
   requestEvent: { type: mongoose.Schema.ObjectId },
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
   comments: [ userCommentSchema ],
   privateMessages: [ privateMessageSchema ],
   events: { type: Array },
-  interests: { type: Array },
+  interests: { type: Array, default: ['baking', 'running', 'yoga', 'reading', 'cinema', 'politics'] },
   tags: { type: Array }
 
 })

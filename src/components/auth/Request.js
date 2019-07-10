@@ -9,6 +9,7 @@ class Request extends React.Component {
 
     this.state = { messageSender: '', event: null }
     this.acceptFunction = this.acceptFunction.bind(this)
+    this.rejectFunction = this.rejectFunction.bind(this)
 
 
   }
@@ -40,14 +41,43 @@ class Request extends React.Component {
     })
       .then(() => this.getData())
       .catch(() => this.setState({ error: 'Invalid Crendentials' }))
+
     this.removeRequestFunction()
+
     document.querySelector('.request').style.display = 'none'
 
+    this.sendAccept()
+
+
+  }
+
+  sendReject() {
+    axios.post(`/api/users/${this.props.request.user}/privateMessages`, { text: `Your request to ${this.state.event.eventName} was not accepted, the event may have been full so please don't take it to heart. Have a good day!` }, {
+      headers: { 'Authorization': `${Auth.getToken()}` }
+    })
+      .then(() => this.getData())
+      .catch(err => console.log(err))
+
+  }
+
+  rejectFunction() {
+
+    this.removeRequestFunction()
+
+    document.querySelector('.request').style.display = 'none'
+
+    this.sendReject()
+
+
+  }
+
+  sendAccept() {
     axios.post(`/api/users/${this.props.request.user}/privateMessages`, { text: `Your request to ${this.state.event.eventName} was accepted, you can now join in the chat and find out all the  details!` }, {
       headers: { 'Authorization': `${Auth.getToken()}` }
     })
       .then(() => this.getData())
       .catch(err => console.log(err))
+
   }
 
   removeRequestFunction() {
@@ -56,37 +86,29 @@ class Request extends React.Component {
     })
 
       .catch(err => console.log(err))
+    this.getData()
   }
-
-
-
 
 
   componentDidMount() {
     if (!this.props.request.user) return null
     this.requestFunction()
-
-
-
   }
 
   render(){
     if (!this.props.request.user) return null
-
+    if (!this.state.event) return null
+    console.log(this.state.event.eventName)
     return (
       <section className="request">
         <div>
+          <h6 className="request"> You have a request from <Link to={`/users/${this.props.request.user}`}>
+            {this.state.messageSender} </Link> to go to
+          <Link to={`/events/${this.props.request.requestEvent}`}> {this.state.event.eventName} </Link>
+          </h6>
 
-
-          <h6 className="request"> You have a request from {this.state.messageSender} to go to </h6>
-          <Link to={`/events/${this.props.request.requestEvent}`}> this event </Link>
-        </div>
-        <div>
-
-          <Link to={`/users/${this.props.request.user}`}>
-            {this.state.messageSender}<p>s profile</p>
-          </Link>
-          <div onClick={this.acceptFunction}> Accept Request </div>
+          <button onClick={this.acceptFunction}> Accept Request </button>
+          <button onClick={this.rejectFunction}> Reject Request </button>
         </div>
       </section>
     )

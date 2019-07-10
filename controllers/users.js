@@ -13,6 +13,24 @@ function register(req, res) {
     .catch(err => console.log(err))
 }
 
+function updateProfile(req, res) {
+  console.log(req.body)
+  User
+    .findById(req.params.id)
+    .then(user => {
+      if (!user) throw new Error('Not Found')
+
+      user.interests.push(req.body.interests)
+      // Object.assign(user, req.body)
+      return user.save()
+    })
+    .then(user => res.status(202).json(user))
+    .catch(err => console.log(err))
+}
+
+
+
+
 
 function login(req, res) {
   User
@@ -139,6 +157,7 @@ function deleteAcceptedRequest(req, res) {
       if (!user) return res.status(401).json({ message: 'no users' })
       const request = user.privateMessages.id(req.params.commentId)
       request.request = false
+      request.read = true
       user.save()
     })
     .then(user => res.status(200).json(user))
@@ -174,6 +193,20 @@ function privateMessageCreateRoute(req, res) {
     })
     .then(user => res.status(201).json(user.privateMessages))
     .catch(err => res.json(err))
+}
+
+function readPrivateMessage(req, res) {
+  req.body.user = req.currentUser
+  User
+    .findById(req.currentUser._id)
+    .then(user => {
+      if (!user) return res.status(401).json({ message: 'no users' })
+      const request = user.privateMessages.id(req.params.commentId)
+      request.read = true
+      user.save()
+    })
+    .then(user => res.status(200).json(user))
+    .catch(err => console.log(err))
 }
 
 
@@ -223,6 +256,8 @@ module.exports = {
   acceptRequest: acceptRequest,
   attendingUsers: attendingUsers,
   getCurrentUser: getCurrentUser,
-  deleteAcceptedRequest: deleteAcceptedRequest
+  deleteAcceptedRequest: deleteAcceptedRequest,
+  readPrivateMessage: readPrivateMessage,
+  updateProfile: updateProfile
 
 }
