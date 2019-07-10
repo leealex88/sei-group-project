@@ -86,6 +86,11 @@ function location(location){
   return location
 }
 
+const attendeeSchema = new mongoose.Schema({
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  accepted: { type: Boolean, default: false }
+})
+
 
 const eventSchema = new mongoose.Schema({
   eventType: { type: String, required: true, default: 'event' },
@@ -115,6 +120,7 @@ const eventSchema = new mongoose.Schema({
   skillLevel: { type: String },
   comments: [ eventCommentSchema ],
   likes: [ likeSchema ],
+  attendees: [ attendeeSchema ],
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 }, {
   timestamps: true

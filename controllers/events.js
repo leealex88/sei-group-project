@@ -27,8 +27,7 @@ function eventCreate(req, res) {
   Event
     .create(req.body)
     .then(event => res.status(201).json(event))
-    .catch(err => console.log(err))
-
+    .catch(err => res.json(err))
 }
 
 //delete event
@@ -69,12 +68,6 @@ function commentDeleteRoute(req, res) {
     .then(event => res.status(200).json(event))
     .catch(err => res.json(err))
 }
-
-
-
-
-
-
 
 module.exports = {
   index: indexRoute,

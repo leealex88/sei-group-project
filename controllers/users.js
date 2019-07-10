@@ -43,10 +43,6 @@ function updateAvatar(req, res) {
     .catch(err => console.log(err))
 }
 
-
-
-
-
 function login(req, res) {
   User
     .findOne({ email: req.body.email })
@@ -174,7 +170,6 @@ function deleteAcceptedRequest(req, res) {
 
 }
 
-
 function attendingUsers(req, res) {
   console.log('attending users', req.params.id)
   User
@@ -185,8 +180,6 @@ function attendingUsers(req, res) {
     })
     .catch(err => console.log(err))
 }
-
-
 
 function privateMessageCreateRoute(req, res) {
   console.log('pming')
@@ -234,18 +227,12 @@ function commentDeleteRoute(req, res) {
     .catch(err => res.json(err))
 }
 
-function getEventCreator(req, res, next) {
+function getEventCreator(req, res) {
   Event
     .findById(req.params.id)
     .populate('user')
-    .then(event =>
-      User
-        .findById(event.user)
-        .then(user => res.status(201).json(user))
-        .catch(next)
-
-    )
-
+    .then(event => res.json(event.users))
+    .catch(err => res.json(err))
 }
 
 
