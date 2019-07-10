@@ -64,7 +64,7 @@ function showUser(req, res, next) {
 //users own profile
 function showCurrentUser(req, res, next) {
   req.body.user = req.currentUser
-  console.log(req.body.user._id)
+  console.log(req.body.user)
   User
     .findById(req.body.user._id)
     .populate('user')

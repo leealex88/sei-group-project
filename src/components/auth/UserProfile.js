@@ -19,8 +19,6 @@ class UserProfile extends React.Component {
     this.handleInterest = this.handleInterest.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
 
-
-
   }
 
 
@@ -34,27 +32,22 @@ class UserProfile extends React.Component {
     requests.concat(requests.map(request => request.user))
     console.log(requests)
     this.setState({ requests: requests })
-
-
   }
 
   messagesFunction() {
     const messages = this.state.user.privateMessages.filter(message => message.request === false && message.text !== '')
     messages.concat(messages.map(message => message.user))
     this.setState({ messages: messages })
-
-
   }
 
   componentDidMount() {
-
+    console.log('user profile component did mount')
+    console.log('token in profile', Auth.getToken())
     axios.get('/api/myprofile', {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
       .then(res => this.setState({ user: res.data }))
       .catch(() => this.setState({ error: 'Invalid Crendentials' }))
-
-
   }
 
   getEvent(){
@@ -63,20 +56,15 @@ class UserProfile extends React.Component {
     })
       .then(res => this.setState({ user: res.data }))
       .catch(() => this.setState({ error: 'Invalid Crendentials' }))
-
-
   }
 
   handleInterest(e) {
-
     this.setState({ data: { interests: e.value }  })
-
-    console.log(this.state.data)
+      .catch(err => console.log(err))
   }
 
   handleSubmit(e) {
     e.preventDefault()
-    console.log(this.state.data)
     const data = this.state.data
     console.log('data is', data.interests, `/api/users/${this.state.user._id}`)
     axios.put(`/api/users/${this.state.user._id}`, data , {
@@ -86,14 +74,10 @@ class UserProfile extends React.Component {
       .catch(err => console.log(err))
   }
 
-
-
-
-
   render(){
     if (!this.state.user) return null
     const { user } = this.state
-    console.log(user)
+    console.log('user profile rendering')
     return (
 
       <div>
@@ -103,8 +87,6 @@ class UserProfile extends React.Component {
         <a onClick={this.logout}>Logout</a>
 
         {user.privateMessages.forEach(message => (
-
-
           <p key ={message._id} > {message} </p> ))}
 
         <p> You have {user.privateMessages.filter(message => message.request === true).length} invitation requests </p>
@@ -112,13 +94,8 @@ class UserProfile extends React.Component {
 
         <div>
           {this.state.requests.map((request, i) =>
-
             <Request key={i} request={request} user={user} />
-
-
-
           )} </div>
-
 
         <p> You have {user.privateMessages.filter(message => message.request === false && message.text && message.read === false).length} private messages </p>
         <button onClick={this.messagesFunction}>See Messages</button>
@@ -128,9 +105,8 @@ class UserProfile extends React.Component {
             <div key={i}>
               <Message message={message} user={user}  />
             </div>
-
-
-          )} </div>
+          )}
+        </div>
         <form onSubmit={this.handleSubmit}>
           <p>Currently your interests are listed as {user.interests.map((interest, i) =>
             <Link key={i} to={`/events/${interest}`}> <button> {interest} </button></Link>
@@ -138,16 +114,12 @@ class UserProfile extends React.Component {
           <label>Interests</label>
           <h6>What else are you interested in? Help us understand what kind of events might interest you.</h6>
           <Select
-
             defaultValue = {interest[0]}
             options= {interest}
             onChange={this.handleInterest}
-
           />
           <button type="submit" className="button">Add Interest</button>
         </form>
-
-
         <h3> Your events: </h3>
 
         < UserEvents />

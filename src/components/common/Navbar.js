@@ -30,7 +30,7 @@ const Navbar = () => {
         <Link to="/users" className="navComponents"> <p>All Users</p>
         </Link>
       </div>
-      <div onClick={Auth.logout()} className="navComponents">
+      <div onClick={() => Auth.logout()} className="navComponents">
         <Link to="/" className="homePageLink"> < p>Logout</p>
         </Link>
       </div>
