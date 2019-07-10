@@ -2,6 +2,7 @@ import React from 'react'
 import EventForm from './EventForm'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
+import Navbar from '../common/Navbar'
 
 class EventNew extends React.Component {
   constructor() {
@@ -45,7 +46,7 @@ class EventNew extends React.Component {
   }
 
   handleBorough(e) {
-    const data = { ...this.state.data, location: e.value }
+    const data = { ...this.state.data, location: e.value, locationString: e.value }
     this.setState({ data })
   }
 
@@ -63,20 +64,17 @@ class EventNew extends React.Component {
 
   render() {
     return (
+      <main>
+        <Navbar />
+        <EventForm
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          handleDate={this.handleDate}
+          handleTimeStart={this.handleTimeStart}
+          handleTimeEnd={this.handleTimeEnd}
+        />
 
-
-      <EventForm
-
-        handleChange={this.handleChange}
-        handleClick={this.handleClick}
-        handleSubmit={this.handleSubmit}
-        handleDate={this.handleDate}
-        handleTimeStart={this.handleTimeStart}
-        handleTimeEnd={this.handleTimeEnd}
-        handleBorough={this.handleBorough}
-      />
-
-
+      </main>
     )
   }
 }

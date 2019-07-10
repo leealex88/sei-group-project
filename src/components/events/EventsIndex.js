@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-
+import Navbar from '../common/Navbar'
 
 
 class EventsIndex extends React.Component {
@@ -30,7 +30,7 @@ class EventsIndex extends React.Component {
 
     return (
       <main>
-
+        <Navbar />
         <section className="frontSection">
           <div className="containerFront">
 

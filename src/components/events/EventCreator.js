@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
 import { Link } from 'react-router-dom'
-
+import Navbar from '../common/Navbar'
 class EventCreator extends React.Component {
   constructor() {
     super()
@@ -45,7 +45,7 @@ class EventCreator extends React.Component {
     const { user } = this.state
     return (
       <div >
-
+        <Navbar />
         <h6> Event creator: </h6>
         <Link to={`/users/${user._id}`}>
           {user.username}</Link>

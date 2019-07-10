@@ -44,9 +44,6 @@ function eventCreate(req, res) {
 
 }
 
-
-
-
 //delete event
 function deleteRoute(req, res) {
   Event

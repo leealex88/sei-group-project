@@ -37,8 +37,6 @@ class Message extends React.Component {
   componentDidMount() {
     if (!this.props.user) return null
     this.MessageFunction()
-
-
   }
 
   render(){

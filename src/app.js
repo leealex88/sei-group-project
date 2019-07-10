@@ -18,6 +18,7 @@ import EventNew from './components/events/EventNew'
 
 
 
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -32,10 +33,8 @@ const App = () => {
           <Route path="/users/:userid/message" component={PrivateMessage} />
           <Route path="/users/:userid" component={UserShow} />
           <Route path="/users/" component={UsersIndex} />
-
           <Route exact path="/" component={Homepage}/>
           <Route path="/myprofile/requests" component={Request} />
-
           <Route path="/myprofile" component={UserProfile} />
         </Switch>
       </main>
