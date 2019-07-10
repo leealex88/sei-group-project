@@ -44,17 +44,28 @@ class Message extends React.Component {
 
     return (
 
-      <section className="PM">
 
-        <h6> You have a Message from {this.state.messageSender} </h6>
+      <section>
 
-        <p> {this.props.message.text} </p>
+        <Navbar />
+        <section className="PM">
 
-        <p> Click <Link to={`/users/${this.props.message.user}/message`}> here </Link> to reply. </p>
-        <button onClick={this.markAsRead}>Mark as Read</button>
+          <h6> You have a Message from {this.state.messageSender} </h6>
+
+
+          <p> {this.props.message.text} </p>
+
+          <p> Click <Link to={`/users/${this.props.message.user}/message`}> here </Link> to reply. </p>
+
+
+          <p> {this.props.message.text} </p>
+
+          <p> Click <Link to={`/users/${this.props.message.user}/message`}> here </Link> to reply. </p>
+          <button onClick={this.markAsRead}>Mark as Read</button>
+
+        </section>
+
       </section>
-
-
 
 
     )
