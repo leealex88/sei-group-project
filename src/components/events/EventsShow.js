@@ -42,6 +42,7 @@ class eventShow extends React.Component {
   }
 
   isAttending(){
+    console.log(this.state.attendees)
     if (this.state.attendees)
       return this.state.attendees.map(attendee => attendee._id).includes(this.state.me)
   }
@@ -54,7 +55,7 @@ class eventShow extends React.Component {
   }
 
   getAttendees() {
-
+    console.log('attending')
     axios.get(`/api/events/${this.props.match.params.id}/attending`)
       .then(res => this.setState({ attendees: res.data }))
       .catch(err => console.log(err))
@@ -67,18 +68,19 @@ class eventShow extends React.Component {
     return (
       <section >
         <Navbar />
-        <div>
+        <div >
+
           <Fragment>
-            <div className="eventName">
-              <h4 >Event: {this.state.event.eventName}</h4>
-            </div>
-            <div className="creator">
-              {!this.isAttending() && <EventCreator event={this.props.match.params.id} eventDetails={this.state.event}/>}
+            <h2 >Event: {this.state.event.eventName}</h2>
 
-              <img src={this.state.event.partyImage} alt={this.state.event.name} />
-            </div>
+            <hr />
+            {!this.isAttending() && <EventCreator event={this.props.match.params.id} eventDetails={this.state.event}/>}
+            <div >
+              <div >
 
-              
+                <img src={this.state.event.partyImage} alt={this.state.event.name} />
+
+              </div>
               <div >
                 <h4 >Description</h4>
                 <p>{this.state.event.description}</p>
@@ -89,7 +91,10 @@ class eventShow extends React.Component {
                 <h3> This event is happening at  {this.state.event.startTime} on <Moment format="YYYY/MM/DD">{this.state.event.date}</Moment></h3>
 
 
+                <hr />
+              </div>
 
+            </div>
 
             <hr />
 

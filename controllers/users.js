@@ -227,12 +227,18 @@ function commentDeleteRoute(req, res) {
     .catch(err => res.json(err))
 }
 
-function getEventCreator(req, res) {
+function getEventCreator(req, res, next) {
   Event
     .findById(req.params.id)
     .populate('user')
-    .then(event => res.json(event.users))
-    .catch(err => res.json(err))
+    .then(event =>
+      User
+        .findById(event.user)
+        .then(user => res.status(201).json(user))
+        .catch(next)
+
+    )
+
 }
 
 
