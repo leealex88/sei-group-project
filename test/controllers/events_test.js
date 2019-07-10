@@ -132,7 +132,6 @@ describe('Event tests', () => {
         .expect(201, done)
     })
 
-
     it('should create an event', done => {
       api
         .get('/api/events')
