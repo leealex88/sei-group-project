@@ -60,8 +60,3 @@ class Homepage extends React.Component {
 }
 
 export default Homepage
-
-
-// <Link to="/jobs" className="button is-medium is-primary">
-//   Find a job
-// </Link>

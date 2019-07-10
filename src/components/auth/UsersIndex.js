@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-
+import Navbar from '../common/Navbar'
 
 
 class UsersIndex extends React.Component {
@@ -29,16 +29,17 @@ class UsersIndex extends React.Component {
 
     return (
       <main>
+        <Navbar />
         <section className="frontSection">
           <div className="container front">
             <div className="frontSection">
               {this.state.users.map(user => (
                 <section  key={user._id} >
                   <Link to={`/users/${user._id}`}>
-                    <div>
-                      <img src={user.avatar}/>
+                    <div id="userProfile">
+                      <img id="usersImage"src={user.avatar}/>
                       <span key={user._id}>
-                        <h3 key={user._id}>
+                        <h3 id="usersName" key={user._id}>
                           {user.username}
                         </h3></span>
                     </div>

@@ -31,7 +31,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div onClick={Auth.logout()} className="navComponents">
-        <Link to="/" className="homePageLink"> < p>Logout</p>
+        <Link to="/" className="homePageLink"> <p>Logout</p>
         </Link>
       </div>
     </nav>
