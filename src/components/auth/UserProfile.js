@@ -97,12 +97,9 @@ class UserProfile extends React.Component {
     return (
 
       <div>
-<<<<<<< HEAD
         <Navbar />
         <h1> {this.state.user.username} </h1>
-=======
         <h1> {user.username} </h1>
->>>>>>> 6bf0b3493e044ee6ca522fa08319412fd8fdef26
         <a onClick={this.logout}>Logout</a>
 
         {user.privateMessages.forEach(message => (
