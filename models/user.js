@@ -28,15 +28,21 @@ const userSchema = new mongoose.Schema({
 'https://i.pinimg.com/736x/97/09/dc/9709dc4b91379a7ccb4e0f609e7a0384--alpacas-funny-animals.jpg' },
   comments: [ userCommentSchema ],
   privateMessages: [ privateMessageSchema ],
-  events: { type: Array },
   interests: { type: Array, default: ['baking', 'running', 'yoga', 'reading', 'cinema', 'politics'] },
   tags: { type: Array }
 
 })
 
+userSchema.virtual('events', {
+  ref: 'Event',
+  localField: '_id',
+  foreignField: 'user'
+})
+
 userSchema.plugin(require('mongoose-unique-validator'))
 
 userSchema.set('toJSON', {
+  virtuals: true,
   transform(doc, json) {
     delete json.password
     delete json.email

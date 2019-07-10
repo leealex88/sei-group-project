@@ -9,11 +9,7 @@ class TheirEvents extends React.Component {
     super()
     this.state = { events: null }
 
-
-
   }
-
-
 
   componentDidMount() {
 

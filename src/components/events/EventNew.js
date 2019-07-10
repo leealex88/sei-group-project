@@ -54,8 +54,8 @@ class EventNew extends React.Component {
     e.preventDefault()
     const data = this.state.data
     console.log('data is', data)
-    axios.post('/api/events/', data, {
-      headers: { 'Authorization': `${Auth.getToken()}` }
+    axios.post('/api/events', data, {
+      headers: { 'Authorization': Auth.getToken() }
     })
       .then(() => this.props.history.push('/events'))
       .catch(err => console.log(err))

@@ -63,23 +63,22 @@ class eventShow extends React.Component {
 
   render() {
     if (!this.state.event) return null
-    console.log(this.state.event)
+    console.log(this.state.attendees)
     return (
       <section >
         <Navbar />
-        <div >
-
+        <div>
           <Fragment>
-            <h2 >Event: {this.state.event.eventName}</h2>
+            <div className="eventName">
+              <h4 >Event: {this.state.event.eventName}</h4>
+            </div>
+            <div className="creator">
+              {!this.isAttending() && <EventCreator event={this.props.match.params.id} eventDetails={this.state.event}/>}
 
-            <hr />
-            {!this.isAttending() && <EventCreator event={this.props.match.params.id} eventDetails={this.state.event}/>}
-            <div >
-              <div >
+              <img src={this.state.event.partyImage} alt={this.state.event.name} />
+            </div>
 
-                <img src={this.state.event.partyImage} alt={this.state.event.name} />
-
-              </div>
+              
               <div >
                 <h4 >Description</h4>
                 <p>{this.state.event.description}</p>
@@ -90,10 +89,7 @@ class eventShow extends React.Component {
                 <h3> This event is happening at  {this.state.event.startTime} on <Moment format="YYYY/MM/DD">{this.state.event.date}</Moment></h3>
 
 
-                <hr />
-              </div>
 
-            </div>
 
             <hr />
 

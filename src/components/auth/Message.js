@@ -48,7 +48,9 @@ class Message extends React.Component {
 
         <h6> You have a Message from {this.state.messageSender} </h6>
 
+        
         <p> {this.props.message.text} </p>
+
 
         <p> Click <Link to={`/users/${this.props.message.user}/message`}> here </Link> to reply. </p>
         <button onClick={this.markAsRead}>Mark as Read</button>

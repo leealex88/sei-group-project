@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navComponents" >
-        <Link to="/" className="navComponents"> <p id="logo">Stranger Things</p>
+        <Link to="/events" className="navComponents"> <p id="logo">Stranger Things</p>
         </Link>
       </div>
 

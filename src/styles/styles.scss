@@ -37,7 +37,6 @@ img {
   height: 500px;
   margin: 0 auto;
   top: 100px;
-
 }
 
 .marker {
@@ -91,9 +90,9 @@ img {
   margin: 40px;
   flex-direction: column-reverse;
   align-content: center;
-  text-align: center;
+  text-align: center
 }
-.eachCard{
+.eachCard {
 border: solid red;
 width: 20%;
 height: 300px;
@@ -105,7 +104,7 @@ flex-wrap: wrap;
 border: solid 1px;
 box-shadow: 2px 5px 20px #483D8B;
 }
-.eachCard, h3{
+.eachCard, h3 {
   color:#483D8B;
   font-size: 18px;
 }
@@ -242,8 +241,6 @@ div.userBio {
   border-radius: 5px;
   text-align: center;
     align-items: center;
-
-
 }
 
 p, {
@@ -274,6 +271,18 @@ p, {
   margin-top: 80px;
 }
 
+
+
+
+.avatar {
+  opacity: 0.7;
+}
+
+.avatar:hover {
+  opacity: 1;
+}
+
+
 .submit {
   width: 200px;
 }
@@ -299,15 +308,14 @@ p, {
   background-image: url("https://images.pexels.com/photos/459029/pexels-photo-459029.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
   background-repeat: no-repeat;
   background-size: cover;
-
 }
+
 #logo {
  width: 50%;
  margin-left: 50px;
  margin-top: 10px;
- border: solid 0.5px white;
+ // border: solid 0.5px white;
  border-radius: 46%;
-
 }
 
 // ALL USERS Profile
@@ -318,7 +326,6 @@ p, {
   transform:scale(1.005);
   box-shadow: 2px 5px 20px #483D8B;
   margin: 20px;
-
 }
 
 #usersName {
@@ -329,9 +336,7 @@ p, {
 
 
 // UserProfile.js
-.userProfileMain {
 
-}
 .flexbox-container {
   display: flex;
   height: 30vh;
@@ -339,7 +344,6 @@ p, {
   flex-wrap: wrap;
   div {
     margin: 3px;
-    border: 1px solid blue;
     &.div1 {
       flex: 100%;
       display: flex;
@@ -367,8 +371,18 @@ p, {
     }
     &.div5 {
       flex:100%;
+      display: flex;
+      flex-wrap:wrap;
 
-
+      h3 {
+        flex: 100%;
+      }
+      section {
+        flex: 20%;
+        border: solid 1px #483D8B;
+        height: 25%;
+        margin: 10px;
+      }
     }
   }
 }
@@ -394,10 +408,24 @@ p, {
 }
 
 
-.avatar {
-  opacity: 0.7;
+
+.button {
+  background-color: #483D8B;
+  color: white;
+
 }
 
-.avatar:hover {
-  opacity: 1;
+//EventShow.js
+
+.eventName {
+  text-align: center;
+  margin-top: 20px;
+  border-bottom: solid 1px #483D8B;
+}
+
+.creator {
+  display: flex;
+  flex-wrap: wrap;
+
+
 }

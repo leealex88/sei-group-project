@@ -8,7 +8,7 @@ import Select from 'react-select'
 import Avatar from './Avatar'
 import { interest } from './UserInterests'
 import { Link } from 'react-router-dom'
-
+import Navbar from '../common/Navbar'
 
 class UserProfile extends React.Component {
   constructor() {
@@ -86,57 +86,59 @@ class UserProfile extends React.Component {
     const { user } = this.state
     console.log('user profile rendering')
     return (
-      <div>
 
+      <main>
+        <Navbar />
+        <div className="flexbox-container">
+          <div className="div1">
+            <h1> {this.state.user.username} </h1>
+            <img className="userPicture" src={user.avatar}/>
+          </div>
 
-        <h1> {this.state.user.username} </h1>
+          <div className="div2">
+            {user.privateMessages.forEach(message => (
+              <p key ={message._id} > {message} </p> ))}
+            <label> You have {user.privateMessages.filter(message => message.request === true).length} invitation requests </label>
+            <button className="button" onClick={this.requestFunction}>See Requests</button>
+          </div>
 
-        <h1> {user.username} </h1>
+          <div className="div3">
+            {this.state.requests.map((request, i) =>
+              <Request key={i} request={request} user={user} />
+            )}
+            <label> You have {user.privateMessages.filter(message => message.request === false && message.text && message.read === false).length} private messages </label>
+            <button className="button" onClick={this.messagesFunction}>See Messages</button>
+            <div>
+              {this.state.messages.filter(message => message.request === false && message.text && message.read === false).map((message, i) =>
+                <div key={i}>
+                  <Message message={message} user={user}  />
+                </div>
+              )} </div>
+          </div>
+          <br />
+          <div className="div4">
+            <form onSubmit={this.handleSubmit}>
+              <hr />
+              <label>Currently your interests are listed as:</label>
+              <p> {user.interests.map((interest, i) =>
+                <Link key={i} to={`/events/${interest}`}> <button className="interestButton"> {interest} </button></Link>
+              )} </p>
+              <label>Interests</label>
+              <h6>What else are you interested in? Help us understand what kind of events might interest you.</h6>
+              <Select
+                defaultValue = {interest[0]}
+                options= {interest}
+                onChange={this.handleInterest}
+              />
+              <button type="submit" className="button" id="userProfileButtons">Add Interest</button>
+            </form>
+          </div>
 
-        <Link to={`/users/${user._id}/avatar`} component={Avatar}>   <button> Pick an avatar!  </button>
-        </Link>
+          < UserEvents />
 
+        </div>
 
-        <a onClick={this.logout}>Logout</a>
-
-        {user.privateMessages.forEach(message => (
-          <p key ={message._id} > {message} </p> ))}
-
-        <p> You have {user.privateMessages.filter(message => message.request === true).length} invitation requests </p>
-        <button onClick={this.requestFunction}>See Requests</button>
-
-        <div>
-          {this.state.requests.map((request, i) =>
-            <Request key={i} request={request} user={user} />
-          )} </div>
-
-        <p> You have {user.privateMessages.filter(message => message.request === false && message.text && message.read === false).length} private messages </p>
-        <button onClick={this.messagesFunction}>See Messages</button>
-
-        <div>
-          {this.state.messages.filter(message => message.request === false && message.text && message.read === false).map((message, i) =>
-            <div key={i}>
-              <Message message={message} user={user}  />
-            </div>
-          )} </div>
-        <form onSubmit={this.handleSubmit}>
-          <p>Currently your interests are listed as {user.interests.map((interest, i) =>
-            <Link key={i} to={`/events/${interest}`}> <button> {interest} </button></Link>
-          )} </p>
-          <label>Interests</label>
-          <h6>What else are you interested in? Help us understand what kind of events might interest you.</h6>
-          <Select
-            defaultValue = {interest[0]}
-            options= {interest}
-            onChange={this.handleInterest}
-          />
-          <button type="submit" className="button">Add Interest</button>
-        </form>
-        <h3> Your events: </h3>
-
-        < UserEvents />
-
-      </div>
+      </main>
 
 
     )
@@ -148,3 +150,5 @@ class UserProfile extends React.Component {
 
 
 export default UserProfile
+
+// <a onClick={this.logout}>Logout</a>
