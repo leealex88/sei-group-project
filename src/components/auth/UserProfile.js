@@ -7,7 +7,7 @@ import Message from './Message'
 import Select from 'react-select'
 import { interest } from './UserInterests'
 import { Link } from 'react-router-dom'
-import Navbar from '../common/Navbar'
+
 
 class UserProfile extends React.Component {
   constructor() {
@@ -41,6 +41,7 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
+
     console.log('user profile component did mount')
     console.log('token in profile', Auth.getToken())
     axios.get('/api/myprofile', {
@@ -70,8 +71,10 @@ class UserProfile extends React.Component {
     axios.put(`/api/users/${this.state.user._id}`, data , {
       headers: { 'Authorization': `${Auth.getToken()}` }
     })
+
       .then(() => this.props.history.push('/myprofile'))
       .catch(err => console.log(err))
+      .this.getData()
   }
 
   render(){
@@ -79,10 +82,11 @@ class UserProfile extends React.Component {
     const { user } = this.state
     console.log('user profile rendering')
     return (
-
       <div>
-        <Navbar />
+
+      
         <h1> {this.state.user.username} </h1>
+
         <h1> {user.username} </h1>
         <a onClick={this.logout}>Logout</a>
 
@@ -105,8 +109,7 @@ class UserProfile extends React.Component {
             <div key={i}>
               <Message message={message} user={user}  />
             </div>
-          )}
-        </div>
+          )} </div>
         <form onSubmit={this.handleSubmit}>
           <p>Currently your interests are listed as {user.interests.map((interest, i) =>
             <Link key={i} to={`/events/${interest}`}> <button> {interest} </button></Link>
