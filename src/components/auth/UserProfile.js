@@ -7,7 +7,7 @@ import Message from './Message'
 import Select from 'react-select'
 import { interest } from './UserInterests'
 import { Link } from 'react-router-dom'
-
+import Navbar from '../common/Navbar'
 
 class UserProfile extends React.Component {
   constructor() {
@@ -95,8 +95,14 @@ class UserProfile extends React.Component {
     const { user } = this.state
     console.log(user)
     return (
+
       <div>
+<<<<<<< HEAD
+        <Navbar />
+        <h1> {this.state.user.username} </h1>
+=======
         <h1> {user.username} </h1>
+>>>>>>> 6bf0b3493e044ee6ca522fa08319412fd8fdef26
         <a onClick={this.logout}>Logout</a>
 
         {user.privateMessages.forEach(message => (

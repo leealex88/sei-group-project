@@ -6,8 +6,7 @@ import EventComments from './EventComments'
 import Attendees from './Attendees'
 import AttendeeInfo from './AttendeeInfo'
 import Auth from '../../lib/Auth'
-
-
+import Navbar from '../common/Navbar'
 
 class eventShow extends React.Component {
   constructor() {
@@ -25,9 +24,6 @@ class eventShow extends React.Component {
 
 
   }
-
-
-
 
   getMe() {
     console.log('attending')
@@ -67,6 +63,7 @@ class eventShow extends React.Component {
     if (!this.state.event) return null
     return (
       <section >
+        <Navbar />
         <div >
 
           <Fragment>

@@ -16,7 +16,7 @@ class Homepage extends React.Component {
       panelOpen: false
     }
 
-    this.handleClick = this.handleClick.bind(this)
+    // this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick() {
@@ -36,7 +36,7 @@ class Homepage extends React.Component {
           </div>
           <div
             className={`panel panel3 ${this.state.panelOpen ? 'open open-active' : ''}`}
-            onClick={this.handleClick}
+            onClick={ e =>  this.handleClick(e)}
           >
             <Link className="homePageLink" to="/register">
               <p>Register</p>
