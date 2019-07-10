@@ -12,25 +12,24 @@ import Auth from '../../lib/Auth'
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="navComponents">
-        <Link to="/" className="homePageLink"> <p>Stranger Things</p>
+      <div className="navComponents" >
+        <Link to="/" className="navComponents"> <p id="logo">Stranger Things</p>
         </Link>
       </div>
 
       <div className="navComponents">
-        <Link to="/events/new" className="homePageLink"> <p>Create Event</p>
+        <Link to="/events/new" className="navComponents"> <p>Create Event</p>
         </Link>
       </div>
 
       <div className="navComponents">
-        <Link to="/myprofile" className="homePageLink"> <p>My Profile</p>
+        <Link to="/myprofile" className="navComponents"> <p>My Profile</p>
         </Link>
       </div>
       <div className="navComponents">
-        <Link to="/users" className="homePageLink"> <p>All Users</p>
+        <Link to="/users" className="navComponents"> <p>All Users</p>
         </Link>
       </div>
-
       <div onClick={Auth.logout()} className="navComponents">
         <Link to="/" className="homePageLink"> < p>Logout</p>
         </Link>

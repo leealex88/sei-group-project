@@ -22,7 +22,7 @@ class Login extends React.Component {
     axios.post('/api/login', this.state.data)
       .then(res => {
         Auth.setToken(res.data.token)
-        this.props.history.push('/')
+        this.props.history.push('/events')
         console.log(res.data.token)
       })
       .catch(() => this.setState({ error: 'Invalid Crendentials' }))

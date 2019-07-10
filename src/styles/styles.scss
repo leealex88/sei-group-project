@@ -281,12 +281,31 @@ p, {
 .navComponents {
   width: 20%;
   text-align: center;
+  color: white;
+    text-decoration: none;
+
 }
 
 // Navbar
 
 .navbar {
+  margin: 10px;
+  height: 80px;
+  padding: 5px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("https://images.pexels.com/photos/459029/pexels-photo-459029.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+#logo {
+ width: 50%;
+ margin-left: 50px;
+ margin-top: 10px;
+ border: solid 0.5px white;
+ border-radius: 46%;
+
 }
