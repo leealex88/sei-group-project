@@ -1,9 +1,7 @@
 const Event = require('../models/event')
-const User = require('../models/user')
 
 //show all events
 function indexRoute(req, res) {
-  console.log(req.body)
   Event
     .find(req.query)
     .populate('user')
@@ -12,7 +10,6 @@ function indexRoute(req, res) {
 }
 //show one event
 function showRoute(req, res) {
-  console.log(req, 'showing')
   Event
     .findById(req.params.id)
     .populate('user')
@@ -27,18 +24,8 @@ function showRoute(req, res) {
 //create an event
 function eventCreate(req, res) {
   req.body.user = req.currentUser
-  console.log('showing', req.body)
   Event
     .create(req.body)
-    .then(event =>
-      User
-        .findById(req.currentUser._id)
-        .then(user => {
-          event = event._id.toString()
-          if (!user) return res.status(404).json({ message: 'Not found' })
-          user.events.push(event)
-          return user.save()
-        }))
     .then(event => res.status(201).json(event))
     .catch(err => console.log(err))
 

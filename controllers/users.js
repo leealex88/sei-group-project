@@ -35,11 +35,9 @@ function updateProfile(req, res) {
 function login(req, res) {
   User
     .findOne({ email: req.body.email })
-    .populate('user')
     .then(user => {
-      console.log(req.body)
+      console.log(user)
       if (!user || !user.validatePassword(req.body.password)) {
-        console.log('unauthorized')
         throw new Error('Unauthorized')
       }
       const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '72h' })
@@ -54,20 +52,16 @@ function login(req, res) {
 function showUser(req, res, next) {
   User
     .findById(req.params.userid)
-    .populate('user')
+    .populate('events')
     .then(users => res.status(200).json(users))
     .catch(next)
 }
 
-
-
 //users own profile
 function showCurrentUser(req, res, next) {
-  req.body.user = req.currentUser
-  console.log(req.body.user)
   User
-    .findById(req.body.user._id)
-    .populate('user')
+    .findById(req.currentUser._id)
+    .populate('events')
     .then(user => res.status(201).json(user))
     .catch(next)
 }
