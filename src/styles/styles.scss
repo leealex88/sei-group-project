@@ -18,7 +18,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $title;
 }
 
-
 .mapMarker {
   width: 5px;
   height: 5px;
@@ -275,18 +274,9 @@ p, {
   margin-top: 80px;
 }
 
-
-.avatar {
-  opacity: 0.7;
-}
-
-.avatar:hover {
-  opacity: 1;
-
 .submit {
   width: 200px;
 }
-
 
 .navComponents {
   width: 20%;
@@ -336,7 +326,78 @@ p, {
   text-decoration: none;
   color: #483D8B;
 }
-#userProfile {
 
->>>>>>> development
+
+// UserProfile.js
+.userProfileMain {
+
+}
+.flexbox-container {
+  display: flex;
+  height: 30vh;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  div {
+    margin: 3px;
+    border: 1px solid blue;
+    &.div1 {
+      flex: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border-bottom: solid 1px #483D8B;
+
+    }
+
+    &.div2 {
+      flex: 30%;
+      text-align: center;
+      margin-top: 20px;
+      justify-content: flex-end;
+    }
+
+    &.div3 {
+      flex: 30%;
+      text-align: center;
+      margin-top: 20px;
+    }
+    &.div4 {
+      flex:90%;
+      margin-top: 30px;
+    }
+    &.div5 {
+      flex:100%;
+
+
+    }
+  }
+}
+
+.userPicture {
+  margin: 20px;
+  margin-right: 90px;
+}
+
+.privateMessage {
+  width: 100%;
+  margin: 40px;
+  flex-direction: column-reverse;
+  align-content: flex-start;
+  text-align: left;
+  margin-left: 100px;
+}
+
+
+.button {
+  background-color: #483D8B;
+  color: white;
+}
+
+
+.avatar {
+  opacity: 0.7;
+}
+
+.avatar:hover {
+  opacity: 1;
 }

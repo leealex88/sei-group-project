@@ -7,6 +7,8 @@ import Attendees from './Attendees'
 import AttendeeInfo from './AttendeeInfo'
 import Auth from '../../lib/Auth'
 import Navbar from '../common/Navbar'
+import Moment from 'react-moment'
+import 'moment-timezone'
 
 class eventShow extends React.Component {
   constructor() {
@@ -83,9 +85,10 @@ class eventShow extends React.Component {
                 <p>{this.state.event.description}</p>
                 <hr />
                 <h4 >Location</h4>
-                <p>{this.state.event.location}</p>
+                <p>{this.state.event.locationString}</p>
                 <hr />
-                <h4 >What else?</h4>
+                <h3> This event is happening at  {this.state.event.startTime} on <Moment format="YYYY/MM/DD">{this.state.event.date}</Moment></h3>
+
 
                 <hr />
               </div>

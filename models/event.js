@@ -82,9 +82,28 @@ function setLngLat(v){
   else return '-0.117 51.5555'
 }
 
-function location(location){
-  return location
+function setImage(v){
+  if (v === 'sport')
+    return '/assets/sport.jpg'
+  else if (v === 'learning')
+    return '/assets/learning.jpg'
+  else if (v === 'community')
+    return '/assets/community.jpg'
+  else if (v === 'food')
+    return '/assets/food-and-drink.jpg'
+  else if (v === 'health')
+    return '/assets/health-and-wellness.jpg'
+  else if (v === 'entertainment')
+    return '/assets/entertainment.jpg'
+  else if (v === 'nature')
+    return '/assets/nature-and-outdoors.jpg'
+  else if (v === 'art')
+    return '/assets/art-and-culture.jpg'
+
+  else return '/assets/social.jpg'
 }
+
+
 
 
 const eventSchema = new mongoose.Schema({
@@ -93,11 +112,11 @@ const eventSchema = new mongoose.Schema({
   date: { type: Date, required: true },
   fixed: { type: Boolean },
   location: { type: String, set: setLngLat, default: '-0.117 51.5555' },
-  locationString: { type: String, set: location },
+  locationString: { type: String },
   description: { type: String },
   schedule: { type: String },
-  startTime: { type: Number },
-  endTime: { type: Number },
+  startTime: { type: String },
+  endTime: { type: String },
   tickets: { type: String },
   ticketLink: { type: String },
   eventLink: { type: String },
@@ -110,7 +129,7 @@ const eventSchema = new mongoose.Schema({
   minSize: { type: Number },
   idealGroupSize: { type: Number },
   privateInfo: { type: String },
-  partyImage: { type: String, default: 'http://www.thegatenewcastle.co.uk/images/layout/headers/mobile/party-planner.jpg' },
+  partyImage: { type: String, set: setImage, default: '/assets/entertainment.jpg' },
   tags: { type: Array },
   skillLevel: { type: String },
   comments: [ eventCommentSchema ],

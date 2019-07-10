@@ -26,7 +26,7 @@ class EventNew extends React.Component {
 
   handleClick(e) {
 
-    const data = { ...this.state.data, eventType: e.target.value  }
+    const data = { ...this.state.data, eventType: e.target.value, partyImage: e.target.value  }
     this.setState({ data  })
 
   }
