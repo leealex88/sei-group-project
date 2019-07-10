@@ -47,7 +47,7 @@ class Message extends React.Component {
 
       <section>
 
-        <Navbar />
+
         <section className="PM">
 
           <h6> You have a Message from {this.state.messageSender} </h6>

@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
-
+import Navbar from '../common/Navbar'
 
 class PrivateMessage extends React.Component {
   constructor() {
@@ -54,27 +54,30 @@ class PrivateMessage extends React.Component {
     if (!this.state.user) return null
     const { user } = this.state
     return (
-      <div >
 
-        <h1 className="userTitle">{user.username}</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div className="field">
-            <div className="control">
-              <textarea
-                className="textarea"
-                placeholder="message..."
-                onChange={this.handleChange}
-                value={this.state.message.text || ''}
-              >
-              </textarea>
+      <main >
+        <Navbar />
+        <div className="privateMessage">
+          <h1 className="userTitle">{user.username}</h1>
+          <form onSubmit={this.handleSubmit}>
+            <div className="field">
+              <div className="control">
+                <textarea
+                  className="textarea"
+                  placeholder="message..."
+                  onChange={this.handleChange}
+                  value={this.state.message.text || ''}
+                >
+                </textarea>
+              </div>
             </div>
-          </div>
-          <button className="button" type="submit">message</button>
-        </form>
+            <button className="button" type="submit">message</button>
+          </form>
 
 
 
-      </div>
+        </div>
+      </main>
     )
   }
 }

@@ -305,8 +305,9 @@ p, {
  width: 50%;
  margin-left: 50px;
  margin-top: 10px;
- border: solid 0.5px white;
+ // border: solid 0.5px white;
  border-radius: 46%;
+
 
 }
 
@@ -326,6 +327,105 @@ p, {
   text-decoration: none;
   color: #483D8B;
 }
-#userProfile {
+
+
+// UserProfile.js
+.userProfileMain {
+
+}
+.flexbox-container {
+  display: flex;
+  height: 30vh;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  div {
+    margin: 3px;
+    &.div1 {
+      flex: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border-bottom: solid 1px #483D8B;
+
+    }
+
+    &.div2 {
+      flex: 30%;
+      text-align: center;
+      margin-top: 20px;
+      justify-content: flex-end;
+    }
+
+    &.div3 {
+      flex: 30%;
+      text-align: center;
+      margin-top: 20px;
+    }
+    &.div4 {
+      flex:90%;
+      margin-top: 30px;
+    }
+    &.div5 {
+      flex:100%;
+      display: flex;
+      flex-wrap:wrap;
+
+
+      h3 {
+        flex: 100%;
+      }
+      section {
+        flex: 20%;
+        border: solid 1px #483D8B;
+        height: 25%;
+        margin: 10px;
+      }
+
+
+
+
+    }
+  }
+}
+
+.userPicture {
+  margin: 20px;
+  margin-right: 90px;
+}
+
+.privateMessage {
+  width: 100%;
+  margin: 40px;
+  flex-direction: column-reverse;
+  align-content: flex-start;
+  text-align: left;
+  margin-left: 100px;
+}
+
+
+.button {
+  background-color: #483D8B;
+  color: white;
+}
+.button {
+  background-color: #483D8B;
+  color: white;
+
+}
+
+//EventShow.js
+
+.eventName {
+  text-align: center;
+  margin-top: 20px;
+  border-bottom: solid 1px #483D8B;
+}
+
+// .name {
+//   bordel: solid blue;
+// }
+.creator {
+  display: flex;
+  flex-wrap: wrap;
 
 }

@@ -45,7 +45,6 @@ class EventCreator extends React.Component {
     const { user } = this.state
     return (
       <div >
-        <Navbar />
         <h6> Event creator: </h6>
         <Link to={`/users/${user._id}`}>
           {user.username}</Link>

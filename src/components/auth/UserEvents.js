@@ -32,10 +32,10 @@ class UserEvents extends React.Component {
     if (!this.state.events) return null
     return (
 
-
-      <div>
+      <div className="div5">
+        <h3> Your events: </h3>
+        
         {this.state.events.map(event => (
-
           <section  key={event._id} >
             <Link to={`/events/${event._id}`}>
               <div>
