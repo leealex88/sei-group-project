@@ -68,12 +68,18 @@ class UserShow extends React.Component {
           <h5 className="userTitle">{user.username}</h5>
           <p>{ user.bio }</p>
         </div>
+        <hr/>
+        <h5> {user.username} is interested in... </h5>
+        <hr/>
+        {user.interests.map((interest, i) =>
+          <Link key={i} to={`/events/${interest}`}> <button> {interest} </button></Link>
+        )}
 
-        <div className="messanger">
+        <div className="messenger">
           <p>Have a Chat with Me!  </p>
           <Link to={`/users/${user._id}/message`}> <button> 💬 Private Message </button> </Link>
         </div>
-
+        <p> Have you attended an event with {user.username}? Let others know how it was! </p>
         <div className="commentSection">
           {user.comments.map(comment => (
             <div key={comment._id} className="card">

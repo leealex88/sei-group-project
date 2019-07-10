@@ -8,6 +8,7 @@ class Message extends React.Component {
     super()
 
     this.state = { messageSender: '' }
+    this.markAsRead = this.markAsRead.bind(this)
 
 
   }
@@ -17,30 +18,44 @@ class Message extends React.Component {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
       .then(res => this.setState({ messageSender: res.data }))
-    // .then(res => this.messageSenders.push(res.data))
+
       .catch(() => this.setState({ error: 'Invalid Crendentials' }))
   }
 
+  markAsRead() {
+    console.log('marking as read', `api/users/${this.props.user._id}/privateMessages/${this.props.message._id}`)
+    axios.patch(`api/users/${this.props.user._id}/privateMessages/${this.props.message._id}`, {
+      headers: { Authorization: ` ${Auth.getToken()}` }
+    })
+    // axios.patch(`api/users/${this.props.user._id}/privateMessages/${this.props.message._id}`, {
+    //   headers: { Authorization: ` ${Auth.getToken()}` }
+    // })
+    document.querySelector('.PM').style.display = 'none'
+    console.log(this.props.message)
+      .catch(err => console.log(err))
+
+  }
+
   componentDidMount() {
-    if (!this.props.message.user) return null
+    if (!this.props.user) return null
     this.MessageFunction()
 
 
   }
 
   render(){
-    if (!this.props.message.user && !this.state.messageSender) return null
-    console.log('message', this.props.message)
+    if (!this.props.message.user && !this.state.messageSender && !this.props.user) return null
+
     return (
 
-      <section>
+      <section className="PM">
 
         <h6> You have a Message from {this.state.messageSender} </h6>
 
         <p> {this.props.message.text} </p>
 
         <p> Click <Link to={`/users/${this.props.message.user}/message`}> here </Link> to reply. </p>
-
+        <button onClick={this.markAsRead}>Mark as Read</button>
       </section>
 
 
