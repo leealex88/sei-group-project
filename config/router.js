@@ -3,7 +3,7 @@ const events = require('../controllers/events')
 const users = require('../controllers/users')
 const secureRoute = require('../lib/secureRoute')
 
-router.route('/events')
+router.route('/events/')
   .get(events.index)
   .post(secureRoute, events.create)
 
@@ -22,12 +22,21 @@ router.route('/users/:id/privateMessages')
 
 router.route('/users/:id/')
   .post(users.getUserName)
+  .put(users.updateProfile)
+
+
 
 router.route('/users/:id/accept')
   .post(secureRoute, users.acceptRequest)
 
 router.route('/users/:id/privateMessages/:commentId')
+  .patch(secureRoute, users.readPrivateMessage)
+
+router.route('/users/:id/privateMessages/:commentId')
   .put(secureRoute, users.deleteAcceptedRequest)
+
+router.route('/users/:id/privateMessages/:commentId')
+  .patch(secureRoute, users.readPrivateMessage)
 
 router.route('/events/:id/comments')
   .post(secureRoute, events.commentCreate)
