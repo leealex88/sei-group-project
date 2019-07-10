@@ -82,6 +82,10 @@ function setLngLat(v){
   else return '-0.117 51.5555'
 }
 
+function location(location){
+  return location
+}
+
 
 const eventSchema = new mongoose.Schema({
   eventType: { type: String, required: true, default: 'event' },
@@ -89,7 +93,7 @@ const eventSchema = new mongoose.Schema({
   date: { type: Date, required: true },
   fixed: { type: Boolean },
   location: { type: String, set: setLngLat, default: '-0.117 51.5555' },
-  // lnglat: { type: String, set: setLngLat },
+  locationString: { type: String, set: location },
   description: { type: String },
   schedule: { type: String },
   startTime: { type: Number },

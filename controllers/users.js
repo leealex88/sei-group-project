@@ -28,6 +28,21 @@ function updateProfile(req, res) {
     .catch(err => console.log(err))
 }
 
+function updateAvatar(req, res) {
+  console.log(req.body)
+  User
+    .findById(req.params.id)
+    .then(user => {
+      if (!user) throw new Error('Not Found')
+
+      user.avatar = req.body.avatar
+      // Object.assign(user, req.body)
+      return user.save()
+    })
+    .then(user => res.status(202).json(user))
+    .catch(err => console.log(err))
+}
+
 
 
 
@@ -258,6 +273,7 @@ module.exports = {
   getCurrentUser: getCurrentUser,
   deleteAcceptedRequest: deleteAcceptedRequest,
   readPrivateMessage: readPrivateMessage,
-  updateProfile: updateProfile
+  updateProfile: updateProfile,
+  updateAvatar: updateAvatar
 
 }

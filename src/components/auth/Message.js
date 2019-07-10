@@ -24,15 +24,13 @@ class Message extends React.Component {
 
   markAsRead() {
     console.log('marking as read', `api/users/${this.props.user._id}/privateMessages/${this.props.message._id}`)
-    axios.patch(`api/users/${this.props.user._id}/privateMessages/${this.props.message._id}`, {
+    axios.post(`api/users/${this.props.user._id}/privateMessages/${this.props.message._id}`, null, {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
-    // axios.patch(`api/users/${this.props.user._id}/privateMessages/${this.props.message._id}`, {
-    //   headers: { Authorization: ` ${Auth.getToken()}` }
-    // })
-    document.querySelector('.PM').style.display = 'none'
-    console.log(this.props.message)
+
+      .then(document.querySelector('.PM').style.display = 'none')
       .catch(err => console.log(err))
+    this.getData()
 
   }
 

@@ -18,6 +18,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $title;
 }
 
+
 .mapMarker {
   width: 5px;
   height: 5px;
@@ -269,4 +270,12 @@ p, {
   border: solid 1px;
   box-shadow: 2px 5px 20px #483D8B;
   margin-top: 80px;
+}
+
+.avatar {
+  opacity: 0.7;
+}
+
+.avatar:hover {
+  opacity: 1;
 }

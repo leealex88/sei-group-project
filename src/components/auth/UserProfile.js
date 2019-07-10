@@ -5,6 +5,7 @@ import UserEvents from './UserEvents'
 import Request from './Request'
 import Message from './Message'
 import Select from 'react-select'
+import Avatar from './Avatar'
 import { interest } from './UserInterests'
 import { Link } from 'react-router-dom'
 
@@ -47,15 +48,18 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
+    this.getData()
+  }
 
+  getData(){
     axios.get('/api/myprofile', {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
       .then(res => this.setState({ user: res.data }))
       .catch(() => this.setState({ error: 'Invalid Crendentials' }))
-
-
   }
+
+
 
   getEvent(){
     axios.get('/api/event', {
@@ -82,8 +86,10 @@ class UserProfile extends React.Component {
     axios.put(`/api/users/${this.state.user._id}`, data , {
       headers: { 'Authorization': `${Auth.getToken()}` }
     })
+
       .then(() => this.props.history.push('/myprofile'))
       .catch(err => console.log(err))
+      .this.getData()
   }
 
 
@@ -97,6 +103,11 @@ class UserProfile extends React.Component {
     return (
       <div>
         <h1> {user.username} </h1>
+
+        <Link to={`/users/${user._id}/avatar`} component={Avatar}>   <button> Pick an avatar!  </button>
+        </Link>
+
+
         <a onClick={this.logout}>Logout</a>
 
         {user.privateMessages.forEach(message => (
@@ -109,11 +120,7 @@ class UserProfile extends React.Component {
 
         <div>
           {this.state.requests.map((request, i) =>
-
             <Request key={i} request={request} user={user} />
-
-
-
           )} </div>
 
 
@@ -125,8 +132,6 @@ class UserProfile extends React.Component {
             <div key={i}>
               <Message message={message} user={user}  />
             </div>
-
-
           )} </div>
         <form onSubmit={this.handleSubmit}>
           <p>Currently your interests are listed as {user.interests.map((interest, i) =>
