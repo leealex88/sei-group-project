@@ -46,7 +46,7 @@ class EventNew extends React.Component {
   }
 
   handleBorough(e) {
-    const data = { ...this.state.data, location: e.value }
+    const data = { ...this.state.data, location: e.value, locationString: e.value }
     this.setState({ data })
   }
 

@@ -5,6 +5,7 @@ import UserEvents from './UserEvents'
 import Request from './Request'
 import Message from './Message'
 import Select from 'react-select'
+import Avatar from './Avatar'
 import { interest } from './UserInterests'
 import { Link } from 'react-router-dom'
 import Navbar from '../common/Navbar'
@@ -41,15 +42,18 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
+    this.getData()
+  }
 
-    console.log('user profile component did mount')
-    console.log('token in profile', Auth.getToken())
+  getData(){
     axios.get('/api/myprofile', {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
       .then(res => this.setState({ user: res.data }))
       .catch(() => this.setState({ error: 'Invalid Crendentials' }))
   }
+
+
 
   getEvent(){
     axios.get('/api/event', {
@@ -82,6 +86,7 @@ class UserProfile extends React.Component {
     const { user } = this.state
     console.log('user profile rendering')
     return (
+
       <main>
         <Navbar />
         <div className="flexbox-container">
@@ -128,7 +133,7 @@ class UserProfile extends React.Component {
               <button type="submit" className="button" id="userProfileButtons">Add Interest</button>
             </form>
           </div>
-      
+
           < UserEvents />
 
         </div>

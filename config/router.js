@@ -17,20 +17,24 @@ router.route('/events/:id')
 router.route('/me')
   .get(secureRoute, users.getCurrentUser)
 
+router.route('/users/:id/privateMessages/:commentId')
+  .post(secureRoute, users.readPrivateMessage)
+
 router.route('/users/:id/privateMessages')
   .post(secureRoute, users.privateMessageCreateRoute)
 
 router.route('/users/:id/')
   .post(users.getUserName)
   .put(users.updateProfile)
+  .patch(users.updateAvatar)
+
 
 
 
 router.route('/users/:id/accept')
   .post(secureRoute, users.acceptRequest)
 
-router.route('/users/:id/privateMessages/:commentId')
-  .patch(secureRoute, users.readPrivateMessage)
+
 
 router.route('/users/:id/privateMessages/:commentId')
   .put(secureRoute, users.deleteAcceptedRequest)

@@ -2,6 +2,7 @@ const { dbURI } = require('../config/environment')
 const mongoose = require('mongoose')
 const Event = require('../models/event')
 const User = require('../models/user')
+// const avatars = require('../src/components/Auth/AvatarImages')
 
 
 
@@ -41,7 +42,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[3]
         },
         {
           username: 'minnie',
@@ -49,7 +50,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[4]
         },
         {
           username: 'tom',
@@ -57,7 +58,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[6]
         },
         {
           username: 'tallah',
@@ -65,7 +66,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[5]
         },
         {
           username: 'shane',
@@ -73,7 +74,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[7]
         },
         {
           username: 'guy',
@@ -81,7 +82,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[8]
         },
         {
           username: 'jack',
@@ -89,7 +90,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[9]
         },
         {
           username: 'wes',
@@ -97,7 +98,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[10]
         },
         {
           username: 'cliff',
@@ -105,7 +106,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[11]
         },
         {
           username: 'sim',
@@ -113,7 +114,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[12]
         },
         {
           username: 'daniela',
@@ -121,7 +122,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[13]
         },
         {
           username: 'shema',
@@ -129,7 +130,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[14]
         },
         {
           username: 'kasia',
@@ -137,7 +138,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[15]
         },
         {
           username: 'mia',
@@ -145,7 +146,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[16]
         },
         {
           username: 'amy',
@@ -153,7 +154,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[17]
         },
         {
           username: 'david',
@@ -161,7 +162,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[18]
         },
         {
           username: 'gruffi',
@@ -169,7 +170,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Gruffi is an old-fashioned bear who prefers to do things "the Gummi way." An extremely skilled craftsman and mechanic, he fixes the old Gummi technology and trap doors, as well as building traps around the Glen to deal with humans and ogres. Gruffi is a perfectionist, which can be his undoing at times. However and at other times, he is respected as the voice of stability and practical solutions when the other Gummis fall into despair.',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[19]
         },
         {
           username: 'tummi',
@@ -177,7 +178,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Tummi is an overweight Gummi, stated to be a little younger than Gusto, who enjoys a good meal, and would much rather be eating the Gummiberries than picking them. Of all the Gummi cubs in Gummi Glen, Tummi is the oldest. He has a rather relaxed and easygoing personality, which often gets him caught up in Cubbi\'s schemes. However and in dangerous situations, Tummi has shown exceptional bravery, and throughout the series, he demonstrates a natural talent as a sailor, gardener, artist and craftsman.',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[20]
         },
         {
           username: 'cubbi',
@@ -185,7 +186,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Cubbi is the youngest Gummi-Glen Gummi (according to the official series\' bible around the equivalent of an 8-year-old), and dreams of becoming a great Gummi knight. He is impetuous and gets distracted by anything mysterious or exciting, but his open-mindedness oftentimes enables him to find simple solutions to sticky problems. He sometimes dons a mask and becomes a vigilante known as the Crimson Avenger. He is best friends with the human Cavin, and he was the first Gummi that Cavin encountered.',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: ''
+          avatar: avatars[21]
         },
         {
           username: 'archer',
@@ -193,7 +194,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'A narcissistic womaniser. Possibly the greatest spy that ever lived.',
           password: 'guest',
           passwordConfirmation: 'guest',
-          avatar: ''
+          avatar: avatars[22]
         },
         {
           username: 'mallory',
@@ -201,7 +202,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Sterling\'s mother, Mallory Archer is almost as self-absorbed as her son and is constantly on the look out for ways to keep her employees under control.',
           password: 'guest',
           passwordConfirmation: 'guest',
-          avatar: ''
+          avatar: avatars[23]
         },
         {
           username: 'kreiger',
@@ -209,7 +210,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Definitely a scientist, apparently a doctor (though no one is entirely sure what type of doctor), probably insane. Also maybe a clone of Hitler.',
           password: 'guest',
           passwordConfirmation: 'guest',
-          avatar: ''
+          avatar: avatars[24]
         },
         {
           username: 'lana',
@@ -217,7 +218,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Possibly the most professional spy at ISIS. This is not saying a huge amount. Kinda like being awarded the title of the World\'s Tallest Midget',
           password: 'guest',
           passwordConfirmation: 'guest',
-          avatar: ''
+          avatar: avatars[25]
         },
         {
           username: 'pam',
@@ -225,7 +226,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'HR Supremo. Basically spends most of her time trying to instigate a sexual harrassment case against herself.',
           password: 'guest',
           passwordConfirmation: 'guest',
-          avatar: ''
+          avatar: avatars[26]
         },
         {
           username: 'cheryl',
@@ -233,7 +234,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Check with HR, she may have changed her name again. Either way, don\'t let her near sharp objects. Or glue.',
           password: 'guest',
           passwordConfirmation: 'guest',
-          avatar: ''
+          avatar: avatars[27]
         }
       ])
     })
@@ -246,8 +247,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventType: 'game',
           eventName: 'Bridge Night',
           date: new Date('07/04/2019'),
-          location: 'Camberwell',
-          // lnglat: 'Camberwell',
+          location: 'Barking & Dagenham',
+          locationString: 'Barking & Dagenham',
           description: '',
           schedule: '',
           startTime: 1900,
@@ -275,7 +276,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'non-alcoholic picnic',
           date: new Date('07/10/2019'),
           fixed: false,
-          location: 'Peckham Rye',
+          location: 'Barnet',
+          locationString: 'Barnet',
           description: 'Just a nice (sober!) afternoon (hopefully!) sitting in the sun.',
           schedule: '',
           startTime: 1100,
@@ -303,7 +305,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'After Work Drink and Chat',
           date: new Date('07/28/2019'),
           fixed: true,
-          location: 'The City',
+          location: 'Bexley',
+          locationString: 'Bexley',
           description: 'Please come have a drink and a chat with me, I\'d appreciate the opportunity to have a good moan and I can offer a listening ear too',
           schedule: '',
           startTime: 1800,
@@ -331,7 +334,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Morning Yoga Session',
           date: new Date('07/17/2019'),
           fixed: true ,
-          location: 'Brixton',
+          location: 'Brent',
+          locationString: 'Brent',
           description: 'Relaxed pre-work yoga session in my local park',
           schedule: '',
           startTime: 545,
@@ -359,7 +363,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'An informal afternoon tea at my lovely home',
           date: new Date('07/12/2019'),
           fixed: false ,
-          location: 'Poplar',
+          location: 'Bromley',
+          locationString: 'Bromley',
           description: 'I love baking and always want a chance to feed people cake!',
           schedule: '',
           startTime: 1600,
@@ -387,7 +392,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Vintage Clothes Shopping- Brick Lane',
           date: new Date('08/01/2019'),
           fixed: true ,
-          location: 'Brick Lane',
+          location: 'Camden',
+          locationString: 'Camden',
           description: 'Need some company for a bit of fun vintage shopping, desperately need a very ridiculous new outfit to wear to a super hipster party I\'m going to and don\'t want to shop alone',
           schedule: '',
           startTime: 1445,
@@ -414,7 +420,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'My French for Your English',
           date: new Date('08/01/2019'),
           fixed: true ,
-          location: 'Dulwich',
+          location: 'City of London',
+          locationString: 'City of London',
           description: 'Frenchy looking for a funny but serious conversation with interesting English person. It is perfect if you want to learn French too',
           schedule: '',
           startTime: 1800,
@@ -441,7 +448,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Greasy Fry-Up in my Local Caff',
           date: new Date('08/02/2019'),
           fixed: false ,
-          location: 'Tower Hamlets',
+          location: 'Croydon',
+          locationString: 'Croydon',
           description: 'I hate eating breakfast alone but this place is the best and I can\'t get enough of their full English, join me for brekky and have your mind blown. Best sausage in London',
           schedule: '',
           startTime: '1100',
@@ -468,7 +476,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Screening of Brief Encounter',
           date: new Date('08/05/2019'),
           fixed: true ,
-          location: 'Shoreditch',
+          location: 'Ealing',
+          locationString: 'Ealing',
           description: 'This is one of my very favourite films but I hate going to the cinema alone. It\'s such a lovely and romantic bit of cinema, please don\'t let the fact that is old put you off even if that\'t not normally your thing.',
           schedule: '',
           startTime: '1900',
@@ -496,7 +505,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: '(Long) Sunday Afternoon Dog Walk',
           date: new Date('08/09/2019'),
           fixed: true ,
-          location: 'Richmond',
+          llocation: 'Richmond upon Thames',
+          locationString: 'Richmond upon Thames',
           description: 'Join me and my beautiful Chow Chow Lola for a long dong walk in Richmond park, I love a good deep chat about anything or everything (or nothing much!) and I\'m an excellent listener. Lola is very social too but does have a bit of a problem with excitable/jumpy small dogs.',
           schedule: '',
           startTime: '1200',
@@ -523,7 +533,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Very serious Ping-Pong Tournament',
           date: new Date('08/09/2019'),
           fixed: true ,
-          location: 'Kilburn',
+          location: 'Greenwich',
+          locationString: 'Greenwich',
           description: 'This tournament will not be the faint harded! I take my ping pong (aka table tennis, aka WHIFF WHAFF) exceedingly seriously so please don\'t bother RSVP-ing if you don\'t even know the TTA\'s official rules or don\'t own your own bat!!!!!',
           schedule: '',
           startTime: '1600',
@@ -550,7 +561,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Very serious Ping-Pong ToureventNament',
           date: new Date('08/13/2019'),
           fixed: true ,
-          location: 'Kilburn',
+          location: 'Hackney',
+          locationString: 'Hackney',
           description: 'This toureventNament will not be the faint harded! I take my ping pong (aka table tennis, aka WHIFF WHAFF) exceedingly seriously so please don\'t bother RSVP-ing if you don\'t even know the TTA\'s official rules or don\'t own your own bat!!!!!',
           schedule: '',
           startTime: '1600',
@@ -577,7 +589,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Casual (indie rock) Jam Session',
           date: new Date('08/12/2019'),
           fixed: true ,
-          location: 'Dalston',
+          location: 'Hackney',
+          locationString: 'Hackney',
           description: 'I play guitar and I\'ve got a big garage and a drum kit, would love to spend an afternoon jamming (and maybe drinking beer!) with a few fellow music lovers and your instruments',
           schedule: '',
           startTime: '1600',
@@ -604,7 +617,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Dungeons and Dragons',
           date: new Date('08/17/2019'),
           fixed: false ,
-          location: 'Islington',
+          location: 'Haringey',
+          locationString: 'Haringey',
           description: 'Would love to form a new group and get back into this, I\'m an experienced DM (dungeon master) but I welcome all levels and I\'m very willing to teach!',
           schedule: '',
           startTime: '1600',
@@ -631,7 +645,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Make-up session with Prosecco and Cheese',
           date: new Date('08/12/2019'),
           fixed: false ,
-          location: 'Camden Town',
+          location: 'Harrow',
+          locationString: 'Harrow',
           description: 'Hi :), I\'ve just completed a course in doing full face make-up and I would love a chance to practice my skills! I will give you a whole new dramatic look and feed you prosecco too!!!!!!! Men and women both welcome, you just must be happy to have lots of stuff put on your face.',
           schedule: '',
           startTime: '1900',
@@ -658,7 +673,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Liverpool V. Bangor',
           date: new Date('08/19/2019'),
           fixed: false ,
-          location: 'Holborm',
+          location: 'Harrow',
+          locationString: 'Harrow',
           description: 'Come round my gaff and watch the footie, I\'m a Bangor man (come on you Bangers!) but all allegances welcome. It\'ll be well macho (lads, lads, lads) but birds welcome so long as you\'ve got banter',
           schedule: '',
           startTime: '1900',
@@ -685,7 +701,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Morning Thames Run',
           date: new Date('08/28/2019'),
           fixed: false ,
-          location: 'Tower Bridge',
+          location: 'Islington',
+          locationString: 'Islington',
           description: 'Join me for a Thames loop going from Tower Bridge to Westminster, I\'m not a fast runner and would prefer it if you\'d keep pace with me as that is the whole point of having company!',
           schedule: '',
           startTime: '0600',
@@ -712,7 +729,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Chess Game',
           date: new Date('08/11/2019'),
           fixed: false ,
-          location: 'Clerkenwell',
+          location: 'Kensington & Chelsea',
+          locationString: 'Kensington & Chelsea',
           description: 'I have not played in quite some time but would love to get back into the game, I used to be a very serious player but am undoubtedly somewhat oxidised (rusty).',
           schedule: '',
           startTime: '1200',
@@ -739,7 +757,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Dinner at Moro',
           date: new Date('08/10/2019'),
           fixed: false ,
-          location: 'Faringdon',
+          location: 'Lambeth',
+          locationString: 'Lambeth',
           description: 'I have been wanting to dine at Moro for quite some time but haven\'t mustered the courage to go alone. The food is said to be muy delicioso.',
           schedule: '',
           startTime: '1900',
@@ -767,6 +786,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           date: new Date('08/13/2019'),
           fixed: false ,
           location: 'Greenwich',
+          locationString: 'Greenwich',
           description: 'I am disabled and don\'t get out much, I\'ll happily buy you a coffee and a slice of cake if you fancy sitting with me for a few hours and just having a good natter',
           schedule: '',
           startTime: '1100',
@@ -793,7 +813,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Door knocking for the Greens',
           date: new Date('09/16/2019'),
           fixed: false ,
-          location: 'Chelsea',
+          location: 'Southwark',
+          locationString: 'Southwark',
           description: 'I am a Green party member but you don\'t need to be offically signed up, if you agree with our values and want to keep me company while we do a bit of campaigning then I\'d very much appreciate it',
           schedule: '',
           startTime: '1200',
@@ -821,6 +842,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           date: new Date('09/18/2019'),
           fixed: false ,
           location: 'Hackney',
+          locationString: 'Hackney',
           description: 'I love to cook and have a serious craving for burittos but no-one to cook for, there will be plenty of food and even more plenty of MARGARITA!',
           schedule: '',
           startTime: '1900',
@@ -848,6 +870,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           date: new Date('09/01/2019'),
           fixed: false ,
           location: 'Haringey',
+          locationString: 'Haringey',
           description: 'I am 84 years old and house bound, I have all of my basic needs met but do miss having somebody to talk to. I have lived a full life and have a few good stories to tell. I also like to think that I have learned a thing or two and give sensible advice if you would like to ask me for my thoughts on anything that is troubling you.',
           schedule: '',
           startTime: '1600',
@@ -873,7 +896,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Help the Homeless',
           date: new Date('07/02/2019'),
           fixed: false ,
-          location: 'The City',
+          location: 'Tower Hamlets',
+          locationString: 'Tower Hamlets',
           description: 'I work for a small charity that aims to help those sleeping rough in London. A big part of this work is just getting out there and talking to folk. We need to understand what happened to these people and what they need if we want to solve this problem. If you fancy helping out and joining me on a night out and about that\'d be great.',
           schedule: '',
           startTime: '2200',
@@ -900,7 +924,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Help the Homeless',
           date: new Date('07/10/2019'),
           fixed: false ,
-          location: 'The City',
+          location: 'Westminster',
+          locationString: 'Westminster',
           description: 'I work for a small charity that aims to help those sleeping rough in London. A big part of this work is just getting out there and talking to folk. We need to understand what happened to these people and what they need if we want to solve this problem. If you fancy helping out and joining me on a night out and about that\'d be great.',
           schedule: '',
           startTime: '2200',
@@ -927,7 +952,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Park Trip with Small People',
           date: new Date('07/11/2019'),
           fixed: false ,
-          location: 'Southwark Park',
+          location: 'Merton',
+          locationString: 'Merton',
           description: 'I\'m a stay at home Dad and have a bit of problem when it comes to doing things with the little ones in the day as I have no SAHP friends! It\'d be great to have a bit of company. My small people are 3, 2 and 5 months (I KNOW!).',
           schedule: '',
           startTime: '1100',
@@ -954,7 +980,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Gardening in the Community Gardens',
           date: new Date('07/02/2019'),
           fixed: false ,
-          location: 'Hackney',
+          location: 'Waltham Forest',
+          locationString: 'Waltham Forest',
           description: 'Our lovely little local garden is looking a bit overgrown, join me with your clippers and let\'s get pruning! I am more than happy give guidance and advice to anyone inexperienced at caring for plants and stuff.',
           schedule: '',
           startTime: '1000',
@@ -981,7 +1008,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Family Friendly BBQ',
           date: new Date('07/13/2019'),
           fixed: false ,
-          location: 'Hyde Park',
+          location: 'Lambeth',
+          locationString: 'Lambeth',
           description: 'We are planning a family day out in the park with lots of drinks, nibbles, fun, games and a BBQ! We are a very social fun loving familyand we are keen to make local friends as we are brand new to the area.',
           schedule: '',
           startTime: '1400',
@@ -1008,7 +1036,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Natalia Goncharova Exhibtion',
           date: new Date('07/03/2019'),
           fixed: false ,
-          location: 'Tate Modern',
+          location: 'Redbridge',
+          locationString: 'Redbridge',
           description: 'Would love some company for this. She is absolutely one of my favourite ever artists and if you don\'t know her work or a lot about her please check the link and if you are interested I will be so happy to share my knowledge with you (she was my dissertation topic)',
           schedule: '',
           startTime: '1400',
@@ -1035,7 +1064,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Wander Around the Natural History Museum',
           date: new Date('08/08/2019'),
           fixed: false ,
-          location: 'Kensington',
+          location: 'Lewisham',
+          locationString: 'Lewisham',
           description: 'I would just love to have some company while I wander around this marvellous place. I am such a huge, huge fan of the natural world and I have always wanted to share this passion with other people. I\'ve literally never met anyone else who likes old stuff though so I have only ever been to museums alone!',
           schedule: '',
           startTime: '1400',
@@ -1062,7 +1092,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Day at the British Museum',
           date: new Date('07/23/2019'),
           fixed: false ,
-          location: 'Bloomsbury',
+          location: 'Havering',
+          locationString: 'Havering',
           description: 'Somehow I\'ve never visited and it seems so very silly that I have not, I would like some company as I always find it more fun to look at stuff when I can talk about the stuff I am looking at (without looking unhinged)',
           schedule: '',
           startTime: '1300',
@@ -1089,7 +1120,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Day at the British Museum',
           date: new Date('07/12/2019'),
           fixed: false ,
-          location: 'Bloomsbury',
+          location: 'City of London',
+          locationString: 'City of London',
           description: 'Somehow I\'ve never visited and it seems so very silly that I have not, I would like some company as I always find it more fun to look at stuff when I can talk about the stuff I am looking at (without looking unhinged)',
           schedule: '',
           startTime: '1300',
@@ -1115,7 +1147,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventType: 'Sport',
           eventName: 'Bouldering',
           date: new Date('07/12/2019'),
-          location: 'Bermondsey',
+          location: 'Enfield',
+          locationString: 'Enfield',
           description: 'An hour or more bouldering at the Bermondsey Arch climbing wall',
           schedule: 'Warm up, climb, drink coffee, climb, repeat',
           startTime: 900,
@@ -1140,7 +1173,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventType: 'Culture',
           eventName: 'Theatre',
           date: new Date('07/12/2019'),
-          location: 'Bermondsey',
+          location: 'Southwark',
+          locationString: 'Southwark',
           description: 'An hour or more bouldering at the Bermondsey Arch climbing wall',
           schedule: 'Warm up, climb, drink coffee, climb, repeat',
           startTime: 900,
@@ -1166,7 +1200,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Long walk in the woods',
           date: new Date('09/09/2019'),
           fixed: false ,
-          location: 'Farringdon',
+          location: 'Camden',
+          locationString: 'Camden',
           description: 'A relaxed stroll through the woodlands, I\'m a big fan of wildlife and trees and stuff so I like to stop and look at things.',
           schedule: '',
           startTime: '1100',
@@ -1194,6 +1229,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           date: new Date('07/02/2019'),
           fixed: false ,
           location: 'Hackney',
+          locationString: 'Hackney',
           description: 'Our lovely little local garden is looking a bit overgrown, join me with your clippers and let\'s get pruning! I am more than happy give guidance and advice to anyone inexperienced at caring for plants and stuff.',
           schedule: '',
           startTime: '1000',
@@ -1220,7 +1256,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Family Friendly BBQ',
           date: new Date('07/13/2019'),
           fixed: false ,
-          location: 'Hyde Park',
+          location: 'Greenwich',
+          locationString: 'Greenwich',
           description: 'We are planning a family day out in the park with lots of drinks, nibbles, fun, games and a BBQ! We are a very social fun loving familyand we are keen to make local friends as we are brand new to the area.',
           schedule: '',
           startTime: '1400',
@@ -1247,7 +1284,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Natalia Goncharova Exhibtion',
           date: new Date('07/03/2019'),
           fixed: false ,
-          location: 'Tate Modern',
+          location: 'Walthom Forest',
+          locationString: 'Walthom Forest',
           description: 'Would love some company for this. She is absolutely one of my favourite ever artists and if you don\'t know her work or a lot about her please check the link and if you are interested I will be so happy to share my knowledge with you (she was my dissertation topic)',
           schedule: '',
           startTime: '1400',
@@ -1274,7 +1312,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Spoken Word Poetry Night',
           date: new Date('08/10/2019'),
           fixed: false ,
-          location: 'Brent',
+          location: 'Wandsworth',
+          locationString: 'Wandsworth',
           description: 'I am planning on performing at an open mic spoken word poetry event, it is my first time and I am very nervous. I have only ever performed to myself in the mirror and sadly I have no friends to ask to come and hold my hand so I would really appreciate some support from some kind stranger out there!',
           schedule: '',
           startTime: '1900',
@@ -1301,7 +1340,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Pottery Workshop',
           date: new Date('08/15/2019'),
           fixed: false ,
-          location: 'Tower Hamlets',
+          location: 'Croydon',
+          locationString: 'Croydon',
           description: 'I have heard great things about this class and have been meaning to go for ages but I\'m a bit reluctant to go alone- it\'s always funner to be "in it together" at things like this isn\'t it? I\'ve heard you get to make some really cool stuff like egg cups even.',
           schedule: '',
           startTime: '1700',
@@ -1328,7 +1368,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventName: 'Bible Study',
           date: new Date('07/28/2019'),
           fixed: true ,
-          location: 'Wandsworth',
+          location: 'Greenwich',
+          locationString: 'Greenwich',
           description: 'I don\'t have any Christian friends as I am far from home and my local churches aren\'t the right denomination (I am a Hutterite). I am missing God-based discussion though and would really welcome a good bible read and chat about our lord with any fellow believers out there. Be you Catholic or Lutheran!',
           schedule: '',
           startTime: '1500',
@@ -1354,7 +1395,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventType: 'Sport',
           eventName: 'Five-a-Side',
           date: new Date('08/10/2019'),
-          location: 'Lambeth',
+          location: 'Brent',
+          locationString: 'Brent',
           description: 'Casual kick about in the local park, lost all my usual mates to their misseses (you know how it is in your thirties!!!) so in need of a new gang. Don\'t take it too serious so no Renaldo-wannabe nobheads need apply!!',
           startTime: 900,
           endTime: 1100,
@@ -1378,7 +1420,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           eventType: 'Comedy',
           eventName: 'Open-Mic',
           date: new Date('12/07/2019'),
-          location: 'Hounslow',
+          location: 'Camden',
+          locationString: 'Camden',
           description: 'I love a laugh- a chuckle, a guffaw, a hehehehehe - whatever you want to call it- if you do to then join me for a night of proper hearty giggles! Well, I hope we will laugh anyhow. If we do not then something has gone wrong somewhere! ',
           startTime: '1900',
           endTime: '2300',
@@ -1407,3 +1450,42 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
     .finally(() => mongoose.connection.close())
 
 })
+
+const avatars =
+['/assets/SVG/baby-deer.svg',
+  '/assets/SVG/bald.svg',
+  '/assets/SVG/baby-panda.svg',
+  '/assets/SVG/blackhair.svg',
+  '/assets/SVG/blond-freckles.svg',
+  '/assets/SVG/blonde.svg',
+  '/assets/SVG/blueeyes.svg',
+  '/assets/SVG/boy.svg',
+  '/assets/SVG/brownhair.svg',
+  '/assets/SVG/brunette.svg',
+  '/assets/SVG/cheeks.svg',
+  '/assets/SVG/chin.svg',
+  '/assets/SVG/confused-cat.svg',
+  '/assets/SVG/dancing-granny.svg',
+  '/assets/SVG/dancing-pig.svg',
+  '/assets/SVG/dancing.svg',
+  '/assets/SVG/eye-liner.svg',
+  '/assets/SVG/fair.svg',
+  '/assets/SVG/freckles.svg',
+  '/assets/SVG/ginger.svg',
+  '/assets/SVG/glasses.svg',
+  '/assets/SVG/goofy.svg',
+  '/assets/SVG/grey-hair.svg',
+  '/assets/SVG/hair.svg',
+  '/assets/SVG/hedgehog.svg',
+  '/assets/SVG/incredible.svg',
+  '/assets/SVG/obama.svg',
+  '/assets/SVG/piglet.svg',
+  '/assets/SVG/puppy.svg',
+  '/assets/SVG/red-glasses.svg',
+  '/assets/SVG/rocker.svg',
+  '/assets/SVG/sloth.svg',
+  '/assets/SVG/smiling-horse.svg',
+  '/assets/SVG/spiky-hair.svg',
+  '/assets/SVG/stern.svg',
+  '/assets/SVG/young.svg'
+]

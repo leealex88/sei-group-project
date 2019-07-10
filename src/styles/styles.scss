@@ -18,6 +18,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $title;
 }
 
+
 .mapMarker {
   width: 5px;
   height: 5px;
@@ -274,9 +275,18 @@ p, {
   margin-top: 80px;
 }
 
+
+.avatar {
+  opacity: 0.7;
+}
+
+.avatar:hover {
+  opacity: 1;
+
 .submit {
   width: 200px;
 }
+
 
 .navComponents {
   width: 20%;
@@ -428,4 +438,5 @@ p, {
   display: flex;
   flex-wrap: wrap;
 
+>>>>>>> development
 }

@@ -28,6 +28,21 @@ function updateProfile(req, res) {
     .catch(err => console.log(err))
 }
 
+function updateAvatar(req, res) {
+  console.log(req.body)
+  User
+    .findById(req.params.id)
+    .then(user => {
+      if (!user) throw new Error('Not Found')
+
+      user.avatar = req.body.avatar
+      // Object.assign(user, req.body)
+      return user.save()
+    })
+    .then(user => res.status(202).json(user))
+    .catch(err => console.log(err))
+}
+
 
 
 
@@ -35,11 +50,9 @@ function updateProfile(req, res) {
 function login(req, res) {
   User
     .findOne({ email: req.body.email })
-    .populate('user')
     .then(user => {
-      console.log(req.body)
+      console.log(user)
       if (!user || !user.validatePassword(req.body.password)) {
-        console.log('unauthorized')
         throw new Error('Unauthorized')
       }
       const token = jwt.sign({ sub: user._id }, secret, { expiresIn: '72h' })
@@ -54,20 +67,16 @@ function login(req, res) {
 function showUser(req, res, next) {
   User
     .findById(req.params.userid)
-    .populate('user')
+    .populate('events')
     .then(users => res.status(200).json(users))
     .catch(next)
 }
 
-
-
 //users own profile
 function showCurrentUser(req, res, next) {
-  req.body.user = req.currentUser
-  console.log(req.body.user)
   User
-    .findById(req.body.user._id)
-    .populate('user')
+    .findById(req.currentUser._id)
+    .populate('events')
     .then(user => res.status(201).json(user))
     .catch(next)
 }
@@ -258,6 +267,7 @@ module.exports = {
   getCurrentUser: getCurrentUser,
   deleteAcceptedRequest: deleteAcceptedRequest,
   readPrivateMessage: readPrivateMessage,
-  updateProfile: updateProfile
+  updateProfile: updateProfile,
+  updateAvatar: updateAvatar
 
 }
