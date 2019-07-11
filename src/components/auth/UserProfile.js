@@ -86,59 +86,59 @@ class UserProfile extends React.Component {
     const { user } = this.state
     console.log('user profile rendering')
     return (
-
-      <main>
+      <section>
         <Navbar />
-        <div className="flexbox-container">
-          <div className="div1">
-            <h1> {this.state.user.username} </h1>
-            <img className="userPicture" src={user.avatar}/>
+        <section className="container section-container">
+          <div className="flexbox-container">
+            <div className="div1">
+              <h1> {this.state.user.username} </h1>
+              <img className="userPicture" src={user.avatar}/>
+            </div>
+
+            <div className="div2">
+              {user.privateMessages.forEach(message => (
+                <p key ={message._id} > {message} </p> ))}
+              <label> You have {user.privateMessages.filter(message => message.request === true).length} invitation requests </label>
+              <button className="button" onClick={this.requestFunction}>See Requests</button>
+            </div>
+
+            <div className="div3">
+              {this.state.requests.map((request, i) =>
+                <Request key={i} request={request} user={user} />
+              )}
+              <label> You have {user.privateMessages.filter(message => message.request === false && message.text && message.read === false).length} private messages </label>
+              <button className="button" onClick={this.messagesFunction}>See Messages</button>
+              <div>
+                {this.state.messages.filter(message => message.request === false && message.text && message.read === false).map((message, i) =>
+                  <div key={i}>
+                    <Message message={message} user={user}  />
+                  </div>
+                )} </div>
+            </div>
+            <br />
+            <div className="div4">
+              <form onSubmit={this.handleSubmit}>
+                <hr />
+                <label>Currently your interests are listed as:</label>
+                <p> {user.interests.map((interest, i) =>
+                  <Link key={i} to={`/events/${interest}`}> <button className="interestButton"> {interest} </button></Link>
+                )} </p>
+                <h6 className="boldh6">Interests</h6>
+                <h6>What else are you interested in? Help us understand what kind of events might interest you.</h6>
+                <Select
+                  defaultValue = {interest[0]}
+                  options= {interest}
+                  onChange={this.handleInterest}
+                />
+                <button type="submit" className="button" id="userProfileButtons">Add Interest</button>
+              </form>
+            </div>
+
+            < UserEvents />
+
           </div>
-
-          <div className="div2">
-            {user.privateMessages.forEach(message => (
-              <p key ={message._id} > {message} </p> ))}
-            <label> You have {user.privateMessages.filter(message => message.request === true).length} invitation requests </label>
-            <button className="button" onClick={this.requestFunction}>See Requests</button>
-          </div>
-
-          <div className="div3">
-            {this.state.requests.map((request, i) =>
-              <Request key={i} request={request} user={user} />
-            )}
-            <label> You have {user.privateMessages.filter(message => message.request === false && message.text && message.read === false).length} private messages </label>
-            <button className="button" onClick={this.messagesFunction}>See Messages</button>
-            <div>
-              {this.state.messages.filter(message => message.request === false && message.text && message.read === false).map((message, i) =>
-                <div key={i}>
-                  <Message message={message} user={user}  />
-                </div>
-              )} </div>
-          </div>
-          <br />
-          <div className="div4">
-            <form onSubmit={this.handleSubmit}>
-              <hr />
-              <label>Currently your interests are listed as:</label>
-              <p> {user.interests.map((interest, i) =>
-                <Link key={i} to={`/events/${interest}`}> <button className="interestButton"> {interest} </button></Link>
-              )} </p>
-              <label>Interests</label>
-              <h6>What else are you interested in? Help us understand what kind of events might interest you.</h6>
-              <Select
-                defaultValue = {interest[0]}
-                options= {interest}
-                onChange={this.handleInterest}
-              />
-              <button type="submit" className="button" id="userProfileButtons">Add Interest</button>
-            </form>
-          </div>
-
-          < UserEvents />
-
-        </div>
-
-      </main>
+        </section>
+      </section>
 
 
     )

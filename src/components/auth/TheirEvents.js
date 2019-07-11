@@ -25,29 +25,29 @@ class TheirEvents extends React.Component {
     if (!this.state.events) return null
     return (
 
+      <div>
+        <div className="userEventCards">
+          {this.state.events.map(event => (
 
-      <div className="userEventCards">
-        {this.state.events.map(event => (
-
-          <section  key={event._id} >
-            <Link to={`/events/${event._id}`}>
-              <div>
-                <img src={event.partyImage}/>
-                <span key={event._id}>
+            <section  key={event._id} >
+              <Link to={`/events/${event._id}`}>
+                <div>
+                  <img src={event.partyImage}/>
+                  <span key={event._id}>
 
 
-                  <h3 key={event._id}>
+                    <h3 key={event._id}>
 
-                    {event.eventName}
+                      {event.eventName}
 
-                  </h3></span>
-              </div>
-            </Link>
-          </section>
-        ))}
+                    </h3></span>
+                </div>
+              </Link>
+            </section>
+          ))}
 
+        </div>
       </div>
-
     )
   }
 }

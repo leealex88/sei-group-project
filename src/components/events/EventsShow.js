@@ -63,13 +63,15 @@ class eventShow extends React.Component {
     if (!this.state.event) return null
     console.log(this.state.event)
     return (
-      <section >
+      <section className="eventDisplayPage">
         <Navbar />
-        <div>
+        <div className="eventsShow">
           <Fragment>
+
             <div className="eventName">
-              <h4 >Event: {this.state.event.eventName}</h4>
+              <h4 >{this.state.event.eventName}</h4>
             </div>
+
             <div className="creator">
               {!this.isAttending() && <EventCreator event={this.props.match.params.id} eventDetails={this.state.event}/>}
 
@@ -84,28 +86,25 @@ class eventShow extends React.Component {
               <hr />
               <h4 >Location</h4>
               <p>{this.state.event.location}</p>
+              <Map locations = {this.state.event}/>
               <hr />
               <h4 >What else?</h4>
 
               <hr />
             </div>
 
-
-
             <hr />
 
             <EventComments event={this.state.event} getEventData={this.getData} attendees={this.state.attendees} me={this.state.me}/>
 
-
           </Fragment>
+
+          <h3>These people are  members of this event group: </h3>
+          <Attendees attendees={this.state.attendees} />
+
+
+          {this.isAttending() && this.state.event && <AttendeeInfo event={this.state.event}/>}
         </div>
-        <h3>These people are  members of this event group: </h3>
-        <Attendees attendees={this.state.attendees} />
-
-        {this.isAttending() && this.state.event && <AttendeeInfo event={this.state.event}/>}
-
-        <Map locations = {this.state.event}/>
-
       </section>
     )
   }

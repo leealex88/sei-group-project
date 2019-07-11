@@ -26,29 +26,29 @@ class EventCalendar extends React.Component {
           onChange={this.props.handleDate}
         />
 
-        <label>Start Time</label>
-        <div>
+
+        <div className="timingDivs">
+          <label>Start Time</label>
           <TimeField
             value={this.state.startTime}
             name="startTime"
             onChange={this.props.handleTimeStart}
+            id="timeStart"
             style={{
-              width: 60
+              width: 80
             }}
           />
           <label>End Time</label>
           <TimeField
             onChange={this.props.handleTimeEnd}
             value={this.state.endTime}
+            id="timeStop"
             style={{
-              width: 60
+              width: 80
             }}
           />
         </div>
       </div>
-
-
-
     )
   }
 }

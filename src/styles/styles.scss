@@ -2,9 +2,9 @@
 @import 'skeleton.css';
 @import '~mapbox-gl/dist/mapbox-gl.css';
 
-@import url('https://fonts.googleapis.comß/css?family=Roboto%7CRoboto+Mono&display=swap');
-$title: 'Roboto', sans-serif;
-$text: 'Roboto Mono', monospace;
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet');
+$title: 'Quicksand', sans-serif;
+$text: 'Quicksand', sans-serif;
 
 * {
   box-sizing: border-box;
@@ -48,14 +48,27 @@ img {
   cursor: pointer;
 }
 
-#newEvent{
+// #newEvent {
+//     border-radius: 5px;
+//     text-align: left;
+//     padding: 70px;
+//     border: solid 1px;
+//     border-color: #DCDCDC;
+//     box-shadow: 2px 5px 20px #483D8B;
+// }
+
+.section-container {
     border-radius: 5px;
     text-align: left;
     padding: 70px;
     border: solid 1px;
     border-color: #DCDCDC;
     box-shadow: 2px 5px 20px #483D8B;
-  }
+}
+
+.eventDescriptionCard p {
+  font-size: 14px;
+}
 
 #registerForm {
   border-radius: 5px;
@@ -96,8 +109,8 @@ img {
 }
 .eachCard{
 border: solid red;
-width: 20%;
-height: 300px;
+width: 25%;
+height: 350px;
 padding: 30px 20px;
 margin: 20px;
 border-radius: 20%;
@@ -105,6 +118,7 @@ display: flex;
 flex-wrap: wrap;
 border: solid 1px;
 box-shadow: 2px 5px 20px #483D8B;
+
 }
 .eachCard, h3{
   color:#483D8B;
@@ -230,7 +244,7 @@ body {
 }
 
 div.userBio {
-  width: 870px;
+  width: 80%;
   margin: 30px 0px 30px 30px;
   border: solid 1px #483D8B;
   padding: 10px;
@@ -258,31 +272,56 @@ p, {
   // border-radius: 5px;
   border-top: solid 1px #483D8B;
   padding: 10px;
-  height: 300px;
+  height: 100%;
 }
 
 .userCommentSection {
   width: 100%;
 }
-.userEventCards section {
-  width: 45%;
-  height: 200px;
-  padding: 30px 20px;
-  margin: 20px;
-  border-radius: 20%;
-  border: solid 1px;
-  box-shadow: 2px 5px 20px #483D8B;
-  margin-top: 80px;
+
+.usersEventsSection {
+  display: flex;
+  flex-wrap: wrap;
+    flex:100%;
+    align-items: center;
+}
+.usersEventsSection section {
+  width: 20%;
+
+margin: 5px;
+    div {
+      border: solid 1px #483D8B;
+      margin: 10px;
+      // border-radius: 20%;
+      height: 100%;
+      img {
+        width: 30%;
+        height: 30%;
+
+
+      }
+    }
 }
 
 
+
+.userEventCards {
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.flexBox {
+  display: flex;
+
+}
 .avatar {
   opacity: 0.7;
 }
 
 .avatar:hover {
   opacity: 1;
-
+}
 .submit {
   width: 200px;
 }
@@ -338,14 +377,24 @@ p, {
   color: #483D8B;
 }
 
+.userEventCard {
+  display: flex;
+  flex-wrap:wrap;
+}
+
 
 // UserProfile.js
-.userProfileMain {
 
-}
+  #wholeUserProfile {
+  border-radius: 5px;
+  padding: 70px;
+  border: solid 1px;
+  border-color: #DCDCDC;
+  box-shadow: 2px 5px 20px #483D8B;
+  }
+
 .flexbox-container {
   display: flex;
-  height: 30vh;
   justify-content: space-around;
   flex-wrap: wrap;
   div {
@@ -374,12 +423,20 @@ p, {
     &.div4 {
       flex:90%;
       margin-top: 30px;
+      text-align: center;
+      font-size: 18px;
+        h6 {
+          text-align: left;
+          font-size: 14px;
+      }
+    }
+    .boldh6 {
+      font-weight: bold;
     }
     &.div5 {
       flex:100%;
       display: flex;
       flex-wrap:wrap;
-
 
       h3 {
         flex: 100%;
@@ -390,13 +447,10 @@ p, {
         height: 25%;
         margin: 10px;
       }
-
-
-
-
     }
   }
 }
+
 
 .userPicture {
   margin: 20px;
@@ -413,17 +467,19 @@ p, {
 }
 
 
-.button {
+.buttonEvent {
   background-color: #483D8B;
   color: white;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
 }
+
 .button {
   background-color: #483D8B;
   color: white;
 
 }
-
-//EventShow.js
 
 .eventName {
   text-align: center;
@@ -431,12 +487,48 @@ p, {
   border-bottom: solid 1px #483D8B;
 }
 
-// .name {
-//   bordel: solid blue;
-// }
 .creator {
   display: flex;
   flex-wrap: wrap;
+}
 
->>>>>>> development
+// Create Event Form
+
+.react-calendar {
+  margin: auto;
+}
+
+.timeStart {
+  width: 150px;
+}
+.timeEnd {
+  width: 150px;
+}
+
+.timingDivs {
+// margin-top: 40px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+margin: 5px;
+margin-top: 30px;
+}
+
+// EventsShow.js
+
+.eventsShow {
+  border-radius: 5px;
+  text-align: center;
+  padding: 70px;
+  border: solid 1px;
+  border-color: #DCDCDC;
+  box-shadow: 2px 5px 20px #483D8B;
+  width: 80%;
+  margin: auto;
+}
+
+.mapboxgl-canvas {
+  // margin: auto;
+  // width: 450;
+  // height: 450;
 }

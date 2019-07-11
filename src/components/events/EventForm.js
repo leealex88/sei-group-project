@@ -8,16 +8,16 @@ import { borough } from './EventFormParts/EventBorough'
 
 const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handleTimeStart, handleTimeEnd, handleBorough }) => (
   <form className="eventForm" onSubmit={handleSubmit}>
-    <div className="container" id="newEvent">
+    <div className="container section-container" id="newEvent">
       <div className="row">
         <h2>Things</h2>
-        <div className="control ten columns">
+        <div className="control eleven columns">
           <label>Type of the Event (required)</label>
           <EventType
             handleClick={handleClick}
           />
         </div>
-        <div className="control ten columns">
+        <div className="control eleven columns">
           <label htmlFor="exampleEmailInput">Name of the Event (required)</label>
           <input
             className="u-full-width"
@@ -27,7 +27,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
             onChange={handleChange}
           />
         </div>
-        <div className="control ten columns">
+        <div className="control eleven columns">
           <label>Date & Time  (required)</label>
           <EventCalendar
             handleDate={handleDate}
@@ -35,7 +35,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
             handleTimeEnd={handleTimeEnd}
           />
         </div>
-        <div className="control ten columns">
+        <div className="control eleven columns">
           <label>Schedule</label>
           <textarea
             className="u-full-width"
@@ -46,7 +46,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
           />
         </div>
         <br />
-        <div className="control ten columns">
+        <div className="control eleven columns">
           <label>Location</label>
           <h6>Which Borough in London is the event taking place?</h6>
           <Select
@@ -55,7 +55,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
             onChange={handleBorough}
           />
         </div>
-        <div className="control ten columns">
+        <div className="control eleven columns">
           <label>Describe the Event</label>
           <textarea
             className="u-full-width"
@@ -67,8 +67,8 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
             id="description"
             onChange={handleChange}
           />
-          <label>Attendee details</label>
-          <p>You can put any private information in here, such as the exact address - this will only be shown to peopl who you have accepted as attendees.</p>
+          <label>Atelevendee details</label>
+          <p>You can put any private information in here, such as the exact address - this will only be shown to peopl who you have accepted as atelevendees.</p>
           <textarea
             className="u-full-width"
             minLength="10"
@@ -82,10 +82,10 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
           <hr />
         </div>
         {/* condense all ticket questions into component. tickets to be Boolean, ticketLink to be string */}
-        <div className="control ten columns">
+        <div className="control eleven columns">
           <h4>Tickets, links and equipment</h4>
-          <label className="control ten columns">Do you need a ticket?</label>
-          <div className="ten columns">
+          <label className="control eleven columns">Do you need a ticket?</label>
+          <div className="eleven columns">
             <div className="control">
               <label className="radio">
                 <input
@@ -109,7 +109,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
               </label>
             </div>
           </div>
-          <div className="control ten columns">
+          <div className="control eleven columns">
             <label>Cost</label>
             <input
               className="u-full-width"
@@ -119,7 +119,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
               onChange={handleChange}
             />
           </div>
-          <div className="control ten columns">
+          <div className="control eleven columns">
             <label>Link to the tickets</label>
             <input
               className="u-full-width"
@@ -129,7 +129,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
               onChange={handleChange}
             />
           </div>
-          <div className="control ten columns">
+          <div className="control eleven columns">
             <label>Link to the event</label>
             <input
               className="u-full-width"
@@ -139,7 +139,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
               onChange={handleChange}
             />
           </div>
-          <div className="control ten columns">
+          <div className="control eleven columns">
             <label>Preparation</label>
             <input
               className="u-full-width"
@@ -149,7 +149,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
               onChange={handleChange}
             />
           </div>
-          <div className="control ten columns">
+          <div className="control eleven columns">
             <label>Is any equipment provided?</label>
             <input
               className="u-full-width"
@@ -159,7 +159,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
               onChange={handleChange}
             />
           </div>
-          <div className="control ten columns">
+          <div className="control eleven columns">
             <label>What you need to bring with you</label>
             <input
               className="u-full-width"
@@ -170,8 +170,8 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
             />
           </div>
         </div>
-        <div className="control ten columns">
-          <div className="control eight columns">
+        <div className="control eleven columns">
+          <div className="control four columns" id="sizeOfTheGroup">
             <label>Min Size</label>
             <select
               name="minSize"
@@ -207,7 +207,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
               <option value = "9">9</option>
             </select>
           </div>
-          <div className="control ten columns">
+          <div className="control eleven columns">
             <label>Party Pic</label>
             <input
               className="u-full-width"
@@ -217,7 +217,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
               onChange={handleChange}
             />
           </div>
-          <div className="control ten columns">
+          <div className="control eleven columns">
             <label>Tags</label>
             <input
               className="u-full-width"
@@ -228,7 +228,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
             />
           </div>
           <div className="field">
-            <div className="control ten columns">
+            <div className="control eleven columns">
               <select
                 onChange={handleChange} name="skillLevel">
                 <option disabled value="">Skill level</option>
@@ -238,7 +238,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
               </select>
             </div>
           </div>
-          <div className="control ten columns">
+          <div className="control eleven columns">
             <label>Comments</label>
             <input
               className="u-full-width"
@@ -249,7 +249,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
             />
           </div>
         </div>
-        <div className="control ten columns">
+        <div className="control eleven columns">
           <button type="submit" className="button">Submit</button>
         </div>
       </div>
