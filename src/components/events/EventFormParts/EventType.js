@@ -14,58 +14,37 @@ class EventType extends React.Component {
         <button
           type="button"
           value="art"
-          className="button"
+          className="buttonEvent"
           onClick={this.props.handleClick}>
         Art & Culture
         </button>
         <button
           type="button"
           value="nature"
-          className="button"
+          className="buttonEvent"
           onClick={this.props.handleClick}>
         Nature & Outdoors
         </button>
         <button
           type="button"
           value="entertainment"
-          className="button"
+          className="buttonEvent"
           onClick={this.props.handleClick}>
         Entertainment
         </button>
         <button
           type="button"
-          value="health"
-          className="button"
+          value="sport"
+          className="buttonEvent"
           onClick={this.props.handleClick}>
-        Health & Wellbeing
+        Sports & Wellness
         </button>
         <button
           type="button"
           value="food"
-          className="button"
+          className="buttonEvent"
           onClick={this.props.handleClick}>
         Food & Drink
-        </button>
-        <button
-          type="button"
-          value="community"
-          className="button"
-          onClick={this.props.handleClick}>
-        Community
-        </button>
-        <button
-          type="button"
-          value="learning"
-          className="button"
-          onClick={this.props.handleClick}>
-        Learning
-        </button>
-        <button
-          type="button"
-          value="sport"
-          className="button"
-          onClick={this.props.handleClick}>
-        Sport & Fitness
         </button>
       </div>
     )

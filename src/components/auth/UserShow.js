@@ -3,6 +3,7 @@ import axios from 'axios'
 import Auth from '../../lib/Auth'
 import TheirEvents from './TheirEvents'
 import { Link } from 'react-router-dom'
+import Navbar from '../common/Navbar'
 
 class UserShow extends React.Component {
   constructor() {
@@ -62,37 +63,39 @@ class UserShow extends React.Component {
     if (!this.state.user) return null
     const { user } = this.state
     return (
-      <div id="userProfileMain">
-        <img className="userPicture" src={user.avatar}/>
-        <div className="userBio">
-          <h5 className="userTitle">{user.username}</h5>
-          <p>{ user.bio }</p>
-        </div>
-        <hr/>
-        <h5> {user.username} is interested in... </h5>
-        <hr/>
-        {user.interests.map((interest, i) =>
-          <Link key={i} to={`/events/${interest}`}> <button> {interest} </button></Link>
-        )}
+      <main>
+        <Navbar />
+        <div id="userProfileMain">
+          <img className="userPicture" src={user.avatar}/>
+          <div className="userBio">
+            <h5 className="userTitle">{user.username}</h5>
+            <p>{ user.bio }</p>
+          </div>
+          <hr/>
+          <h5> {user.username} is interested in... </h5>
+          <hr/>
+          {user.interests.map((interest, i) =>
+            <Link key={i} to={`/events/${interest}`}> <button> {interest} </button></Link>
+          )}
 
-        <div className="messenger">
-          <p>Have a Chat with Me!  </p>
-          <Link to={`/users/${user._id}/message`}> <button> 💬 Private Message </button> </Link>
-        </div>
-        <p> Have you attended an event with {user.username}? Let others know how it was! </p>
-        <div className="commentSection">
-          {user.comments.map(comment => (
-            <div key={comment._id} className="card">
-              <div className="card-content">
-                {comment.text} - {new Date(comment.createdAt).toLocaleString()}
+          <div className="messenger">
+            <p>Have a Chat with Me!  </p>
+            <Link to={`/users/${user._id}/message`}> <button> 💬 Private Message </button> </Link>
+          </div>
+          <p> Have you attended an event with {user.username}? Let others know how it was! </p>
+          <div className="commentSection">
+            {user.comments.map(comment => (
+              <div key={comment._id} className="card">
+                <div className="card-content">
+                  {comment.text} - {new Date(comment.createdAt).toLocaleString()}
+                </div>
+                {this.isOwner(comment) && <button
+                  onClick={() => this.handleCommentDelete(comment)}
+                >Delete
+                </button>}
               </div>
-              {this.isOwner(comment) && <button
-                onClick={() => this.handleCommentDelete(comment)}
-              >Delete
-              </button>}
-            </div>
-          ))}
-          {Auth.isAuthenticated() &&
+            ))}
+            {Auth.isAuthenticated() &&
           <form  onSubmit={this.handleSubmit}>
             <div className="field">
               <div className="control">
@@ -107,14 +110,14 @@ class UserShow extends React.Component {
             </div>
             <button type="submit">Post a Comment</button>
           </form>}
-        </div>
-        <section className="usersEventsSection">
-          <div className="usersEvents">
+
+          </div>
+          <section className="usersEventsSection">
             <p> {user.username} is attending these events: </p>
             <TheirEvents user={this.props.match.params.userid} />
-          </div>
-        </section>
-      </div>
+          </section>
+        </div>
+      </main>
     )
   }
 }

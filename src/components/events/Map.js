@@ -50,3 +50,6 @@ class Map extends React.Component {
 }
 
 export default Map
+
+
+// el.innerHTML = '<img src="../assets/star.svg"/>'
