@@ -30,15 +30,15 @@ function eventCreate(req, res) {
   console.log('showing', req.body)
   Event
     .create(req.body)
-    .then(event =>
-      User
-        .findById(req.currentUser._id)
-        .then(user => {
-          event = event._id.toString()
-          if (!user) return res.status(404).json({ message: 'Not found' })
-          user.events.push(event)
-          return user.save()
-        }))
+    // .then(event =>
+    //   User
+    //     .findById(req.currentUser._id)
+    //     .then(user => {
+    //       event = event._id.toString()
+    //       if (!user) return res.status(404).json({ message: 'Not found' })
+    //       user.events.push(event)
+    //       return user.save()
+    //     }))
     .then(event => res.status(201).json(event))
     .catch(err => console.log(err))
 
@@ -96,6 +96,6 @@ module.exports = {
   delete: deleteRoute,
   commentCreate: commentCreateRoute,
   commentDelete: commentDeleteRoute
-  
+
 
 }
