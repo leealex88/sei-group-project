@@ -7,7 +7,7 @@ class Request extends React.Component {
   constructor() {
     super()
 
-    this.state = { messageSender: '', event: null }
+    this.state = { messageSender: '', event: null, read: false }
     this.acceptFunction = this.acceptFunction.bind(this)
     this.rejectFunction = this.rejectFunction.bind(this)
 
@@ -39,6 +39,7 @@ class Request extends React.Component {
     axios.post(`api/users/${this.props.request.user}/accept`,  { events: this.props.request.requestEvent } ,  {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
+      .then(() => this.setState({ read: true }))
       .then(() => this.getData())
       .catch(() => this.setState({ error: 'Invalid Crendentials' }))
 
@@ -49,12 +50,14 @@ class Request extends React.Component {
     this.sendAccept()
 
 
+
   }
 
   sendReject() {
     axios.post(`/api/users/${this.props.request.user}/privateMessages`, { text: `Your request to ${this.state.event.eventName} was not accepted, the event may have been full so please don't take it to heart. Have a good day!` }, {
       headers: { 'Authorization': `${Auth.getToken()}` }
     })
+      .then(() => this.setState({ read: true }))
       .then(() => this.getData())
       .catch(err => console.log(err))
 
@@ -75,8 +78,9 @@ class Request extends React.Component {
     axios.post(`/api/users/${this.props.request.user}/privateMessages`, { text: `Your request to ${this.state.event.eventName} was accepted, you can now join in the chat and find out all the  details!` }, {
       headers: { 'Authorization': `${Auth.getToken()}` }
     })
-      .then(() => this.getData())
+      
       .catch(err => console.log(err))
+
 
   }
 
@@ -86,12 +90,12 @@ class Request extends React.Component {
     })
 
       .catch(err => console.log(err))
-    this.getData()
+
   }
 
 
   componentDidMount() {
-    if (!this.props.request.user) return null
+    if (!this.props.request.user || this.state.read) return null
     this.requestFunction()
   }
 

@@ -18,10 +18,10 @@ class Attendees extends React.Component {
     return (
       <section >
 
-        {this.props.attendees.map(attendee =>
-          <div key={attendee._id}>
+        {this.props.attendees.map((attendee, i) =>
+          <div key={i}>
 
-            <Link to={`/users/${attendee._id}`} key={attendee._id}> <p> {attendee.username} </p></Link>
+            <Link to={`/users/${attendee._id}`} key={i}> <p> {attendee.username} </p></Link>
           </div>
         )}
 

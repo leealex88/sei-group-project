@@ -119,6 +119,8 @@ class UserProfile extends React.Component {
               <Message message={message} user={user}  />
             </div>
           )} </div>
+
+      
         <form onSubmit={this.handleSubmit}>
           <p>Currently your interests are listed as {user.interests.map((interest, i) =>
             <Link key={i} to={`/events/${interest}`}> <button> {interest} </button></Link>
