@@ -28,13 +28,8 @@ router.route('/users/:id/')
   .put(users.updateProfile)
   .patch(users.updateAvatar)
 
-
-
-
 router.route('/users/:id/accept')
   .post(secureRoute, users.acceptRequest)
-
-
 
 router.route('/users/:id/privateMessages/:commentId')
   .put(secureRoute, users.deleteAcceptedRequest)
@@ -44,8 +39,6 @@ router.route('/users/:id/privateMessages/:commentId')
 
 router.route('/events/:id/comments')
   .post(secureRoute, events.commentCreate)
-
-
 
 router.route('/events/:id/comments/:commentId')
   .delete(secureRoute, events.commentDelete)
@@ -61,7 +54,6 @@ router.route('/users/:id/events')
 
 router.route('/myprofile')
   .get(secureRoute, users.showCurrentUser)
-
 
 router.route('/login')
   .post(users.login)

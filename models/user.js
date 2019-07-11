@@ -29,14 +29,9 @@ const userSchema = new mongoose.Schema({
   comments: [ userCommentSchema ],
   privateMessages: [ privateMessageSchema ],
   interests: { type: Array, default: ['baking', 'running', 'yoga', 'reading', 'cinema', 'politics'] },
-  tags: { type: Array }
+  tags: { type: Array },
+  events: { type: Array }
 
-})
-
-userSchema.virtual('events', {
-  ref: 'Event',
-  localField: '_id',
-  foreignField: 'user'
 })
 
 userSchema.plugin(require('mongoose-unique-validator'))

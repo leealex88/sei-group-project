@@ -43,10 +43,6 @@ function updateAvatar(req, res) {
     .catch(err => console.log(err))
 }
 
-
-
-
-
 function login(req, res) {
   User
     .findOne({ email: req.body.email })
@@ -174,7 +170,6 @@ function deleteAcceptedRequest(req, res) {
 
 }
 
-
 function attendingUsers(req, res) {
   console.log('attending users', req.params.id)
   User
@@ -185,8 +180,6 @@ function attendingUsers(req, res) {
     })
     .catch(err => console.log(err))
 }
-
-
 
 function privateMessageCreateRoute(req, res) {
   console.log('pming')
