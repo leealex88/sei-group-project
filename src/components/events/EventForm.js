@@ -259,12 +259,3 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
 )
 
 export default EventForm
-
-
-// <input
-//   className="u-full-width"
-//   type="input"
-//   placeholder=""
-//   name="username"
-//   id="exampleEmailInput"
-//   onChange={handleChange}/>

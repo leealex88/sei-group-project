@@ -280,6 +280,25 @@ p, {
   flex-wrap: wrap;
     flex:100%;
     align-items: center;
+
+}
+.usersEventsSection section {
+  width: 20%;
+
+margin: 5px;
+    div {
+      border: solid 1px #483D8B;
+      margin: 10px;
+      // border-radius: 20%;
+      height: 100%;
+      img {
+        width: 30%;
+        height: 30%;
+
+
+      }
+    }
+
 }
 .usersEventsSection section {
   width: 20%;
@@ -301,6 +320,17 @@ margin: 5px;
 
 
 
+
+.userEventCards {
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.flexBox {
+  display: flex;
+
+}
 
 .userEventCards {
   height: 200px;
@@ -523,9 +553,13 @@ margin-top: 30px;
 }
 
 
-.mapboxgl-canvas {
-  // margin: auto;
-  // width: 450;
-  // height: 450;
-
+.eventsShow {
+  border-radius: 5px;
+  text-align: center;
+  padding: 70px;
+  border: solid 1px;
+  border-color: #DCDCDC;
+  box-shadow: 2px 5px 20px #483D8B;
+  width: 80%;
+  margin: auto;
 }
