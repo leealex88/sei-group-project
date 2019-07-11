@@ -127,7 +127,7 @@ class eventShow extends React.Component {
               <div className="creator">
                 {!this.isAttending() && <EventCreator event={this.props.match.params.id} eventDetails={this.state.event}/>}
 
-                <img src={this.state.event.partyImage} alt={this.state.event.name} />
+              
               </div>
 
               <div>
@@ -136,8 +136,7 @@ class eventShow extends React.Component {
                 <h4 >Description</h4>
                 <p>{this.state.event.description}</p>
                 <hr />
-                <h4 >Location</h4>
-                <p>{this.state.event.location}</p>
+
                 <Map locations = {this.state.event}/>
                 <hr />
                 <h4 >What else?</h4>

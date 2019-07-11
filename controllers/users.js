@@ -96,7 +96,7 @@ function showCreatedEvents(req, res, next) {
     .catch(next)
 }
 
-//created events of specific user
+//created events of specific user. takes the user id on the event from.... and populates info to x.
 function showTheirEvents(req, res, next) {
 
   console.log(req.params.id)
