@@ -27,12 +27,15 @@ class Message extends React.Component {
     axios.post(`api/users/${this.props.user._id}/privateMessages/${this.props.message._id}`, null, {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
-
-      .then(document.querySelector('.PM').style.display = 'none')
+      .then(() => {
+        this.props.getEventData()
+        this.props.toggleMessages()
+        document.querySelector('.PM').style.display = 'none'
+      })
       .catch(err => console.log(err))
-    this.getData()
-
   }
+
+
 
   componentDidMount() {
     if (!this.props.user) return null
@@ -48,7 +51,7 @@ class Message extends React.Component {
 
         <h6> You have a Message from {this.state.messageSender} </h6>
 
-        
+
         <p> {this.props.message.text} </p>
 
 

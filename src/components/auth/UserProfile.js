@@ -13,12 +13,15 @@ import { Link } from 'react-router-dom'
 class UserProfile extends React.Component {
   constructor() {
     super()
-    this.state = { user: null, requests: [], messages: [], data: { interests: null } }
+    this.state = { user: null, requests: false, messages: false, data: { interests: null } }
     this.logout = this.logout.bind(this)
     this.requestFunction = this.requestFunction.bind(this)
     this.messagesFunction = this.messagesFunction.bind(this)
     this.handleInterest = this.handleInterest.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.getData = this.getData.bind(this)
+    this.messagesFunction = this.messagesFunction.bind(this)
+    this.requestFunction = this.requestFunction.bind(this)
 
   }
 
@@ -28,17 +31,18 @@ class UserProfile extends React.Component {
     this.props.history.push('/')
   }
 
+  // requestFunction() {
+  //   const requests = this.state.user.privateMessages.filter(message => message.request === true)
+  //   requests.concat(requests.map(request => request.user))
+  //   console.log(requests)
+  //   this.setState({ requests: requests })
+  // }
   requestFunction() {
-    const requests = this.state.user.privateMessages.filter(message => message.request === true)
-    requests.concat(requests.map(request => request.user))
-    console.log(requests)
-    this.setState({ requests: requests })
+    this.setState({ requests: !this.state.requests })
   }
 
   messagesFunction() {
-    const messages = this.state.user.privateMessages.filter(message => message.request === false && message.text !== '')
-    messages.concat(messages.map(message => message.user))
-    this.setState({ messages: messages })
+    this.setState({ messages: !this.state.messages })
   }
 
   componentDidMount() {
@@ -46,6 +50,7 @@ class UserProfile extends React.Component {
   }
 
   getData(){
+    console.log('getting data')
     axios.get('/api/myprofile', {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
@@ -106,17 +111,27 @@ class UserProfile extends React.Component {
         <button onClick={this.requestFunction}>See Requests</button>
 
         <div>
-          {this.state.requests.map((request, i) =>
-            <Request key={i} request={request} user={user} />
+          {this.state.requests && user.privateMessages.filter(message => message.request === true).map((request, i) =>
+            <Request key={i}
+              request={request}
+              user={user}
+              getEventData={this.getData}
+              toggleRequests={this.requestFunction}
+            />
           )} </div>
 
         <p> You have {user.privateMessages.filter(message => message.request === false && message.text && message.read === false).length} private messages </p>
         <button onClick={this.messagesFunction}>See Messages</button>
 
         <div>
-          {this.state.messages.filter(message => message.request === false && message.text && message.read === false).map((message, i) =>
+          {this.state.messages && user.privateMessages.filter(message => message.request === false && message.text && message.read === false).map((message, i) =>
             <div key={i}>
-              <Message message={message} user={user}  />
+              <Message
+                message={message}
+                user={user}
+                getEventData={this.getData}
+                toggleMessages={this.messagesFunction}
+              />
             </div>
           )} </div>
         <form onSubmit={this.handleSubmit}>
