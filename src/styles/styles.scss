@@ -2,9 +2,9 @@
 @import 'skeleton.css';
 @import '~mapbox-gl/dist/mapbox-gl.css';
 
-@import url('https://fonts.googleapis.comß/css?family=Roboto%7CRoboto+Mono&display=swap');
-$title: 'Roboto', sans-serif;
-$text: 'Roboto Mono', monospace;
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet');
+$title: 'Quicksand', sans-serif;
+$text: 'Quicksand', sans-serif;
 
 * {
   box-sizing: border-box;
@@ -46,14 +46,27 @@ img {
   cursor: pointer;
 }
 
-#newEvent{
+// #newEvent {
+//     border-radius: 5px;
+//     text-align: left;
+//     padding: 70px;
+//     border: solid 1px;
+//     border-color: #DCDCDC;
+//     box-shadow: 2px 5px 20px #483D8B;
+// }
+
+.section-container {
     border-radius: 5px;
     text-align: left;
     padding: 70px;
     border: solid 1px;
     border-color: #DCDCDC;
     box-shadow: 2px 5px 20px #483D8B;
-  }
+}
+
+.eventDescriptionCard p {
+  font-size: 14px;
+}
 
 #registerForm {
   border-radius: 5px;
@@ -94,8 +107,8 @@ img {
 }
 .eachCard {
 border: solid red;
-width: 20%;
-height: 300px;
+width: 25%;
+height: 350px;
 padding: 30px 20px;
 margin: 20px;
 border-radius: 20%;
@@ -103,6 +116,7 @@ display: flex;
 flex-wrap: wrap;
 border: solid 1px;
 box-shadow: 2px 5px 20px #483D8B;
+
 }
 .eachCard, h3 {
   color:#483D8B;
@@ -228,7 +242,7 @@ body {
 }
 
 div.userBio {
-  width: 870px;
+  width: 80%;
   margin: 30px 0px 30px 30px;
   border: solid 1px #483D8B;
   padding: 10px;
@@ -254,25 +268,50 @@ p, {
   // border-radius: 5px;
   border-top: solid 1px #483D8B;
   padding: 10px;
-  height: 300px;
+  height: 100%;
 }
 
 .userCommentSection {
   width: 100%;
 }
-.userEventCards section {
-  width: 45%;
-  height: 200px;
-  padding: 30px 20px;
-  margin: 20px;
-  border-radius: 20%;
-  border: solid 1px;
-  box-shadow: 2px 5px 20px #483D8B;
-  margin-top: 80px;
+
+.usersEventsSection {
+  display: flex;
+  flex-wrap: wrap;
+    flex:100%;
+    align-items: center;
+}
+.usersEventsSection section {
+  width: 20%;
+
+margin: 5px;
+    div {
+      border: solid 1px #483D8B;
+      margin: 10px;
+      // border-radius: 20%;
+      height: 100%;
+      img {
+        width: 30%;
+        height: 30%;
+
+
+      }
+    }
 }
 
 
 
+
+.userEventCards {
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.flexBox {
+  display: flex;
+
+}
 
 .avatar {
   opacity: 0.7;
@@ -281,8 +320,6 @@ p, {
 .avatar:hover {
   opacity: 1;
 }
-
-
 .submit {
   width: 200px;
 }
@@ -334,12 +371,25 @@ p, {
   color: #483D8B;
 }
 
+.userEventCard {
+  display: flex;
+  flex-wrap:wrap;
+}
+
 
 // UserProfile.js
 
+
+  #wholeUserProfile {
+  border-radius: 5px;
+  padding: 70px;
+  border: solid 1px;
+  border-color: #DCDCDC;
+  box-shadow: 2px 5px 20px #483D8B;
+  }
+
 .flexbox-container {
   display: flex;
-  height: 30vh;
   justify-content: space-around;
   flex-wrap: wrap;
   div {
@@ -368,6 +418,15 @@ p, {
     &.div4 {
       flex:90%;
       margin-top: 30px;
+      text-align: center;
+      font-size: 18px;
+        h6 {
+          text-align: left;
+          font-size: 14px;
+      }
+    }
+    .boldh6 {
+      font-weight: bold;
     }
     &.div5 {
       flex:100%;
@@ -387,6 +446,7 @@ p, {
   }
 }
 
+
 .userPicture {
   margin: 20px;
   margin-right: 90px;
@@ -402,20 +462,19 @@ p, {
 }
 
 
+.buttonEvent {
+  background-color: #483D8B;
+  color: white;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+}
+
 .button {
   background-color: #483D8B;
   color: white;
-}
-
-
-
-.button {
-  background-color: #483D8B;
-  color: white;
 
 }
-
-//EventShow.js
 
 .eventName {
   text-align: center;
@@ -426,6 +485,480 @@ p, {
 .creator {
   display: flex;
   flex-wrap: wrap;
-
-
 }
+
+// Create Event Form
+
+.react-calendar {
+  margin: auto;
+}
+
+.timeStart {
+  width: 150px;
+}
+.timeEnd {
+  width: 150px;
+}
+
+.timingDivs {
+// margin-top: 40px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+margin: 5px;
+margin-top: 30px;
+}
+
+// EventsShow.js
+
+.eventsShow {
+  border-radius: 5px;
+  text-align: center;
+  padding: 70px;
+  border: solid 1px;
+  border-color: #DCDCDC;
+  box-shadow: 2px 5px 20px #483D8B;
+  width: 80%;
+  margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+// @import 'normalize.css';
+// @import 'skeleton.css';
+// @import '~mapbox-gl/dist/mapbox-gl.css';
+//
+// @import url('https://fonts.googleapis.comß/css?family=Roboto%7CRoboto+Mono&display=swap');
+// $title: 'Roboto', sans-serif;
+// $text: 'Roboto Mono', monospace;
+//
+// * {
+//   box-sizing: border-box;
+// }
+//
+// body {
+//   font-family: $text
+// }
+//
+// h1, h2, h3, h4, h5, h6 {
+//   font-family: $title;
+// }
+//
+// .mapMarker {
+//   width: 5px;
+//   height: 5px;
+// }
+//
+// img {
+//   width: 100px;
+// }
+//
+// .mapMarker {
+//   width: 5px;
+//   height: 5px
+// }
+//
+// .map {
+//   width: 500px;
+//   height: 500px;
+//   margin: 0 auto;
+//   top: 100px;
+// }
+//
+// .marker {
+//   background-size: cover;
+//   width: 15px;
+//   height: 50px;
+//   cursor: pointer;
+// }
+//
+// #newEvent{
+//     border-radius: 5px;
+//     text-align: left;
+//     padding: 70px;
+//     border: solid 1px;
+//     border-color: #DCDCDC;
+//     box-shadow: 2px 5px 20px #483D8B;
+//   }
+//
+// #registerForm {
+//   border-radius: 5px;
+//   text-align: left;
+//   padding: 70px;
+//   border: solid 1px;
+//   border-color: #DCDCDC;
+//   box-shadow: 2px 5px 20px #483D8B;
+//   width: 80%;
+//   margin: 10px auto;
+// }
+//
+// #loginForm {
+//   border-radius: 5px;
+//   text-align: left;
+//   padding: 70px;
+//   border: solid 1px;
+//   border-color: #DCDCDC;
+//   box-shadow: 2px 5px 20px #483D8B;
+//   width: 80%;
+//   margin: 10px auto;
+// }
+// .u-full-width {
+//     height: 40px;
+// }
+// .frontSection{
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin: auto;
+//   width: 100%
+// }
+// .containerFront {
+//   width: 100%;
+//   margin: 40px;
+//   flex-direction: column-reverse;
+//   align-content: center;
+//   text-align: center
+// }
+// .eachCard {
+// border: solid red;
+// width: 20%;
+// height: 300px;
+// padding: 30px 20px;
+// margin: 20px;
+// border-radius: 20%;
+// display: flex;
+// flex-wrap: wrap;
+// border: solid 1px;
+// box-shadow: 2px 5px 20px #483D8B;
+// }
+// .eachCard, h3 {
+//   color:#483D8B;
+//   font-size: 18px;
+// }
+// html {
+//   box-sizing: border-box;
+//   background: white;
+//   font-family: $text;
+// }
+// #eventDescription {
+//   height: 300px;
+// }
+// body {
+//   margin: 0;
+//   color: #373737;
+// }
+// .button {
+//   border: solid 1px #483D8B;
+// }
+//
+// //Home page
+//
+// .homePageLink {
+//   color: black;
+//   text-decoration: none;
+// }
+// *, *:before, *:after {
+//   box-sizing: inherit;
+// }
+// .panels {
+//   min-height: 100vh;
+//   overflow: hidden;
+//   display: flex;
+// }
+// .panel {
+//   background: white;
+//   // box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+//   color: black;
+//   text-align: center;
+//   align-items: center;
+//   /* Safari transitionend event.propertyName === flex */
+//   /* Chrome + FF transitionend event.propertyName === flex-grow */
+//   transition:
+//     font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+//     flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+//     background 0.2s;
+//   font-size: 16px;
+//   background-size: cover;
+//   background-position: center;
+//   flex: 1;
+//   justify-content: center;
+//   align-items: center;
+//   display: flex;
+//   flex-direction: column;
+// }
+// .panel1 { background-image:url(https://images.pexels.com/photos/1587646/pexels-photo-1587646.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500); }
+//
+// .panel3 { background-image:url(https://images.pexels.com/photos/1855269/pexels-photo-1855269.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500); }
+//
+// .panel5 { background-image:url(https://images.pexels.com/photos/1267693/pexels-photo-1267693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500); }
+// /* Flex Children */
+//
+//
+// .panel > * {
+//   margin: 0;
+//   width: 100%;
+//   transition: transform 1s;
+//   flex: 1 0 auto;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+//
+// .panel > *:first-child { transform: translateY(-100%); }
+// .panel.open-active > *:first-child { transform: translateY(0); }
+// .panel > *:last-child { transform: translateY(100%); }
+// .panel.open-active > *:last-child { transform: translateY(0); }
+// .panel p {
+//   // text-transform: uppercase;
+//   text-shadow:  rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+//   font-size: 2em;
+// }
+//
+// .panel p:nth-child(2) {
+//   font-size: 2em;
+// }
+// .panel.open {
+//   font-size: 15px;
+//   flex: 3.5;
+// }
+//
+//
+// .invited {
+//   display: none;
+// }
+//
+// // userProfileMain
+//
+// #userProfileMain {
+//   border-radius: 5px;
+//   text-align: left;
+//   padding: 70px;
+//   border: solid 1px;
+//   border-color: #DCDCDC;
+//   box-shadow: 2px 5px 20px #483D8B;
+//   width: 80%;
+//   margin: 10px auto;
+//   display: flex;
+//   flex-wrap: wrap;
+//
+// }
+//
+// .userPicture {
+//    border-radius: 100%;
+//    height: 100px;
+//    transform:scale(1.005);
+//    box-shadow: 2px 5px 20px #483D8B;
+// }
+//
+// .userPicture:hover {
+//    transform:scale(1.07);
+// }
+//
+// div.userBio {
+//   width: 870px;
+//   margin: 30px 0px 30px 30px;
+//   border: solid 1px #483D8B;
+//   padding: 10px;
+//   border-radius: 5px;
+//    text-align: justify;
+// }
+//
+// .messanger {
+//   // border: solid 1px #483D8B;
+//   border-radius: 5px;
+//   text-align: center;
+//     align-items: center;
+// }
+//
+// p, {
+//     margin-bottom: 1rem;
+// }
+//
+// .commentSection {
+//   width: 100%;
+//   // border-style: solid  2px;
+//   border-color: #483D8B;
+//   // border-radius: 5px;
+//   border-top: solid 1px #483D8B;
+//   padding: 10px;
+//   height: 300px;
+// }
+//
+// .userCommentSection {
+//   width: 100%;
+// }
+// .userEventCards section {
+//   width: 45%;
+//   height: 200px;
+//   padding: 30px 20px;
+//   margin: 20px;
+//   border-radius: 20%;
+//   border: solid 1px;
+//   box-shadow: 2px 5px 20px #483D8B;
+//   margin-top: 80px;
+// }
+//
+//
+//
+//
+// .avatar {
+//   opacity: 0.7;
+// }
+//
+// .avatar:hover {
+//   opacity: 1;
+// }
+//
+//
+// .submit {
+//   width: 200px;
+// }
+//
+// .navComponents {
+//   width: 20%;
+//   text-align: center;
+//   color: white;
+//     text-decoration: none;
+//
+// }
+//
+// // Navbar
+//
+// .navbar {
+//   margin: 10px;
+//   height: 80px;
+//   padding: 5px;
+//   font-size: 20px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-image: url("https://images.pexels.com/photos/459029/pexels-photo-459029.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+//
+// #logo {
+//  width: 50%;
+//  margin-left: 50px;
+//  margin-top: 10px;
+//  // border: solid 0.5px white;
+//  border-radius: 46%;
+// }
+//
+// // ALL USERS Profile
+//
+// #usersImage {
+//   border-radius: 100%;
+//   height: 100px;
+//   transform:scale(1.005);
+//   box-shadow: 2px 5px 20px #483D8B;
+//   margin: 20px;
+// }
+//
+// #usersName {
+//   text-align: center;
+//   text-decoration: none;
+//   color: #483D8B;
+// }
+//
+//
+// // UserProfile.js
+//
+// .flexbox-container {
+//   display: flex;
+//   height: 30vh;
+//   justify-content: space-around;
+//   flex-wrap: wrap;
+//   div {
+//     margin: 3px;
+//     &.div1 {
+//       flex: 100%;
+//       display: flex;
+//       justify-content: flex-end;
+//       align-items: center;
+//       border-bottom: solid 1px #483D8B;
+//
+//     }
+//
+//     &.div2 {
+//       flex: 30%;
+//       text-align: center;
+//       margin-top: 20px;
+//       justify-content: flex-end;
+//     }
+//
+//     &.div3 {
+//       flex: 30%;
+//       text-align: center;
+//       margin-top: 20px;
+//     }
+//     &.div4 {
+//       flex:90%;
+//       margin-top: 30px;
+//     }
+//     &.div5 {
+//       flex:100%;
+//       display: flex;
+//       flex-wrap:wrap;
+//
+//       h3 {
+//         flex: 100%;
+//       }
+//       section {
+//         flex: 20%;
+//         border: solid 1px #483D8B;
+//         height: 25%;
+//         margin: 10px;
+//       }
+//     }
+//   }
+// }
+//
+// .userPicture {
+//   margin: 20px;
+//   margin-right: 90px;
+// }
+//
+// .privateMessage {
+//   width: 100%;
+//   margin: 40px;
+//   flex-direction: column-reverse;
+//   align-content: flex-start;
+//   text-align: left;
+//   margin-left: 100px;
+// }
+//
+//
+// .button {
+//   background-color: #483D8B;
+//   color: white;
+// }
+//
+//
+//
+// .button {
+//   background-color: #483D8B;
+//   color: white;
+//
+// }
+//
+// //EventShow.js
+//
+// .eventName {
+//   text-align: center;
+//   margin-top: 20px;
+//   border-bottom: solid 1px #483D8B;
+// }
+//
+// .creator {
+//   display: flex;
+//   flex-wrap: wrap;
+//
+//
+// }

@@ -20,11 +20,11 @@ class EventComments extends React.Component {
     this.setState({ comment: { text: e.target.value } })
   }
 
-  // getData() {
-  //   axios.get(`/api/events/${this.props.event._id}`)
-  //     .then(res => this.setState({ event: res.data }))
-  //     .catch(err => console.log(err))
-  // }
+  getData() {
+    axios.get(`/api/events/${this.props.event._id}`)
+      .then(res => this.setState({ event: res.data }))
+      .catch(err => console.log(err))
+  }
 
   handleSubmit(e) {
     console.log('submitting')
@@ -48,7 +48,7 @@ class EventComments extends React.Component {
     axios.delete(`/api/events/${this.props.event._id}/comments/${comment._id}`, {
       headers: { 'Authorization': Auth.getToken() }
     })
-      .then(() => this.props.getEventData())
+      .then(() => this.getData())
       .catch(err => console.log(err))
   }
 
@@ -61,9 +61,9 @@ class EventComments extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.isAttending()
-  }
+  // componentDidMount() {
+  //   this.isAttending()
+  // }
 
   render() {
     if (!this.props.event || !this.props.attendees || !this.props.me) return null

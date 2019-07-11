@@ -89,50 +89,56 @@ class eventShow extends React.Component {
 
 
     return (
-      <section >
+      <section className="eventDisplayPage">
         <Navbar />
-        <div >
-
+        <div className="eventsShow">
           <Fragment>
-            <h2 >Event: {this.state.event.eventName}</h2>
 
-            <hr />
-            {!this.isAttending() && <EventCreator event={this.props.match.params.id} eventDetails={this.state.event}/>}
-            {this.isAttending() && !this.state.attendees  && <h2> You are a member of this event group </h2>}
-            <div >
-              <div >
-
-                <img src={this.state.event.partyImage} alt={this.state.event.name} />
-
-              </div>
-              <div >
-                <h4 >Description</h4>
-                <p>{this.state.event.description}</p>
-                <hr />
-                <h4 >Location</h4>
-                <p>{this.state.event.locationString}</p>
-                <hr />
-                <h3> This event is happening at  {this.state.event.startTime} on <Moment format="YYYY/MM/DD">{this.state.event.date}</Moment></h3>
-                <hr />
-              </div>
+            <div className="eventName">
 
             </div>
+
+            <div className="creator">
+              {!this.isAttending() && <EventCreator event={this.props.match.params.id} eventDetails={this.state.event}/>}
+            </div>
+            <h2 >{this.state.event.eventName}</h2>
+            <hr/>
+
+            <div >
+              <h4 >Description</h4>
+              <p>{this.state.event.description}</p>
+              <hr />
+              <h4 >Location</h4>
+              <p>{this.state.event.locationString}</p>
+              <Map locations = {this.state.event}/>
+              <hr />
+            </div>
+            <h4> This event is happening at  {this.state.event.startTime} on <Moment format="YYYY/MM/DD">{this.state.event.date}</Moment></h4>
+            <hr />
+
+            <div >
+
+              <img src={this.state.event.partyImage} alt={this.state.event.name} />
+
+            </div>
+
+
 
             <hr />
             <EventComments event={this.state.event} getEventData={this.getData}
               attendees={this.state.attendees} me={this.state.me}
               attending={this.state.isAttending} host={this.state.host}/>
+
+
+            <h3>These people are  members of this event group: </h3>
+            {this.state.host &&  <Link to={`/users/${this.state.host._id}`}>
+              {this.state.host.username}</Link>}
+            <Attendees attendees={this.state.attendees} />
+
+            {this.isAttending() && this.state.event && <AttendeeInfo event={this.state.event}/>}
+
           </Fragment>
         </div>
-        <h3>These people are  members of this event group: </h3>
-        {this.state.host &&  <Link to={`/users/${this.state.host._id}`}>
-          {this.state.host.username}</Link>}
-        <Attendees attendees={this.state.attendees} />
-
-        {this.isAttending() && this.state.event && <AttendeeInfo event={this.state.event}/>}
-
-        <Map locations = {this.state.event}/>
-
       </section>
     )
   }

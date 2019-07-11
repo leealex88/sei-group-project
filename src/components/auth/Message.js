@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 
 class Message extends React.Component {
-  constructor() {
+  constructor() {   
     super()
 
     this.state = { messageSender: '', read: false }
@@ -36,13 +36,14 @@ class Message extends React.Component {
     console.log(this.state.read)
     axios.post(`api/users/${this.props.user._id}/privateMessages/${this.props.message._id}`, null, {      headers: { Authorization: ` ${Auth.getToken()}` }
     })
-      .then(() => this.setState({ read: true }))
-      .then(document.querySelector('.PM').style.display = 'none')
+      .then(() => {
+        this.props.getEventData()
+        this.props.toggleMessages()
+        document.querySelector('.PM').style.display = 'none'
+      })
       .catch(err => console.log(err))
-
-
-
   }
+
 
 
   componentDidMount() {
@@ -62,6 +63,7 @@ class Message extends React.Component {
 
 
         <h6> You have a Message from {this.state.messageSender} </h6>
+
 
         <p> {this.props.message.text} </p>
         <p> Click <Link to={`/users/${this.props.message.user}/message`}> here </Link> to reply. </p>
