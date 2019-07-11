@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 
 class Message extends React.Component {
-  constructor() {   
+  constructor() {
     super()
 
     this.state = { messageSender: '', read: false }
@@ -67,7 +67,7 @@ class Message extends React.Component {
 
         <p> {this.props.message.text} </p>
         <p> Click <Link to={`/users/${this.props.message.user}/message`}> here </Link> to reply. </p>
--        <button onClick={this.markAsRead}>Mark as Read</button>
+-        <button className="buttonEvent" onClick={this.markAsRead}>Mark as Read</button>
 
       </section>
 

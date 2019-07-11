@@ -90,7 +90,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
               <label className="radio">
                 <input
                   type="radio"
-                  checked=""
+                  
                   name="yes"
                   value="yes"
                   onChange={handleChange}
@@ -100,9 +100,9 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
               <label className="radio">
                 <input
                   type="radio"
-                  checked="yes"
+
                   name="no"
-                  value=""
+                  value="no"
                   onChange={handleChange}
                 />
                     No

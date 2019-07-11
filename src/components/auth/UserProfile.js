@@ -100,21 +100,18 @@ class UserProfile extends React.Component {
               <div className="div1">
                 <h1> {this.state.user.username} </h1>
                 <img className="userPicture" src={user.avatar}/>
+                <Link id="fullLineLink" className="links" to={`/users/${user._id}/avatar`} component={Avatar}>
+                  <button className="buttonEvent" > Pick an avatar!  </button>
+                </Link>
               </div>
 
-              <Link to={`/users/${user._id}/avatar`} component={Avatar}>   <button> Pick an avatar!  </button>
-              </Link>
-
-
-
-
-              {user.privateMessages.forEach(message => (
-                <p key ={message._id} > {message} </p> ))}
-
-              <p> You have {user.privateMessages.filter(message => message.request === true).length} invitation requests </p>
-              <button onClick={this.requestFunction}>See Requests</button>
-
               <div className="div2">
+
+                {user.privateMessages.forEach(message => (
+                  <p key ={message._id} > {message} </p> ))}
+                <p> You have {user.privateMessages.filter(message => message.request === true).length} invitation requests </p>
+                <button className="buttonEvent" onClick={this.requestFunction}>See Requests</button>
+
                 {this.state.requests && user.privateMessages.filter(message => message.request === true).map((request, i) =>
                   <Request key={i}
                     request={request}
@@ -128,7 +125,7 @@ class UserProfile extends React.Component {
               <div className="div3">
                 <p> You have {user.privateMessages.filter(message =>
                   message.request === false && message.text && message.read === false).length} private messages </p>
-                <button onClick={this.messagesFunction}>See Messages</button>
+                <button className="buttonEvent" onClick={this.messagesFunction}>See Messages</button>
 
                 <div>
                   {this.state.messages && user.privateMessages.filter(message =>
