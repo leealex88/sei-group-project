@@ -8,7 +8,7 @@ class EventComments extends React.Component {
   constructor() {
     super()
 
-    this.state = { event: null, comment: {} }
+    this.state = { event: null, comment: { text: null } }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleCommentDelete = this.handleCommentDelete.bind(this)
@@ -20,13 +20,15 @@ class EventComments extends React.Component {
     this.setState({ comment: { text: e.target.value } })
   }
 
-
-
+  getData() {
+    axios.get(`/api/events/${this.props.event._id}`)
+      .then(res => this.setState({ event: res.data }))
+      .catch(err => console.log(err))
+  }
 
   handleSubmit(e) {
     console.log('submitting')
     e.preventDefault()
-
     axios.post(`/api/events/${this.props.event._id}/comments`, this.state.comment, {
       headers: { 'Authorization': `${Auth.getToken()}` }
     })
@@ -35,6 +37,7 @@ class EventComments extends React.Component {
         this.setState({ comment: '' })
       })
       .catch(err => console.log(err))
+
   }
 
   isOwner(comment) {
@@ -49,22 +52,30 @@ class EventComments extends React.Component {
       .catch(err => console.log(err))
   }
 
+
   isAttending(){
-    if (this.props.attendees)
-      return this.props.attendees.map(attendee => attendee._id).includes(this.props.me)
+    if (this.props.me) {
+      if ( (this.props.attendees.map(attendee => attendee._id).includes(this.props.me)) ||
+          ( this.props.me === this.props.host._id.toString()))
+        return true
+    }
   }
 
+  // componentDidMount() {
+  //   this.isAttending()
+  // }
+
   render() {
-    if (!this.props.event) return null
+    if (!this.props.event || !this.props.attendees || !this.props.me) return null
+
     // const { event } = this.props
-    console.log(this.state)
+
     return (
 
       <section >
         <div >
           {this.props.event.comments.map(comment => (
             <div key={comment._id} className="card">
-
               <div className="card-content">
                 {comment.text} - {new Date(comment.createdAt).toLocaleString()}
               </div>

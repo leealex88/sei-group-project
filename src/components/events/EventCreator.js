@@ -22,7 +22,7 @@ class EventCreator extends React.Component {
 
   getData() {
     axios.post(`/api/events/${this.props.event}`)
-      .then(res => this.setState({ user: res.data, comment: {} }))
+      .then(res => this.setState({ user: res.data }))
       .catch(err => console.log(err))
   }
 

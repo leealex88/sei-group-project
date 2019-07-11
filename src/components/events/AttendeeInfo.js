@@ -16,7 +16,7 @@ class AttendeeInfo extends React.Component {
     return (
       <section >
 
-        <p>The event host has accepted your request to join this event group.Here are the private details of this event. </p>
+        <p> Only members of the event group can see this info: </p>
 
       </section>
     )
