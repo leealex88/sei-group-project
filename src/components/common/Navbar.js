@@ -13,25 +13,25 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navComponents" >
-        <Link to="/events" className="navComponents"> <p id="logo">Stranger Things</p>
+        <Link id="links" to="/events" className="navComponents"> <p id="logo">Stranger Things</p>
         </Link>
       </div>
 
       <div className="navComponents">
-        <Link to="/events/new" className="navComponents"> <p>Create Event</p>
+        <Link id="links" to="/events/new" className="navComponents"> <p>Create Event</p>
         </Link>
       </div>
 
       <div className="navComponents">
-        <Link to="/myprofile" className="navComponents"> <p>My Profile</p>
+        <Link id="links" to="/myprofile" className="navComponents"> <p>My Profile</p>
         </Link>
       </div>
       <div className="navComponents">
-        <Link to="/users" className="navComponents"> <p>All Users</p>
+        <Link id="links" to="/users" className="navComponents"> <p>All Users</p>
         </Link>
       </div>
       <div onClick={() => Auth.logout()} className="navComponents">
-        <Link to="/" className="homePageLink"> < p>Logout</p>
+        <Link id="links" to="/" className="homePageLink"> <p className="logOutNavbar">Logout</p>
         </Link>
       </div>
     </nav>

@@ -92,7 +92,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
                   type="radio"
                   name="yes"
                   value="yes"
-                  
+
                   onChange={handleChange}
                 />
                   Yes

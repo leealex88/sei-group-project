@@ -35,7 +35,7 @@ class UsersIndex extends React.Component {
             <div className="frontSection">
               {this.state.users.map(user => (
                 <section  key={user._id} >
-                  <Link to={`/users/${user._id}`}>
+                  <Link className="links" to={`/users/${user._id}`}>
                     <div id="userProfile">
                       <img id="usersImage"src={user.avatar}/>
                       <span key={user._id}>

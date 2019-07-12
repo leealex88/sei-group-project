@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import { avatars } from './AvatarImages.js'
 import Auth from '../../lib/Auth'
-
+import Navbar from '../common/Navbar'
 
 
 
@@ -57,17 +57,19 @@ class Avatar extends React.Component {
     return (
 
       <main>
-        <section className="frontSection">
-          <h1> Avatars </h1>
-          <div className="container front">
+        <Navbar />
+        <div>
 
+          <div className="containerFront">
+            <h1> Avatars </h1>
             {avatars.map((image, i) => (
-              <img src={`/assets/SVG/${image}`} className="avatar" key={i} onClick={this.handleAvatar} />))}
-
-            <button type="submit" className="button" onClick={this.handleSubmit}>Make Avatar</button>
+              <img className="avatar" id="chooseAvatar" src={`/assets/SVG/${image}`} key={i} onClick={this.handleAvatar} />))}
+            <div>
+              <button type="submit" className="button" onClick={this.handleSubmit}>Make Avatar</button>
+            </div>
           </div>
 
-        </section>
+        </div>
 
       </main>
     )
