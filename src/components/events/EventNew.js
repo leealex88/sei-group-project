@@ -20,6 +20,7 @@ class EventNew extends React.Component {
   }
 
   handleChange(e) {
+    console.log(e.target.name, e.target.value)
     const data = { ...this.state.data, [e.target.name]: e.target.value }
     this.setState({ data, error: '' })
   }
