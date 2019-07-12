@@ -36,7 +36,7 @@ class EventsIndex extends React.Component {
               {this.state.events.map(event => (
 
                 <section key={event._id} className="eachCard">
-                  <Link to={`/events/${event._id}`}>
+                  <Link className="links" to={`/events/${event._id}`}>
 
                     <div>
                       <img src={event.partyImage}/>

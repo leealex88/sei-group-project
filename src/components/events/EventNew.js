@@ -54,7 +54,7 @@ class EventNew extends React.Component {
 
   handleInterest(e) {
     let tagsArray = []
-    tagsArray = [e.value]
+    tagsArray = [...e.value]
     const data = { ...this.state.data, tags: tagsArray }
     this.setState({ data })
   }
