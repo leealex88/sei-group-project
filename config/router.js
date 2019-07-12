@@ -3,9 +3,14 @@ const events = require('../controllers/events')
 const users = require('../controllers/users')
 const secureRoute = require('../lib/secureRoute')
 
+
+
 router.route('/events/')
   .get(events.index)
   .post(secureRoute, events.create)
+
+router.route('/searchevents/:query')
+  .get(events.searchTags)
 
 router.route('/events/:id/attending')
   .get(users.attendingUsers)
@@ -16,6 +21,9 @@ router.route('/events/:id')
 
 router.route('/me')
   .get(secureRoute, users.getCurrentUser)
+
+router.route('/searchusers/:query')
+  .get(users.searchInterests)
 
 router.route('/users/:id/privateMessages/:commentId')
   .post(secureRoute, users.readPrivateMessage)
@@ -36,6 +44,8 @@ router.route('/users/:id/privateMessages/:commentId')
 
 router.route('/users/:id/privateMessages/:commentId')
   .patch(secureRoute, users.readPrivateMessage)
+
+
 
 router.route('/events/:id/comments')
   .post(secureRoute, events.commentCreate)

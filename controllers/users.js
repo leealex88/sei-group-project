@@ -96,7 +96,7 @@ function showCreatedEvents(req, res, next) {
     .catch(next)
 }
 
-//created events of specific user
+//created events of specific user. takes the user id on the event from.... and populates info to x.
 function showTheirEvents(req, res, next) {
 
   console.log(req.params.id)
@@ -241,6 +241,17 @@ function getEventCreator(req, res, next) {
 
 }
 
+function searchInterests(req, res) {
+  console.log(req.params.query, 'showing')
+  User
+    .find( { interests: req.params.query })
+    .then(users => {
+      if (!users) throw new Error('Not Found')
+      return res.status(200).json(users)
+    })
+    .catch(err => console.log(err))
+}
+
 
 module.exports = {
   login: login,
@@ -261,6 +272,7 @@ module.exports = {
   deleteAcceptedRequest: deleteAcceptedRequest,
   readPrivateMessage: readPrivateMessage,
   updateProfile: updateProfile,
-  updateAvatar: updateAvatar
+  updateAvatar: updateAvatar,
+  searchInterests: searchInterests
 
 }

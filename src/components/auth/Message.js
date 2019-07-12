@@ -6,32 +6,22 @@ import { Link } from 'react-router-dom'
 
 
 class Message extends React.Component {
-  constructor() {   
+  constructor() {
     super()
 
     this.state = { messageSender: '', read: false }
     this.markAsRead = this.markAsRead.bind(this)
 
-
-
-
   }
-
-
-
 
   MessageFunction() {
     axios.post(`/api/users/${this.props.message.user}`, {
       headers: { Authorization: ` ${Auth.getToken()}` }
     })
       .then(res => this.setState({ messageSender: res.data }))
-    // .then(res => this.messageSenders.push(res.data))
       .catch(err => console.log(err))
-
-
-
-
   }
+
   markAsRead() {
     console.log(this.state.read)
     axios.post(`api/users/${this.props.user._id}/privateMessages/${this.props.message._id}`, null, {      headers: { Authorization: ` ${Auth.getToken()}` }
@@ -44,13 +34,9 @@ class Message extends React.Component {
       .catch(err => console.log(err))
   }
 
-
-
   componentDidMount() {
     if (!this.props.message.user) return null
     this.MessageFunction()
-
-
   }
 
   render(){
@@ -58,28 +44,15 @@ class Message extends React.Component {
     console.log('message', this.props.message)
 
     return (
-
       <section className="PM">
-
-
         <h6> You have a Message from {this.state.messageSender} </h6>
-
-
         <p> {this.props.message.text} </p>
         <p> Click <Link to={`/users/${this.props.message.user}/message`}> here </Link> to reply. </p>
--        <button onClick={this.markAsRead}>Mark as Read</button>
+-        <button className="buttonEvent" onClick={this.markAsRead}>Mark as Read</button>
 
       </section>
-
-
-
-
     )
   }
 }
-
-
-
-
 
 export default Message

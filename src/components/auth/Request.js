@@ -115,8 +115,8 @@ class Request extends React.Component {
           <Link to={`/events/${this.props.request.requestEvent}`}> {this.state.event.eventName} </Link>
           </h6>
 
-          <button onClick={this.acceptFunction}> Accept Request </button>
-          <button onClick={this.rejectFunction}> Reject Request </button>
+          <button className="buttonEvent" onClick={this.acceptFunction}> Accept Request </button>
+          <button className="buttonEvent" onClick={this.rejectFunction}> Reject Request </button>
         </div>
       </section>
     )

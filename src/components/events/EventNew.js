@@ -17,9 +17,11 @@ class EventNew extends React.Component {
     this.handleTimeStart = this.handleTimeStart.bind(this)
     this.handleTimeEnd = this.handleTimeEnd.bind(this)
     this.handleBorough = this.handleBorough.bind(this)
+    this.handleInterest = this.handleInterest.bind(this)
   }
 
   handleChange(e) {
+    console.log(e.target.name, e.target.value)
     const data = { ...this.state.data, [e.target.name]: e.target.value }
     this.setState({ data, error: '' })
   }
@@ -50,6 +52,13 @@ class EventNew extends React.Component {
     this.setState({ data })
   }
 
+  handleInterest(e) {
+    let tagsArray = []
+    tagsArray = [e.value]
+    const data = { ...this.state.data, tags: tagsArray }
+    this.setState({ data })
+  }
+
   handleSubmit(e) {
     e.preventDefault()
     const data = this.state.data
@@ -60,9 +69,13 @@ class EventNew extends React.Component {
       .then(() => this.props.history.push('/events'))
       .catch(err => console.log(err))
   }
+
+
+
   //write handleSubmit function
 
   render() {
+    console.log(this.state.data)
     return (
       <main>
         <Navbar />
@@ -72,6 +85,7 @@ class EventNew extends React.Component {
           handleDate={this.handleDate}
           handleTimeStart={this.handleTimeStart}
           handleTimeEnd={this.handleTimeEnd}
+          handleInterest={this.handleInterest}
         />
 
       </main>

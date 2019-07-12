@@ -14,7 +14,7 @@ class UsersIndex extends React.Component {
 
 
   componentDidMount() {
-    axios.get('/api/users')
+    axios.get(`/api/searchusers/${this.props.match.params.query}`)
       .then(res => this.setState({ users: res.data }))
       .catch(err => console.log(err))
   }
@@ -23,10 +23,8 @@ class UsersIndex extends React.Component {
 
 
   render() {
-
     if (!this.state.users) return null
     console.log(this.state.users)
-
     return (
       <main>
         <Navbar />
@@ -35,7 +33,7 @@ class UsersIndex extends React.Component {
             <div className="frontSection">
               {this.state.users.map(user => (
                 <section  key={user._id} >
-                  <Link className="links" to={`/users/${user._id}`}>
+                  <Link to={`/users/${user._id}`}>
                     <div id="userProfile">
                       <img id="usersImage"src={user.avatar}/>
                       <span key={user._id}>

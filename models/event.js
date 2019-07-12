@@ -107,10 +107,6 @@ const attendeeSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   accepted: { type: Boolean, default: false }
 })
-
-
-
-
 const eventSchema = new mongoose.Schema({
   eventType: { type: String, required: true, default: 'event' },
   eventName: { type: String, required: true },
@@ -145,15 +141,12 @@ const eventSchema = new mongoose.Schema({
   timestamps: true
 })
 
+//to be added in the future.
 eventSchema
   .virtual('likeCount')
   .get(function() {
     return this.likes.length
   })
-
-
-
-
 
 eventSchema.plugin(require('mongoose-unique-validator'))
 
