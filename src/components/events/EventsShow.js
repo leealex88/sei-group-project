@@ -97,9 +97,7 @@ class eventShow extends React.Component {
         <div className="eventsShow">
           <Fragment>
 
-            <div className="eventName">
-              <h4 >{this.state.event.eventName}</h4>
-            </div>
+        
 
             <div className="creator">
               {!this.isAttending() && <EventCreator event={this.props.match.params.id} eventDetails={this.state.event}/>}

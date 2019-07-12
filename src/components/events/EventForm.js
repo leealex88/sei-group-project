@@ -67,7 +67,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
             id="description"
             onChange={handleChange}
           />
-          <label>Atelevendee details</label>
+          <label>Attendee details</label>
           <p>You can put any private information in here, such as the exact address - this will only be shown to peopl who you have accepted as atelevendees.</p>
           <textarea
             className="u-full-width"
@@ -92,7 +92,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
                   type="radio"
                   checked=""
                   name="yes"
-                  value="yes"
+                  value='yes'
                   onChange={handleChange}
                 />
                   Yes
@@ -100,9 +100,9 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
               <label className="radio">
                 <input
                   type="radio"
-                  checked="yes"
+                  defaultChecked="yes"
                   name="no"
-                  value=""
+                  value="no"
                   onChange={handleChange}
                 />
                     No
@@ -207,26 +207,6 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
               <option value = "9">9</option>
             </select>
           </div>
-          <div className="control eleven columns">
-            <label>Party Pic</label>
-            <input
-              className="u-full-width"
-              type="input"
-              placeholder=""
-              name="partyImage"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="control eleven columns">
-            <label>Tags</label>
-            <input
-              className="u-full-width"
-              type="input"
-              placeholder=""
-              name="tags"
-              onChange={handleChange}
-            />
-          </div>
           <div className="field">
             <div className="control eleven columns">
               <select
@@ -237,16 +217,6 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
                 <option value="3">Expert</option>
               </select>
             </div>
-          </div>
-          <div className="control eleven columns">
-            <label>Comments</label>
-            <input
-              className="u-full-width"
-              type="input"
-              placeholder=""
-              name="comments"
-              onChange={handleChange}
-            />
           </div>
         </div>
         <div className="control eleven columns">
