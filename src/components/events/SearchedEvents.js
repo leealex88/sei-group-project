@@ -51,7 +51,7 @@ class SearchedEvents extends React.Component {
                     </div>
                   </Link>
                   <div className="eventDescriptionCard">
-                    <p key={event._id}>
+                    <p className="searchEventsTitel" key={event._id}>
                       {event.description}
                     </p>
                   </div>

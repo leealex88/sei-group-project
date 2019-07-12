@@ -30,8 +30,8 @@ class TheirEvents extends React.Component {
           {this.state.events.map(event => (
 
             <section  key={event._id} >
-              <Link to={`/events/${event._id}`}>
-                <div>
+              <Link className="links" to={`/events/${event._id}`}>
+                <div className="usersEventsDisplay">
                   <img src={event.partyImage}/>
                   <span key={event._id}>
 

@@ -219,6 +219,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
           </div>
           <div className="field">
             <div className="control eleven columns">
+              <label>Skill Level</label>
               <select
                 onChange={handleChange} name="skillLevel">
                 <option disabled value="">Skill level</option>
