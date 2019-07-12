@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import axios from 'axios'
 import Map from './Map'
 import EventCreator from './EventCreator'
@@ -7,6 +7,8 @@ import Attendees from './Attendees'
 import AttendeeInfo from './AttendeeInfo'
 import Auth from '../../lib/Auth'
 import Navbar from '../common/Navbar'
+import { interest } from '../auth/UserInterests'
+import Select from 'react-select'
 
 import Moment from 'react-moment'
 import { Link } from 'react-router-dom'
@@ -17,8 +19,10 @@ class eventShow extends React.Component {
   constructor() {
     super()
 
-    this.state = { event: null, attendees: [] , me: null, host: null }
+    this.state = { event: null, attendees: [] , me: null, host: null, data: { tags: null } }
     this.getData = this.getData.bind(this)
+    this.handleInterest = this.handleInterest.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount() {
@@ -55,10 +59,6 @@ class eventShow extends React.Component {
     axios.get(`/api/events/${this.props.match.params.id}`)
       .then(res => this.setState({ event: res.data }))
       .catch(err => console.log(err))
-
-
-
-
   }
 
   getAttendees() {
@@ -85,9 +85,24 @@ class eventShow extends React.Component {
     this.setState({ attendees: this.state.attendees.concat(this.state.host) })
   }
 
+  handleInterest(e) {
+    this.setState({ data: { tags: e.value }  })
+
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    const data = this.state.data
+    axios.put(`/api/events/${this.state.event._id}`, data , {
+      headers: { 'Authorization': `${Auth.getToken()}` }
+    })
+      .catch(err => console.log(err))
+    this.getData()
+  }
+
 
   render() {
-    if (!this.state.event || !this.state.attendees || !this.state.me  ) return null
+    if (!this.state.event || !this.state.attendees ) return null
 
 
 
@@ -112,6 +127,8 @@ class eventShow extends React.Component {
             <hr />
             <h4 >Location</h4>
             <p>{this.state.event.locationString}</p>
+            <h3> This event is happening at  {this.state.event.startTime} on <Moment format="YYYY/MM/DD">{this.state.event.date}</Moment></h3>
+            <hr />
             <Map locations = {this.state.event}/>
             <hr />
           </div>
@@ -130,15 +147,30 @@ class eventShow extends React.Component {
 
             {this.isAttending() && this.state.event && <AttendeeInfo event={this.state.event}/>}
           </div>
+          <section>
+        Event tags: {this.state.event.tags.map((tag, i) =>
+              <Link key={i}
+                to={`/searchevents/${tag}`}>
+                <button> {tag} </button>
+              </Link>)}
 
-          <p> Event tags: {this.state.event.tags.map((tag, i) =>
-            <Link key={i}
-              to={`/searchevents/${tag}`}>
-              <button> {tag} </button>
-            </Link>)}
-          </p>
+            {this.isAttending() &&
+
+             <form onSubmit={this.handleSubmit}>
+               <h6>Add tags...</h6>
+               <Select
+                 defaultValue = {interest[0]}
+                 options= {interest}
+                 onChange={this.handleInterest}
+               />
+
+               <button  type="submit" className="button" id="userProfileButtons">Add Tag</button>
+             </form> }
+
+          </section>
 
         </div>
+
       </section>
     )
   }

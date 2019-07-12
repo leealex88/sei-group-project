@@ -27,8 +27,8 @@ class EventNew extends React.Component {
   }
 
   handleClick(e) {
-
-    const data = { ...this.state.data, eventType: e.target.value  }
+    console.log('e.value', e.value)
+    const data = { ...this.state.data, eventType: e.target.value, partyImage: e.target.value }
     this.setState({ data  })
 
   }
@@ -54,7 +54,7 @@ class EventNew extends React.Component {
 
   handleInterest(e) {
     let tagsArray = []
-    tagsArray = [...e.value]
+    tagsArray = [e.value]
     const data = { ...this.state.data, tags: tagsArray }
     this.setState({ data })
   }
@@ -78,6 +78,7 @@ class EventNew extends React.Component {
         <Navbar />
         <EventForm
           handleChange={this.handleChange}
+          handleClick={this.handleClick}
           handleSubmit={this.handleSubmit}
           handleDate={this.handleDate}
           handleTimeStart={this.handleTimeStart}

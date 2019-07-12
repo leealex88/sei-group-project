@@ -130,7 +130,7 @@ const eventSchema = new mongoose.Schema({
   minSize: { type: Number },
   idealGroupSize: { type: Number },
   privateInfo: { type: String },
-  partyImage: { type: String, set: setImage, default: '/assets/entertainment.jpg' },
+  partyImage: { type: String, set: setImage },
   tags: { type: Array },
   skillLevel: { type: String },
   comments: [ eventCommentSchema ],

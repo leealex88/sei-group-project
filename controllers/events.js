@@ -77,12 +77,25 @@ function commentDeleteRoute(req, res) {
 function searchTags(req, res) {
   console.log(req.params.query, 'showing')
   Event
+
     .find( { tags: req.params.query })
-    
     .then(events => {
       if (!events) throw new Error('Not Found')
       return res.status(200).json(events)
     })
+    .catch(err => console.log(err))
+}
+
+function updateEvent(req, res) {
+  console.log(req.body)
+  Event
+    .findById(req.params.id)
+    .then(event => {
+      if (!event) throw new Error('Not Found')
+      event.tags.push(req.body.tags)
+      return event.save()
+    })
+    .then(user => res.status(202).json(user))
     .catch(err => console.log(err))
 }
 
@@ -97,7 +110,8 @@ module.exports = {
   delete: deleteRoute,
   commentCreate: commentCreateRoute,
   commentDelete: commentDeleteRoute,
-  searchTags: searchTags
+  searchTags: searchTags,
+  updateEvent: updateEvent
 
 
 }
