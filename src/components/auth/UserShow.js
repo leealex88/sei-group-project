@@ -71,7 +71,6 @@ class UserShow extends React.Component {
             <h5 className="userTitle">{user.username}</h5>
             <p>{ user.bio }</p>
           </div>
-          <hr/>
           <h5> {user.username} is interested in... </h5>
           <hr/>
           {user.interests.map((interest, i) =>

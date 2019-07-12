@@ -4,7 +4,7 @@ class EventType extends React.Component {
   constructor() {
     super()
 
-    this.state = {  type: {} }
+    this.state = {  eventType: {} }
 
   }
 

@@ -44,7 +44,7 @@ class EventCreator extends React.Component {
     if (!this.state.user) return null
     const { user } = this.state
     return (
-      <div >
+      <div className="eventCreator">
         <h6> Event creator: </h6>
         <Link to={`/users/${user._id}`}>
           {user.username}</Link>

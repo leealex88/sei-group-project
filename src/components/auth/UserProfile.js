@@ -144,13 +144,15 @@ class UserProfile extends React.Component {
                   <p>{user.interests.map((interest, i) =>
                     <Link key={i} to={`/searchevents/${interest}`}> <button> {interest} </button></Link>
                   )} </p>
-                  <h6 className="boldh6">Interests</h6>
-                  <h6>What else are you interested in? Help us understand what kind of events might interest you.</h6>
-                  <Select
-                    defaultValue = {interest[0]}
-                    options= {interest}
-                    onChange={this.handleInterest}
-                  />
+                  <div className="control eleven columns">
+                    <label>Tags </label>
+                    <Select
+                      className = "Interest"
+                      options= {interest}
+                      onChange={this.handleInterest}
+                      placeholder={this.state.data.interests || 'Pick an interest'}
+                    />
+                  </div>
                   <button type="submit" className="button" id="userProfileButtons">Add Interest</button>
                 </form>
 

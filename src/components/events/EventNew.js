@@ -21,14 +21,13 @@ class EventNew extends React.Component {
   }
 
   handleChange(e) {
-    console.log(e.target.name, e.target.value)
     const data = { ...this.state.data, [e.target.name]: e.target.value }
     this.setState({ data, error: '' })
   }
 
   handleClick(e) {
-
-    const data = { ...this.state.data, eventType: e.target.value  }
+    console.log('e.value', e.value)
+    const data = { ...this.state.data, eventType: e.target.value, partyImage: e.target.value }
     this.setState({ data  })
 
   }
@@ -81,6 +80,7 @@ class EventNew extends React.Component {
         <Navbar />
         <EventForm
           handleChange={this.handleChange}
+          handleClick={this.handleClick}
           handleSubmit={this.handleSubmit}
           handleDate={this.handleDate}
           handleTimeStart={this.handleTimeStart}
@@ -93,41 +93,3 @@ class EventNew extends React.Component {
   }
 }
 export default EventNew
-
-
-// data={data}
-// errors={errors}
-
-
-
-
-
-
-//
-//
-// eventType: { type: String, required: true }, -
-// eventName: { type: String }, -
-// date: { type: Date, required: true }, -
-// fixedDate: { type: Boolean }, -
-// location: { type: String, set: setLngLat, default: 'string' },
-// // lnglat: { type: String, set: setLngLat },
-// description: { type: String },
-// schedule: { type: String },
-// startTime: { type: Number },
-// endTime: { type: Number },
-// tickets: { type: String },
-// ticketLink: { type: String },
-// eventLink: { type: String },
-// preparation: { type: String },
-// cost: { type: Number, default: 0 },
-// catered: { type: String },
-// provided: { type: String },
-// whatToBring: { type: String },
-// maxSize: { type: Number },
-// minSize: { type: Number },
-// idealGroupSize: { type: Number },
-// anythingElse: { type: String },
-// partyImage: { type: String, default: 'http://www.thegatenewcastle.co.uk/images/layout/headers/mobile/party-planner.jpg' },
-// tags: { type: Array },
-// skillLevel: { type: String },
-// comments: [ eventCommentSchema ]

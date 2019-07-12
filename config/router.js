@@ -4,11 +4,12 @@ const users = require('../controllers/users')
 const secureRoute = require('../lib/secureRoute')
 
 
-
+//events index and create event
 router.route('/events/')
   .get(events.index)
   .post(secureRoute, events.create)
 
+//serches for events using tag as query
 router.route('/searchevents/:query')
   .get(events.searchTags)
 
@@ -18,6 +19,7 @@ router.route('/events/:id/attending')
 router.route('/events/:id')
   .get(events.show)
   .post(users.getEventCreator)
+  .put(events.updateEvent)
 
 router.route('/me')
   .get(secureRoute, users.getCurrentUser)
@@ -44,8 +46,6 @@ router.route('/users/:id/privateMessages/:commentId')
 
 router.route('/users/:id/privateMessages/:commentId')
   .patch(secureRoute, users.readPrivateMessage)
-
-
 
 router.route('/events/:id/comments')
   .post(secureRoute, events.commentCreate)
@@ -74,8 +74,6 @@ router.route('/register')
 router.route('/myevents')
   .get(secureRoute, users.showCreatedEvents)
 
-
-
 router.route('/users')
   .get(users.showUsers)
 
@@ -84,9 +82,5 @@ router.route('/users/:userid')
 
 router.route('/*')
   .all((req, res) => res.status(404).json({ message: 'Not Found' }))
-
-
-
-
 
 module.exports = router

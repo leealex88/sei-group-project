@@ -7,7 +7,7 @@ import { borough } from './EventFormParts/EventBorough'
 import { interest } from '../auth/UserInterests'
 
 
-const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handleTimeStart, handleTimeEnd, handleBorough, handleInterest }) =>  (
+const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handleTimeStart, handleTimeEnd, handleBorough, handleInterest  }) =>  (
   <form className="eventForm" onSubmit={handleSubmit}>
 
     <div className="container section-container" id="newEvent">
@@ -219,6 +219,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
           </div>
           <div className="field">
             <div className="control eleven columns">
+              <label>Skill Level</label>
               <select
                 onChange={handleChange} name="skillLevel">
                 <option disabled value="">Skill level</option>
