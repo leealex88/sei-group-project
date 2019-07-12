@@ -127,7 +127,7 @@ class eventShow extends React.Component {
               <div className="creator">
                 {!this.isAttending() && <EventCreator event={this.props.match.params.id} eventDetails={this.state.event}/>}
 
-              
+
               </div>
 
               <div>
@@ -157,6 +157,12 @@ class eventShow extends React.Component {
 
               {this.isAttending() && this.state.event && <AttendeeInfo event={this.state.event}/>}
             </div>
+            <p> Event tags: {this.state.event.tags.map((tag, i) =>
+              <Link key={i}
+                to={`/searchevents/${tag}`}>
+                <button> {tag} </button>
+              </Link>)}
+            </p>
           </Fragment>
         </div>
       </section>

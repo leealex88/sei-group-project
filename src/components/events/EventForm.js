@@ -4,10 +4,12 @@ import Select from 'react-select'
 import EventCalendar from './EventFormParts/EventCalendar'
 import EventType from './EventFormParts/EventType'
 import { borough } from './EventFormParts/EventBorough'
+import { interest } from '../auth/UserInterests'
 
 
-const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handleTimeStart, handleTimeEnd, handleBorough }) => (
+const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handleTimeStart, handleTimeEnd, handleBorough, handleInterest, data  }) =>  (
   <form className="eventForm" onSubmit={handleSubmit}>
+
     <div className="container section-container" id="newEvent">
       <div className="row">
         <h2>Things</h2>
@@ -67,16 +69,16 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
             id="description"
             onChange={handleChange}
           />
-          <label>Atelevendee details</label>
-          <p>You can put any private information in here, such as the exact address - this will only be shown to peopl who you have accepted as atelevendees.</p>
+          <label>Attendee details</label>
+          <p>You can put any private information in here, such as the exact address - this will only be shown to people who you have accepted as atelevendees.</p>
           <textarea
             className="u-full-width"
             minLength="10"
             maxLength="460"
             type="text"
             placeholder="..."
-            name="description"
-            id="description"
+            name="privateInfo"
+            id="privateInfo"
             onChange={handleChange}
           />
           <hr />
@@ -92,7 +94,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
                   type="radio"
                   name="yes"
                   value="yes"
-                  
+
                   onChange={handleChange}
                 />
                   Yes
@@ -207,23 +209,12 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
             </select>
           </div>
           <div className="control eleven columns">
-            <label>Party Pic</label>
-            <input
-              className="u-full-width"
-              type="input"
-              placeholder=""
-              name="partyImage"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="control eleven columns">
-            <label>Tags</label>
-            <input
-              className="u-full-width"
-              type="input"
-              placeholder=""
-              name="tags"
-              onChange={handleChange}
+            <label>Tags </label>
+            <Select
+              className = "Interest"
+              defaultValue = {interest[0]}
+              options= {interest}
+              onChange={handleInterest}
             />
           </div>
           <div className="field">
@@ -237,16 +228,7 @@ const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handl
               </select>
             </div>
           </div>
-          <div className="control eleven columns">
-            <label>Comments</label>
-            <input
-              className="u-full-width"
-              type="input"
-              placeholder=""
-              name="comments"
-              onChange={handleChange}
-            />
-          </div>
+
         </div>
         <div className="control eleven columns">
           <button type="submit" className="button">Submit</button>

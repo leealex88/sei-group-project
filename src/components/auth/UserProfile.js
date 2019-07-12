@@ -31,12 +31,6 @@ class UserProfile extends React.Component {
     this.props.history.push('/')
   }
 
-  // requestFunction() {
-  //   const requests = this.state.user.privateMessages.filter(message => message.request === true)
-  //   requests.concat(requests.map(request => request.user))
-  //   console.log(requests)
-  //   this.setState({ requests: requests })
-  // }
   requestFunction() {
     this.setState({ requests: !this.state.requests })
   }
@@ -83,7 +77,7 @@ class UserProfile extends React.Component {
 
       .then(() => this.props.history.push('/myprofile'))
       .catch(err => console.log(err))
-      .this.getData()
+    this.getData()
   }
 
   render(){
@@ -151,7 +145,7 @@ class UserProfile extends React.Component {
                   <hr />
                   <label>Currently your interests are listed as </label>
                   <p>{user.interests.map((interest, i) =>
-                    <Link key={i} to={`/events/${interest}`}> <button> {interest} </button></Link>
+                    <Link key={i} to={`/searchevents/${interest}`}> <button> {interest} </button></Link>
                   )} </p>
                   <h6 className="boldh6">Interests</h6>
                   <h6>What else are you interested in? Help us understand what kind of events might interest you.</h6>

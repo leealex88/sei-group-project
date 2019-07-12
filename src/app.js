@@ -15,20 +15,21 @@ import Request from './components/auth/Request'
 import UserShow from './components/auth/UserShow'
 import UsersIndex from './components/auth/UsersIndex'
 import EventNew from './components/events/EventNew'
-
-
-
+import SearchedEvents from './components/events/SearchedEvents'
+import SearchedUsers from './components/auth/SearchedUsers'
 
 const App = () => {
   return (
     <BrowserRouter>
       <main>
         <Switch>
+          <Route path="/searchevents/:query" component={SearchedEvents} />
           <Route path="/events/new" component={EventNew} />
           <Route path="/events/:id" component={EventsShow} />
           <Route path="/events/" component={EventsIndex} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
+          <Route path="/searchusers/:query" component={SearchedUsers} />
           <Route path="/users/:userid/avatar" component={Avatar} />
           <Route path="/users/:userid/message" component={PrivateMessage} />
           <Route path="/users/:userid" component={UserShow} />

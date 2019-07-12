@@ -11,13 +11,13 @@ class AttendeeInfo extends React.Component {
 
 
   render() {
-    if (!this.props.event) return null
+    if (!this.props.event.privateInfo) return null
     console.log(this.props)
     return (
       <section >
 
-        <p> Only members of the event group can see this info: </p>
-
+        <p> Private information for group members only: </p>
+        <p>{this.props.event.privateInfo}</p>
       </section>
     )
   }

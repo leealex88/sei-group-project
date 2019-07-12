@@ -6,14 +6,10 @@ import Navbar from '../common/Navbar'
 class PrivateMessage extends React.Component {
   constructor() {
     super()
-
     this.state = { user: null, message: { text: '' } }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
-
-
   }
-
 
   componentDidMount() {
     this.getData()
@@ -40,13 +36,10 @@ class PrivateMessage extends React.Component {
     })
       .then(() => {
         this.getData()
-
         this.props.history.push('/myprofile')
-
       })
       .then(() => this.getData())
       .catch(err => console.log(err))
-
   }
 
   render() {
@@ -73,9 +66,6 @@ class PrivateMessage extends React.Component {
             </div>
             <button className="button" type="submit">message</button>
           </form>
-
-
-
         </div>
       </main>
     )

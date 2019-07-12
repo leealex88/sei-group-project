@@ -75,7 +75,7 @@ class UserShow extends React.Component {
           <h5> {user.username} is interested in... </h5>
           <hr/>
           {user.interests.map((interest, i) =>
-            <Link key={i} to={`/events/${interest}`}> <button> {interest} </button></Link>
+            <Link key={i} to={`/searchevents/${interest}`}> <button> {interest} </button></Link>
           )}
 
           <div className="messenger">
