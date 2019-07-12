@@ -75,9 +75,7 @@ function commentDeleteRoute(req, res) {
 }
 
 function searchTags(req, res) {
-  console.log(req.params.query, 'showing')
   Event
-
     .find( { tags: req.params.query })
     .then(events => {
       if (!events) throw new Error('Not Found')
@@ -98,6 +96,7 @@ function updateEvent(req, res) {
     .then(user => res.status(202).json(user))
     .catch(err => console.log(err))
 }
+
 
 
 
