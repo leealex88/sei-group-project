@@ -7,7 +7,7 @@ import { borough } from './EventFormParts/EventBorough'
 import { interest } from '../auth/UserInterests'
 
 
-const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handleTimeStart, handleTimeEnd, handleBorough, handleInterest, data  }) =>  (
+const EventForm = ({  handleChange, handleClick, handleSubmit, handleDate, handleTimeStart, handleTimeEnd, handleBorough, handleInterest  }) =>  (
   <form className="eventForm" onSubmit={handleSubmit}>
 
     <div className="container section-container" id="newEvent">

@@ -18,6 +18,7 @@ router.route('/events/:id/attending')
 router.route('/events/:id')
   .get(events.show)
   .post(users.getEventCreator)
+  .put(events.updateEvent)
 
 router.route('/me')
   .get(secureRoute, users.getCurrentUser)
