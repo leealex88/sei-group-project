@@ -128,6 +128,10 @@ class eventShow extends React.Component {
             <h4 >Location</h4>
             <p>{this.state.event.locationString}</p>
             <h3> This event is happening at  {this.state.event.startTime} on <Moment format="YYYY/MM/DD">{this.state.event.date}</Moment></h3>
+<<<<<<< HEAD
+=======
+            <hr />
+>>>>>>> development
             <Map locations = {this.state.event}/>
           </div>
 

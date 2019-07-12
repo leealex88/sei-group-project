@@ -17,14 +17,16 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Grammi is another old bear who is the matriarch of Gummi-Glen. She acts as the groups mother, who cooks, cleans, and is the Gummi who prepares the Gummiberry Juice. She holds the secret recipe. She has an intense rivalry with Gruffi Gummi, and tends to bicker with him. Her cooking is disliked by most of the others, especially Gruffi.',
           password: 'password',
           passwordConfirmation: 'password',
-          avatar: 'https://i.imgur.com/ZFhlV9A.jpg'
+          avatar: 'https://i.imgur.com/ZFhlV9A.jpg',
+          interests: ['CSS', 'making delicious pancakes', 'swimming','talking', 'listening', 'being bloody fantastic']
 
         }, {
           username: 'Charlie',
           email: 'charlie@email',
           bio: 'Zummi is an aged bear who is the Gummi-Glen Gummis leader, although he often defers to the more practical Grammi and Gruffi. He is the "Keeper of Gummi Wisdom" and later the holder of the Gummi-Medallion which he uses to read his magic book to become the groups magician. He is forgetful (he is nearly always shown reciting spells from notes instead of from memory) and clumsy, mis-speaking often with spoonerisms, and his spells tend to back-fire. He also has a fear of heights.',
           password: 'password',
-          passwordConfirmation: 'password'
+          passwordConfirmation: 'password',
+          interests: ['climbing', 'dad jokes', 'being bloody fantastic']
 
         },
         {
@@ -33,6 +35,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Sunni is a preteen Gummi, who dreams about becoming a princess just like her best friend, the human Princess Calla. Sunni is the most curious about human culture and human fashion, and least concerned with Gummi history. She is the second oldest of the kid Gummis, behind only Tummi Gummi. Later in the series, she is shown to have a crush on Gusto, and becomes close friends with Buddy.',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['being a total div'],
           avatar: 'https://static1.squarespace.com/static/5ada91e331d4df2af37677c2/t/5ae3c9f270a6adc561f22176/1524877811615/irvin+yalom.jpeg?format=1000w'
 
         },
@@ -42,6 +45,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['dogs', 'make-up', 'make-over', 'sparkles', 'LGBTQ', 'drag', 'dress-up'],
           avatar: avatars[3]
         },
         {
@@ -50,6 +54,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['dogs', 'walking', 'talking', 'listening', 'fashion', 'vinatge', 'hipster', 'day time', 'shopping', 'community'],
           avatar: avatars[4]
         },
         {
@@ -58,6 +63,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['music', 'yoga', 'mindfulness', 'buddhism', 'mental health', 'health', 'fitness'],
           avatar: avatars[6]
         },
         {
@@ -66,6 +72,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['sport', 'vinatage', 'hipster', 'day time', 'shopping', 'community'],
           avatar: avatars[5]
         },
         {
@@ -74,6 +81,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['music' ,'yoga', 'mindfulness', 'buddhism', 'mental health', 'health', 'fitness', 'dogs', 'walking', 'talking', 'listening'],
           avatar: avatars[7]
         },
         {
@@ -82,6 +90,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['dogs', 'sport', 'music' , 'listening', 'politics', 'green', 'environmental', 'activism', 'door-knocking', 'community'],
           avatar: avatars[8]
         },
         {
@@ -90,6 +99,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['breakfast', 'meat', 'food', 'morning', 'eggs', 'hipster', 'teaching'],
           avatar: avatars[9]
         },
         {
@@ -98,6 +108,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['dogs', 'walking', 'talking', 'listening'],
           avatar: avatars[10]
         },
         {
@@ -106,6 +117,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['dogs', 'walking', 'talking', 'listening'],
           avatar: avatars[11]
         },
         {
@@ -114,6 +126,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['dogs', 'walking', 'talking', 'listening'],
           avatar: avatars[12]
         },
         {
@@ -122,6 +135,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['food', 'fine-dining', 'spanish', 'restaurant', 'wine'],
           avatar: avatars[13]
         },
         {
@@ -130,6 +144,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['dogs', 'walking','breakfast', 'meat', 'food', 'morning', 'eggs'],
           avatar: avatars[14]
         },
         {
@@ -138,6 +153,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['chitchat', 'girls-only', 'cake', 'baking', 'community'],
           avatar: avatars[15]
         },
         {
@@ -146,6 +162,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['yoga', 'mindfulness', 'buddhism', 'breakfast', 'meat', 'food', 'morning', 'eggs', 'mental health', 'health', 'fitness'],
           avatar: avatars[16]
         },
         {
@@ -154,6 +171,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['banter', 'dogs', 'walking', 'talking', 'listening', 'yoga', 'mindfulness', 'buddhism', 'mental health', 'health', 'fitness'],
           avatar: avatars[17]
         },
         {
@@ -162,6 +180,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['food', 'fine-dining', 'spanish', 'restaurant', 'wine','chitchat', 'girls-only', 'cake', 'baking', 'community'],
           avatar: avatars[18]
         },
         {
@@ -170,6 +189,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Gruffi is an old-fashioned bear who prefers to do things "the Gummi way." An extremely skilled craftsman and mechanic, he fixes the old Gummi technology and trap doors, as well as building traps around the Glen to deal with humans and ogres. Gruffi is a perfectionist, which can be his undoing at times. However and at other times, he is respected as the voice of stability and practical solutions when the other Gummis fall into despair.',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['dogs', 'walking', 'talking', 'listening', 'game', 'strategy', 'nerdy', 'fantasy', 'story-telling', 'role-play'],
           avatar: avatars[19]
         },
         {
@@ -178,6 +198,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Tummi is an overweight Gummi, stated to be a little younger than Gusto, who enjoys a good meal, and would much rather be eating the Gummiberries than picking them. Of all the Gummi cubs in Gummi Glen, Tummi is the oldest. He has a rather relaxed and easygoing personality, which often gets him caught up in Cubbi\'s schemes. However and in dangerous situations, Tummi has shown exceptional bravery, and throughout the series, he demonstrates a natural talent as a sailor, gardener, artist and craftsman.',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['dogs', 'walking', 'talking', 'listening'],
           avatar: avatars[20]
         },
         {
@@ -186,6 +207,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Cubbi is the youngest Gummi-Glen Gummi (according to the official series\' bible around the equivalent of an 8-year-old), and dreams of becoming a great Gummi knight. He is impetuous and gets distracted by anything mysterious or exciting, but his open-mindedness oftentimes enables him to find simple solutions to sticky problems. He sometimes dons a mask and becomes a vigilante known as the Crimson Avenger. He is best friends with the human Cavin, and he was the first Gummi that Cavin encountered.',
           password: 'password',
           passwordConfirmation: 'password',
+          interests: ['family', 'picnic', 'park', 'community', 'fun', 'games'],
           avatar: avatars[21]
         },
         {
@@ -194,6 +216,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'A narcissistic womaniser. Possibly the greatest spy that ever lived.',
           password: 'guest',
           passwordConfirmation: 'guest',
+          interests: ['dogs', 'walking', 'talking', 'listening'],
           avatar: avatars[22]
         },
         {
@@ -202,6 +225,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Sterling\'s mother, Mallory Archer is almost as self-absorbed as her son and is constantly on the look out for ways to keep her employees under control.',
           password: 'guest',
           passwordConfirmation: 'guest',
+          interests: ['dogs', 'walking', 'talking', 'listening', 'food', 'fine-dining', 'spanish', 'restaurant', 'wine'],
           avatar: avatars[23]
         },
         {
@@ -210,6 +234,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Definitely a scientist, apparently a doctor (though no one is entirely sure what type of doctor), probably insane. Also maybe a clone of Hitler.',
           password: 'guest',
           passwordConfirmation: 'guest',
+          interests: ['politics', 'green', 'environmental', 'activism', 'door-knocking', 'community', 'music', 'rock', 'guitar', 'band', 'talking', 'listening'],
           avatar: avatars[24]
         },
         {
@@ -218,6 +243,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Possibly the most professional spy at ISIS. This is not saying a huge amount. Kinda like being awarded the title of the World\'s Tallest Midget',
           password: 'guest',
           passwordConfirmation: 'guest',
+          interests: ['food', 'fine-dining', 'spanish', 'restaurant', 'wine', 'dogs', 'sober', 'non-alcoholic', 'day time', 'park', 'community'],
           avatar: avatars[25]
         },
         {
@@ -226,6 +252,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'HR Supremo. Basically spends most of her time trying to instigate a sexual harrassment case against herself.',
           password: 'guest',
           passwordConfirmation: 'guest',
+          interests: ['dogs', 'walking', 'talking', 'listening', 'music', 'rock', 'guitar', 'band', 'live-music', 'jamming', 'Performance'],
           avatar: avatars[26]
         },
         {
@@ -234,6 +261,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           bio: 'Check with HR, she may have changed her name again. Either way, don\'t let her near sharp objects. Or glue.',
           password: 'guest',
           passwordConfirmation: 'guest',
+          interests: ['cards', 'strategy game', 'community', 'sober', 'non-alcoholic', 'day time', 'park'],
           avatar: avatars[27]
         }
       ])
@@ -267,7 +295,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           partyImage: 'social',
           image: '',
-          tags: ['cards', 'strategy game'],
+          tags: ['cards', 'strategy game', 'community'],
           user: users[1],
           skillLevel: 'intermediate'
         },
@@ -296,7 +324,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: 4,
           anythingElse: '',
           image: '',
-          tags: ['sober', 'non-alcoholic', 'day time', 'park'],
+          tags: ['sober', 'non-alcoholic', 'day-time', 'park', 'community'],
           user: users[1],
           partyImage: 'food',
           skillLevel: ''
@@ -326,7 +354,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: 4,
           anythingElse: '',
           image: '',
-          tags: ['sober', 'non-alcoholic', 'day time', 'park'],
+          tags: ['sober', 'non-alcoholic', 'day-time', 'park'],
           user: users[1],
           partyImage: 'food',
           skillLevel: ''
@@ -357,7 +385,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           partyImage: 'health',
           image: '',
-          tags: ['yoga', 'mindfulness', 'buddhism', 'mental health', 'health', 'fitness'],
+          tags: ['yoga', 'mindfulness', 'buddhism', 'mental-health', 'health', 'fitness'],
           user: users[1],
           skillLevel: ''
         },
@@ -386,7 +414,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: 4,
           anythingElse: 'Only women please!',
           image: '',
-          tags: ['chitchat', 'girls-only', 'cake', 'baking'],
+          tags: ['chitchat', 'girls-only', 'cake', 'baking', 'community', 'cinema', 'film', 'hollywood', 'Performance'],
           user: users[1],
           partyImage: 'food',
           skillLevel: ''
@@ -416,7 +444,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: '',
           anythingElse: 'I have slightly out there taste in clothes, you have been warned!',
           image: '',
-          tags: ['fashion', 'vinatge', 'hipster', 'day time', 'shopping'],
+          tags: ['fashion', 'vinatge', 'hipster', 'day time', 'shopping', 'community'],
           user: users[1],
           partyImage: 'food',
           skillLevel: ''
@@ -503,7 +531,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: '',
           anythingElse: '',
           image: '',
-          tags: ['cinema', 'film', 'hollywood'],
+          tags: ['cinema', 'film', 'hollywood', 'Performance'],
           user: users[1],
           skillLevel: ''
         },
@@ -590,7 +618,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: '',
           anythingElse: '',
           image: '',
-          tags: ['ping-pong', 'sport', 'game', 'ball-game', 'activity', 'competition', 'toureventNament'],
+          tags: ['ping-pong', 'sport', 'game', 'ball-game', 'activity', 'competition', 'tournament'],
           user: users[1],
           skillLevel: 'Advanced!'
         },
@@ -618,7 +646,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: 5,
           anythingElse: '',
           image: '',
-          tags: ['music', 'rock', 'guitar', 'band', 'live-music', 'jamming'],
+          tags: ['music', 'rock', 'guitar', 'band', 'live-music', 'jamming', 'Performance'],
           user: users[1],
           skillLevel: 'intermediate'
         },
@@ -676,7 +704,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           partyImage: 'health',
-          tags: ['make-up', 'make-over', 'sparkles', 'LGBTQ', 'drag', 'dress-up'],
+          tags: ['food', 'fine-dining', 'spanish', 'restaurant', 'wine'],
           user: users[1],
           skillLevel: ''
         },
@@ -734,7 +762,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           partyImage: 'health',
           image: '',
-          tags: ['running', 'fitness', 'morning', 'exercise'],
+          tags: ['running', 'fitness', 'morning', 'exercise', 'day-time'],
           user: users[2],
           skillLevel: ''
         },
@@ -763,7 +791,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           image: '',
           partyImage: 'learning',
-          tags: ['chess', 'strategy', 'intellectual chat'],
+          tags: ['chess', 'strategy', 'intellectual chat', 'community', 'gardening', 'helping'],
           user: users[2],
           skillLevel: ''
         },
@@ -791,7 +819,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           idealGroupSize: '',
           anythingElse: 'We will pay for what we each eat/drink just to keep things as simple as possible',
           image: '',
-          tags: ['food', 'fine-dining', 'spanish', 'restaurant'],
+          tags: ['food', 'fine-dining', 'spanish', 'restaurant', 'wine'],
           partyImage: 'food',
           user: users[2],
           skillLevel: ''
@@ -850,7 +878,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           partyImage: 'community',
           image: '',
-          tags: ['politics', 'green', 'environmental', 'activism', 'door-knocking'],
+          tags: ['politics', 'green', 'environmental', 'activism', 'door-knocking', 'community'],
           user: users[2],
           skillLevel: ''
         },
@@ -879,7 +907,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true }, (err, d
           anythingElse: '',
           partyImage: 'food',
           image: '',
-          tags: ['mexican', 'food', 'cocktails', 'drink', 'friendship', 'fun', 'party'],
+          tags: ['mexican', 'food', 'cocktails', 'drink', 'friendship', 'fun', 'party', 'community'],
           user: users[2],
           skillLevel: ''
         },
