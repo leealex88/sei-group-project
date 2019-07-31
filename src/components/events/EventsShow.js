@@ -135,7 +135,7 @@ class eventShow extends React.Component {
               {this.state.host.username}</Link>}
             <Attendees attendees={this.state.attendees} />
 
-            {this.isAttending() && this.state.event && <AttendeeInfo event={this.state.event}/>}
+            {this.isAttending() &&  <AttendeeInfo event={this.state.event}/>}
           </div>
           <section>
         Event tags: {this.state.event.tags.map((tag, i) =>
@@ -152,9 +152,13 @@ class eventShow extends React.Component {
                  defaultValue = {interest[0]}
                  options= {interest}
                  onChange={this.handleInterest}
+                 placeholder={this.state.data.tags || 'Add a tag'}
                />
 
-               <button  type="submit" className="button" id="userProfileButtons">Add Tag</button>
+               <button
+                 type="submit"
+                 className="button"
+                 id="userProfileButtons">Add Tag</button>
              </form> }
 
           </section>
