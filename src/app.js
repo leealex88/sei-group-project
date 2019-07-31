@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './styles/styles.scss'
 
 import Homepage from './components/common/Homepage'
-import EventsIndex from './components/events/eventsIndex'
+import EventsIndex from './components/events/EventsIndex'
 import EventsShow from './components/events/EventsShow'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
