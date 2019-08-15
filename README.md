@@ -65,7 +65,7 @@ With our initial idea in place, we began by story-boarding our user journey and 
 ## User story
 Our homepage is simple - a background image with the name of our site clearly displayed. A mouse click on the page reveals the options to login or register a new user:
 
-[image:5775B09D-144F-48CD-84F9-B25BBE20834B-7734-00001D2191E7A54F/AE257F11-6E2B-4EDB-82DD-52E34260CC22.png]
+<img src="src/assets/community.jpg" width="900">
 (img 1: homepage showing Register and Login options)
 
 The registration asks for a unique username, a password & confirmation, email address and a brief bio. Once these details are entered, the user is taken to the login page, then to the index of events.
