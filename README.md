@@ -113,7 +113,7 @@ While a preferred option was suggested by our instructors, there were too many f
 
 Preferred method: add the code below to the user model, setting a virtual field that pulls the user from the event model.
 
-<img src="src/assets/two-way.png" width="900">
+<img src="src/assets/two-way.png">
 
 This virtual field allows a two-way relationship between the owner and the event, meaning the id of the user can be pulled from the event and vice versa.
 
