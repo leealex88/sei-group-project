@@ -88,13 +88,6 @@ On submission, the user is taken to the events index, where their new event is d
 
 *Logout:* logs the user out and returns them to the homepage.
 
-## Future development
-	* Error handling - our errors currently display either in the developer tools or in terminal, but do not pass any of this information back to the user.
-	* Incorporate more events from [The List API](https://api.list.co.uk/)
-	* Search users by interest/tags (currently running, but through the event tags)
-	* User can choose whether the events they are attending are shown on their profile.
-	* User profile to include a private calendar of events
-
 ## Major hurdles
 *Linking Events and Users*
 One of the biggest stumbling blocks we encountered was connecting the user and the events as several functions relied on having the attendees and owner linked to the events  While we reached a working solution, the current code is not as DRY as it could be, nor does it play to the strengths of the technologies used.
@@ -135,6 +128,23 @@ The most useful tool for us in identifying what should be styled and where it wa
 
 *GitHub*
 This was our first project  working together as a group and using GitHub to coordinate the different parts we are working on. This resulted in a very steep learning curve for all of us as we built our familiarity with working branches and committing our updates.
+
+## Wins and Key Learnings
+
+Each user and each event has a tags and interests array respectively. It is this that allows us to filter events but it also gives us the potential to be able to match users to events and to each other based on these matching interests. Those options adding a lot of value to the user experience.
+
+Creating a new event required the user to input a large amount of data. We wanted to ensure our users were able to quickly and easily input these data fields, not to simply fill in numerous text boxes and so used select boxes filled with preset options, radio buttons, and third party packages such as react-calendar and react-simple-timefield. We tried different JS components, familiarising ourselves with the documentation and testing each before finding the most appropriate for our purpose. I found the experience of identifying and utilising third-party software to be interesting and informative, and something I hope to take in future projects.
+
+![Event Form](src/assets/new-event-form.gif.gif)
+
+
+
+## Future development
+	* Error handling - our errors currently display either in the developer tools or in terminal, but do not pass any of this information back to the user.
+	* Incorporate more events from [The List API](https://api.list.co.uk/)
+	* Search users by interest/tags (currently running, but through the event tags)
+	* User can choose whether the events they are attending are shown on their profile.
+	* User profile to include a private calendar of events
 
 ## Unsolved Problems
 While we do not have any unresolved issues by hand in, we felt there were also opportunities to clean up our code. This is something we will have to continue working on independently as we improve our portfolios.
