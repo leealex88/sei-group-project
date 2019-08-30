@@ -135,7 +135,7 @@ Each user and each event has a tags and interests array respectively. It is this
 
 Creating a new event required the user to input a large amount of data. We wanted to ensure our users were able to quickly and easily input these data fields, not to simply fill in numerous text boxes and so used select boxes filled with preset options, radio buttons, and third party packages such as react-calendar and react-simple-timefield. We tried different JS components, familiarising ourselves with the documentation and testing each before finding the most appropriate for our purpose. I found the experience of identifying and utilising third-party software to be interesting and informative, and something I hope to take in future projects.
 
-![Event Form](src/assets/new-event-form.gif.gif)
+![Event Form](src/assets/new-event-form.gif)
 
 
 
